@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  caliper:
+    container_name: caliper
+    image: hyperledger/caliper:0.4.2
+    command: launch manager --caliper-fabric-gateway-enabled
+    environment:
+      - CALIPER_BIND_SUT=fabric:2.2
+      - CALIPER_BENCHCONFIG=/hyperledger/caliper/workspace/benchmarks/scenario/simple/benchmark-config-ballot.yaml
+      - CALIPER_NETWORKCONFIG=/hyperledger/caliper/workspace/networks/network-config-ballot.yaml
+    volumes:
+      - ./caliper-benchmarks-local:/hyperledger/caliper/workspace
+      - /var/run/docker.sock:/var/run/docker.sock  # Add Docker socket mount
+    network_mode: host
+    group_add:
+      - "${DOCKER_GID:-999}"  # Add Docker group access
+    user: "${UID:-1000}:${GID:-1000}"  # Set proper user permissions
+
