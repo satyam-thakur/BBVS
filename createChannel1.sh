@@ -46,7 +46,6 @@ setGlobalsForPeer1Org2(){
 
 createChannel(){
     rm -rf ./channel-artifacts/${CHANNEL_NAME}.block
-    # setGlobalsForOrderer
     setGlobalsForPeer0Org1
     
     peer channel create -o localhost:7050 -c $CHANNEL_NAME \
