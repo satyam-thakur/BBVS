@@ -7,7 +7,7 @@ echo "Running docker-compose up -d"
 #Change the directory to location of docker-compose
 pushd ./artifacts/      
 docker-compose  up -d
-if [ $? -ne 0]; then
+if [ $? -ne 0 ]; then
     echo "Error running docker-compose up -d"
     exit 1
 fi
