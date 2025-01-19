@@ -126,19 +126,18 @@
             <ul>
                 <h3>&nbspBasic information</h3>
                 <li>DLT: &nbsp<span style="font-weight: 500;">fabric</span></li>
-                <li>Name: &nbsp<span style="font-weight: 500;">Voting Token Benchmark</span></li>
-                <li>Description: &nbsp<span style="font-weight: 500;">Test performance of VcmsVotingToken function</span></li>
-                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">1</span></li>
+                <li>Name: &nbsp<span style="font-weight: 500;">Ballot Casting Benchmark</span></li>
+                <li>Description: &nbsp<span style="font-weight: 500;">Test performance of Castvote function</span></li>
+                <li>Benchmark Rounds: &nbsp<span style="font-weight: 500;">2</span></li>
                 <li><a href="#benchmarkInfo">Details</a></li>
             </ul>
             <ul>
                 <h3>&nbspBenchmark results</h3>
                 <li><a href="#benchmarksummary">Summary</a></li>
-                    <li><a href="#VcmsVotingToken">VcmsVotingToken</a></li>
+                    <li><a href="#Castvote">Castvote</a></li>
             </ul>
             <ul>
                 <h3>&nbspSystem under test</h3>
-                <li>SUT: &nbsp<span style="font-weight: 500;">Hyperledger Fabric v2.5.9</span></li>
                 <li>Version: &nbsp<span style="font-weight: 500;">2.5.9</span></li>
                 <li>Size: &nbsp<span style="font-weight: 500;">2 Orgs with 4 Peer</span></li>
                 <li>Orderer: &nbsp<span style="font-weight: 500;">Raft</span></li>
@@ -158,69 +157,121 @@
                     </tr>
 
                     <tr>
-                         <td>VcmsVotingToken</td> <td>751</td> <td>0</td> <td>25.0</td> <td>2.11</td> <td>0.10</td> <td>0.37</td> <td>23.4</td>
+                         <td>Castvote</td> <td>748</td> <td>3</td> <td>25.0</td> <td>2.20</td> <td>0.16</td> <td>0.41</td> <td>23.5</td>
+                    </tr>
+                    <tr>
+                         <td>Castvote</td> <td>100</td> <td>0</td> <td>38.4</td> <td>1.98</td> <td>0.16</td> <td>1.35</td> <td>23.9</td>
                     </tr>
                 </table>
             </div>
-            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="VcmsVotingToken">
-                <h2>Benchmark round: VcmsVotingToken</h2>
-                <p>Test VcmsVotingToken function</p>
+            <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;" id="Castvote">
+                <h2>Benchmark round: Castvote</h2>
+                <p>Test Castvote function with fixed-load 100 Transactions</p>
                 <pre style="overflow: visible;white-space: pre-wrap;max-height:100%;">txDuration: 30
 rateControl:
   type: fixed-rate
   opts:
     tps: 25
 </pre>
-                        <h3>Performance metrics for VcmsVotingToken</h3>
+                        <h3>Performance metrics for Castvote</h3>
                             <table style="min-width: 100%;">
                                 <tr>
                                      <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
                                 </tr>
                                 <tr>
-                                     <td>VcmsVotingToken</td> <td>751</td> <td>0</td> <td>25.0</td> <td>2.11</td> <td>0.10</td> <td>0.37</td> <td>23.4</td>
+                                     <td>Castvote</td> <td>748</td> <td>3</td> <td>25.0</td> <td>2.20</td> <td>0.16</td> <td>0.41</td> <td>23.5</td>
                                 </tr>
                             </table>
-                        <h3>Resource utilization for VcmsVotingToken</h3>
+                        <h3>Resource utilization for Castvote</h3>
                             <h4>Resource monitor: docker</h4>
                             <table style="min-width: 100%;">
                                 <tr>
                                 <table>
                                     <tr>
-                                         <th>Name</th> <th>CPU%(max)</th> <th>CPU%(avg)</th> <th>Memory(max) [MB]</th> <th>Memory(avg) [MB]</th> <th>Traffic In [MB]</th> <th>Traffic Out [MB]</th> <th>Disc Write [MB]</th> <th>Disc Read [KB]</th>
+                                         <th>Name</th> <th>CPU%(max)</th> <th>CPU%(avg)</th> <th>Memory(max) [MB]</th> <th>Memory(avg) [MB]</th> <th>Traffic In [MB]</th> <th>Traffic Out [MB]</th> <th>Disc Write [MB]</th> <th>Disc Read [MB]</th>
                                     </tr>
                                     <tr>
-                                         <td>peer0.org1.example.com</td> <td>21.23</td> <td>14.38</td> <td>111</td> <td>109</td> <td>5.88</td> <td>6.58</td> <td>4.32</td> <td>120</td>
+                                         <td>peer0.org1.example.com</td> <td>26.26</td> <td>16.94</td> <td>112</td> <td>110</td> <td>7.64</td> <td>9.09</td> <td>4.39</td> <td>0.684</td>
                                     </tr>
                                     <tr>
-                                         <td>orderer.example.com</td> <td>6.33</td> <td>3.31</td> <td>54.5</td> <td>47.9</td> <td>3.45</td> <td>6.50</td> <td>6.84</td> <td>216</td>
+                                         <td>orderer.example.com</td> <td>6.98</td> <td>3.66</td> <td>60.3</td> <td>54.4</td> <td>3.54</td> <td>6.64</td> <td>6.97</td> <td>2.77</td>
                                     </tr>
                                 </table>
                                 </tr>
                             </table>
                             <div class="charting">
+                                <div class="chart">
+                                    <canvas id="MonitorDocker_Castvote_horizontalBar0">
+                                        <script>plotChart("MonitorDocker_Castvote_horizontalBar0", "{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;title&quot;:&quot;CPU%(avg)&quot;,&quot;legend&quot;:false,&quot;labels&quot;:[&quot;peer0.org1.example.com&quot;,&quot;orderer.example.com&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:[&quot;rgb(255,71,0,0.6)&quot;,&quot;rgb(179,50,0,0.6)&quot;],&quot;data&quot;:[&quot;16.94&quot;,&quot;3.66&quot;]}]}")</script>
+                                    </canvas>
+                                </div>
+                                <div class="chart">
+                                    <canvas id="MonitorDocker_Castvote_horizontalBar1">
+                                        <script>plotChart("MonitorDocker_Castvote_horizontalBar1", "{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;title&quot;:&quot;Memory(avg) [MB]&quot;,&quot;legend&quot;:false,&quot;labels&quot;:[&quot;peer0.org1.example.com&quot;,&quot;orderer.example.com&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:[&quot;rgb(255,71,0,0.6)&quot;,&quot;rgb(179,50,0,0.6)&quot;],&quot;data&quot;:[&quot;110&quot;,&quot;54.4&quot;]}]}")</script>
+                                    </canvas>
+                                </div>
+                                <div class="chart">
+                                    <canvas id="MonitorDocker_Castvote_horizontalBar2">
+                                        <script>plotChart("MonitorDocker_Castvote_horizontalBar2", "{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;title&quot;:&quot;Traffic In [MB]&quot;,&quot;legend&quot;:false,&quot;labels&quot;:[&quot;peer0.org1.example.com&quot;,&quot;orderer.example.com&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:[&quot;rgb(255,71,0,0.6)&quot;,&quot;rgb(179,50,0,0.6)&quot;],&quot;data&quot;:[&quot;7.64&quot;,&quot;3.54&quot;]}]}")</script>
+                                    </canvas>
+                                </div>
+                                <div class="chart">
+                                    <canvas id="MonitorDocker_Castvote_horizontalBar3">
+                                        <script>plotChart("MonitorDocker_Castvote_horizontalBar3", "{&quot;type&quot;:&quot;horizontalBar&quot;,&quot;title&quot;:&quot;Traffic Out [MB]&quot;,&quot;legend&quot;:false,&quot;labels&quot;:[&quot;peer0.org1.example.com&quot;,&quot;orderer.example.com&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:[&quot;rgb(255,71,0,0.6)&quot;,&quot;rgb(179,50,0,0.6)&quot;],&quot;data&quot;:[&quot;9.09&quot;,&quot;6.64&quot;]}]}")</script>
+                                    </canvas>
+                                </div>
+                                <div class="chart">
+                                    <canvas id="MonitorDocker_Castvote_polarArea0">
+                                        <script>plotChart("MonitorDocker_Castvote_polarArea0", "{&quot;type&quot;:&quot;polarArea&quot;,&quot;title&quot;:&quot;CPU%(avg)&quot;,&quot;legend&quot;:true,&quot;labels&quot;:[&quot;peer0.org1.example.com&quot;,&quot;orderer.example.com&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:[&quot;rgb(255,71,0,0.6)&quot;,&quot;rgb(179,50,0,0.6)&quot;],&quot;data&quot;:[&quot;16.94&quot;,&quot;3.66&quot;]}]}")</script>
+                                    </canvas>
+                                </div>
+                                <div class="chart">
+                                    <canvas id="MonitorDocker_Castvote_polarArea1">
+                                        <script>plotChart("MonitorDocker_Castvote_polarArea1", "{&quot;type&quot;:&quot;polarArea&quot;,&quot;title&quot;:&quot;Memory(avg) [MB]&quot;,&quot;legend&quot;:true,&quot;labels&quot;:[&quot;peer0.org1.example.com&quot;,&quot;orderer.example.com&quot;],&quot;datasets&quot;:[{&quot;backgroundColor&quot;:[&quot;rgb(255,71,0,0.6)&quot;,&quot;rgb(179,50,0,0.6)&quot;],&quot;data&quot;:[&quot;110&quot;,&quot;54.4&quot;]}]}")</script>
+                                    </canvas>
+                                </div>
                             </div>
+                        <h3>Performance metrics for Castvote</h3>
+                            <table style="min-width: 100%;">
+                                <tr>
+                                     <th>Name</th> <th>Succ</th> <th>Fail</th> <th>Send Rate (TPS)</th> <th>Max Latency (s)</th> <th>Min Latency (s)</th> <th>Avg Latency (s)</th> <th>Throughput (TPS)</th>
+                                </tr>
+                                <tr>
+                                     <td>Castvote</td> <td>100</td> <td>0</td> <td>38.4</td> <td>1.98</td> <td>0.16</td> <td>1.35</td> <td>23.9</td>
+                                </tr>
+                            </table>
+                        <h3>Resource utilization for Castvote</h3>
             </div>
 
             <div style="border-bottom: 1px solid #d9d9d9; padding-bottom: 10px;">
                 <h2>Test Environment</h2>
                 <h3>benchmark config</h3>
-                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: Voting Token Benchmark
-description: Test performance of VcmsVotingToken function
+                <pre id="benchmarkInfo" style="overflow: visible;white-space: pre-wrap;max-height:100%;">name: Ballot Casting Benchmark
+description: Test performance of Castvote function
 workers:
   number: 1
 clients:
   type: local
   number: 1
 rounds:
-  - label: VcmsVotingToken
-    description: Test VcmsVotingToken function
+  - label: Castvote
+    description: Test Castvote function with fixed-rate TPS 25ps
     txDuration: 30
     rateControl:
       type: fixed-rate
       opts:
         tps: 25
     workload:
-      module: benchmarks&#x2F;scenario&#x2F;simple&#x2F;vcms-voting-token-workload.js
+      module: benchmarks&#x2F;scenario&#x2F;simple&#x2F;vcms-cast-vote-workload.js
+  - label: Castvote
+    description: Test Castvote function with fixed-load 100 Transactions
+    txNumber: 100
+    rateControl:
+      type: fixed-load
+      opts:
+        transactionLoad: 100
+    workload:
+      module: benchmarks&#x2F;scenario&#x2F;simple&#x2F;vcms-cast-vote-workload-1.js
 </pre>
                 <h3>SUT</h3>
                 <pre id="sutdetails">not provided</pre>

@@ -60,9 +60,26 @@ channels:
     - id: voting6
       version: "1"
       language: golang
-      path: fabric/samples/go
-      # metadataPath: src/fabric/samples/marbles/go/metadata
+      path: fabric/samples/go/
 
+  # mychannel:
+  #   # configBinary: networks/mychannel1.tx
+  #   created: true
+  #   orderers:
+  #   - orderer.example.com
+  #   # - orderer2.example.com
+  #   # - orderer3.example.com
+  #   peers:
+  #     peer0.org1.example.com:
+  #       eventSource: true
+  #     peer0.org2.example.com:
+  #       eventSource: true    
+    
+  #   contracts:
+  #   - id: voting8
+  #     version: "1"
+  #     language: golang
+  #     path: fabric/samples/Ballot/
 
 organizations:
   Org1:

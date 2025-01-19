@@ -8,7 +8,7 @@ test:
     number: 1
   rounds:
     - label: Castvote
-      description: Test Castvote function
+      description: Test Castvote function with fixed-rate TPS 25ps
       txDuration: 30
       rateControl:
         type: fixed-rate
@@ -16,6 +16,16 @@ test:
           tps: 25
       workload:
         module: benchmarks/scenario/simple/vcms-cast-vote-workload.js
+
+    - label: Castvote
+      description: Test Castvote function with fixed-load 100 Transactions
+      txNumber: 100
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 100
+      workload:
+        module: benchmarks/scenario/simple/vcms-cast-vote-workload-1.js
 
 monitors:
   resource:

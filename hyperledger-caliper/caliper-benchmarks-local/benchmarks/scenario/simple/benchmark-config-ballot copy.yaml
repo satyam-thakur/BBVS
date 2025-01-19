@@ -1,0 +1,40 @@
+test:
+  name: Ballot Casting Benchmark
+  description: Test performance of Castvote function
+  workers:
+    number: 1
+  clients:
+    type: local
+    number: 1
+  rounds:
+    - label: Castvote
+      description: Test Castvote function
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 25
+      workload:
+        module: benchmarks/scenario/simple/vcms-cast-vote-workload.js
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 10
+        containers:
+          - peer0.org1.example.com
+          - orderer.example.com
+        charting:
+          # bar:
+          #   metrics: [Throughput, Latency]
+          # line:
+          #   metrics: [CPU%(avg), Memory(avg)]
+          # pie:
+          #   metrics: [Transaction Distribution]
+          # heatmap:
+          #   metrics: [Traffic In, Traffic Out]  
+          bar:
+            metrics: [Memory(avg), CPU%(avg), Traffic In, Traffic Out]
+          polar:
+            metrics: [CPU%(avg), Memory(avg)]

@@ -242,7 +242,8 @@ CastVote() {
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
         --tlsRootCertFiles $PEER0_ORG1_CA \
-        --peerAddresses localhost:9051 --tlsRootCertFiles $PEER0_ORG2_CA   \
+        --peerAddresses localhost:9051 \
+        --tlsRootCertFiles $PEER0_ORG2_CA   \
         -c '{"function": "CastVote","Args":["cCiOJjRLGza2+8s26T7ybA==", "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 

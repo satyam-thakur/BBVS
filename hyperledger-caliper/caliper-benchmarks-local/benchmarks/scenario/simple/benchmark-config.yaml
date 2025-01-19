@@ -1,14 +1,16 @@
 test:
-  name: Voting Token Benchmark
-  description: Test performance of VcmsVotingToken function
+  name: Benchmarking
+  description: Test performance of BBVS Voting functions
   workers:
     number: 1
   clients:
     type: local
     number: 1
   rounds:
+    # worldload:
+    #   module: benchmarks/scenario/simple/vcms-voting-token-workload.js
     - label: VcmsVotingToken
-      description: Test VcmsVotingToken function
+      description: Test VcmsVotingToken function with fixed-rate TPS 25ps
       txDuration: 30
       rateControl:
         type: fixed-rate
@@ -17,9 +19,31 @@ test:
       workload:
         module: benchmarks/scenario/simple/vcms-voting-token-workload.js
 
+    - label: VcmsVotingToken
+      description: Test VcmsVotingToken function with fixed-load 100 Transactions
+      txNumber: 100
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 100
+      workload:
+        module: benchmarks/scenario/simple/vcms-voting-token-workload-1.js
+
+    - label: VcmsVotingToken
+      description: Test VcmsVotingToken function with fixed-load 100 Transactions and computer latency for each transaction
+      txNumber: 100
+      rateControl:
+        type: fixed-load
+        opts:
+          transactionLoad: 100
+      workload:
+        module: benchmarks/scenario/simple/vcms-voting-token-workload-latency-2.js
+
 monitors:
   resource:
     - module: docker
+  # transaction:
+  #   - module: local-monitor
       options:
         interval: 10
         containers:
@@ -30,10 +54,10 @@ monitors:
             metrics: [Throughput, Latency]
           line:
             metrics: [CPU%(avg), Memory(avg)]
-          pie:
-            metrics: [Transaction Distribution]
-          heatmap:
-            metrics: [Traffic In, Traffic Out]  
+          # pie:
+          #   metrics: [Transaction Distribution]
+          # heatmap:
+          #   metrics: [Traffic In, Traffic Out]  
           # bar:
           #   metrics: [Memory(avg), CPU%(avg), Traffic In, Traffic Out]
           # polar:
