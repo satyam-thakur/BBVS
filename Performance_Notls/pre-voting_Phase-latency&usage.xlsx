@@ -1,0 +1,55 @@
+tx_num, duration
+13000,112
+13001,107
+13002,109
+13003,137
+13004,136
+13005,109
+13006,109
+13007,111
+13008,115
+13009,147
+13010,117
+13011,124
+13012,118
+13013,164
+13014,113
+13015,106
+13016,107
+13017,120
+tx_num, duration
+1,104
+2,107
+3,106
+4,103
+5,99
+6,102
+CPU Usage for 5 transactions = -5.8%
+Memory Usage for 5 transactions = 11 MB
+Total number of transactions = 5
+average latency = 124 ms
+Total latency = 621 ms
+tx_num, duration
+1,100
+2,95
+3,103
+4,103
+5,105
+6,109
+CPU Usage for 5 transactions = 9.9%
+Memory Usage for 5 transactions = 1 MB
+Total number of transactions = 5
+average latency = 123 ms
+Total latency = 615 ms
+tx_num, duration
+1,109
+2,122
+3,106
+4,105
+5,107
+6,114
+CPU Usage for 5 transactions = 13.7%
+Memory Usage for 5 transactions = 5 MB
+Total number of transactions = 5
+average latency = 132 ms
+Total latency = 663 ms

@@ -48,7 +48,7 @@ CastVote() {
 OUTPUT_FILE="voting_Phase-total_latency.xlsx"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=2000
+start_tx=0
 Num_of_tx=50
 
 # set +x

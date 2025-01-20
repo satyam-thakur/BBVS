@@ -19,7 +19,7 @@ CHANNEL_NAME="mychannel1"
 echo $CHANNEL_NAME
 
 # Generate channel configuration block
-configtxgen -profile BasicChannel -configPath . -outputCreateChannelTx ./mychannel1.tx -channelID $CHANNEL_NAME
+configtxgen -profile BasicChannel -configPath . -outputCreateChannelTx ./mychannel1.tx -channelID $CHANNEL_NAME -asOrg Org1MSP,Org2MSP,Org3MSP
 
 echo "#######    Generating anchor peer update for Org1MSP  ##########"
 configtxgen -profile BasicChannel -configPath . -outputAnchorPeersUpdate ./Org1MSPanchors1.tx -channelID $CHANNEL_NAME -asOrg Org1MSP

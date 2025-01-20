@@ -1,0 +1,16 @@
+tx_num, duration
+tx_num, duration
+1000,2712
+1001,2705
+1002,2697
+1003,2659
+1004,2676
+1005,2716
+1006,2660
+1007,2692
+1008,2767
+1009,2396
+1010,2780
+Total number of transactions = 10
+average latency = 2946 ms
+Total latency = 29460 ms
