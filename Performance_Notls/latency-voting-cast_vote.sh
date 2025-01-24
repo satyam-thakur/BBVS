@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_TLS_ENABLED=false
 export FABRIC_CFG_PATH=${PWD}/config/
 
 export CHANNEL_NAME=mychannel

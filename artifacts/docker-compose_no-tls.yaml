@@ -263,3 +263,5 @@ services:
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
+
+  

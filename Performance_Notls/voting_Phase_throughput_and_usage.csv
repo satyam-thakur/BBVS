@@ -1,0 +1,21 @@
+time,transactions,cpu_usage,memory_usage
+2,500,43.1,4806
+Total transactions: 25
+Total duration: 2 seconds
+Average throughput: 12.50 TPS
+CPU usage difference: -11.5%
+Memory usage difference: 7 MB
+time,transactions,cpu_usage,memory_usage
+2,500,46.9,4782
+Total transactions: 25
+Total duration: 2 seconds
+Average throughput: 12.50 TPS
+CPU usage difference: 7.8%
+Memory usage difference: -3 MB
+time,transactions,cpu_usage,memory_usage
+3,1000,43.6,4804
+Total transactions: 25
+Total duration: 3 seconds
+Average throughput: 8.33 TPS
+CPU usage difference: -14.4%
+Memory usage difference: 46 MB

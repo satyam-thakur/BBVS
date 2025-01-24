@@ -45,6 +45,48 @@ setGlobalsForPeer0Org3(){
     export CORE_PEER_ADDRESS=localhost:11051
 }
 
+# Set global environment variables for peer0 in org4
+setGlobalsForPeer0Org4(){
+    export CORE_PEER_LOCALMSPID="Org4MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org4.example.com/users/Admin@org4.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:14051
+}
+
+# Set global environment variables for peer0 in org5
+setGlobalsForPeer0Org5(){
+    export CORE_PEER_LOCALMSPID="Org5MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org5.example.com/users/Admin@org5.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:15051
+}
+
+# Set global environment variables for peer0 in org6
+setGlobalsForPeer0Org6(){
+    export CORE_PEER_LOCALMSPID="Org6MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org6.example.com/users/Admin@org6.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:16051
+}
+
+# Set global environment variables for peer0 in org7
+setGlobalsForPeer0Org7(){
+    export CORE_PEER_LOCALMSPID="Org7MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org7.example.com/users/Admin@org7.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:17051
+}
+
+# Set global environment variables for peer0 in org8
+setGlobalsForPeer0Org8(){
+    export CORE_PEER_LOCALMSPID="Org8MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org8.example.com/users/Admin@org8.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:18051
+}
+
+# Set global environment variables for peer0 in org9
+setGlobalsForPeer0Org9(){
+    export CORE_PEER_LOCALMSPID="Org9MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org9.example.com/users/Admin@org9.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:19051
+}
+
 # Channel name
 export CHANNEL_NAME="mychannel"
 
@@ -52,7 +94,6 @@ export CHANNEL_NAME="mychannel"
 createChannel(){
     # rm -rf ./channel-artifacts/${CHANNEL_NAME}.block
     setGlobalsForPeer0Org1
-
     peer channel create -o localhost:7050 -c $CHANNEL_NAME \
     -f ./artifacts/channel/${CHANNEL_NAME}.tx --outputBlock ./channel-artifacts/${CHANNEL_NAME}.block
 }
@@ -73,6 +114,25 @@ joinChannel(){
 
     setGlobalsForPeer0Org3
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+    setGlobalsForPeer0Org4
+    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+    setGlobalsForPeer0Org5
+    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+    # setGlobalsForPeer0Org6
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+    # setGlobalsForPeer0Org7
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+    # setGlobalsForPeer0Org8
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
+    # setGlobalsForPeer0Org9
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+
 }
 
 # Update anchor peers for each organization
@@ -85,9 +145,27 @@ updateAnchorPeers(){
 
     setGlobalsForPeer0Org3
     peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+
+    setGlobalsForPeer0Org4
+    peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+
+    setGlobalsForPeer0Org5
+    peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+
+    # setGlobalsForPeer0Org6
+    # peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+
+    # setGlobalsForPeer0Org7
+    # peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+
+    # setGlobalsForPeer0Org8
+    # peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+
+    # setGlobalsForPeer0Org9
+    # peer channel update -o localhost:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
 }
 
 # Execute the functions
 createChannel
-joinChannel
-updateAnchorPeers
+# joinChannel
+# updateAnchorPeers

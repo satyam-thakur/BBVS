@@ -1,0 +1,15 @@
+time,transactions
+30,1000
+Total transactions: 5
+Total duration: 30 seconds
+Average throughput: .16 TPS
+time,transactions
+30,1000
+Total transactions: 5
+Total duration: 30 seconds
+Average throughput: .16 TPS
+time,transactions
+30,200
+Total transactions: 5
+Total duration: 30 seconds
+Average throughput: .16 TPS

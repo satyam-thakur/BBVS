@@ -39,6 +39,8 @@ setGlobalsForPeer0Org3(){
     export CORE_PEER_ADDRESS=localhost:11051
     
 }
+
+source ./env_variables.sh
 presetup() {
     echo Vendoring Go dependencies ...
     pushd ./artifacts/src/github.com/fabcar/go
