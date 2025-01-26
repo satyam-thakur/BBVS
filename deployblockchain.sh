@@ -27,16 +27,6 @@ fi
 
 sleep 5
 
-# Run createChannel1.sh
-echo "Running createChannel_no-tls1.sh"
-./createChannel_no-tls1.sh
-if [ $? -ne 0 ]; then
-    echo "Error running createChannel_no-tls1.sh"
-    exit 1
-fi
-
-sleep 5
-
 #Check peer channel list
 docker exec peer0.org1.example.com peer channel list
 docker exec peer1.org1.example.com peer channel list

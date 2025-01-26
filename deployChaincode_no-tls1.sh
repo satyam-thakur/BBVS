@@ -19,10 +19,12 @@ CC_NAME="voting6"
 
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
+    export GOFLAGS="-buildvcs=false"
+
     setGlobalsForPeer0Org1
     peer lifecycle chaincode package ${CC_NAME}.tar.gz \
         --path ${CC_SRC_PATH} --lang ${CC_RUNTIME_LANGUAGE} \
-        --label ${CC_NAME}_${VERSION}
+        --label ${CC_NAME}_${VERSION} 
     echo "===================== Chaincode is packaged on peer0.org1 ===================== "
 }
 # packageChaincode
@@ -139,7 +141,8 @@ commitChaincodeDefination() {
         --peerAddresses localhost:9051 \
         --peerAddresses localhost:11051 \
         --version ${VERSION} --sequence ${VERSION} \
-        --init-required
+        --init-required 
+        # --signature-policy "OutOf(2, 'Org1MSP.peer', 'Org2MSP.peer', 'Org3MSP.peer')"
 }
 
 # commitChaincodeDefination
@@ -210,6 +213,7 @@ GetVotingTokenRecord(){
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
         --peerAddresses localhost:9051  \
+        --peerAddresses localhost:11051 \
         -c '{"function": "GetVotingTokenRecord","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 }

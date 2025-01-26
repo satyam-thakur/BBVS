@@ -61,7 +61,7 @@ checkCommitReadyness() {
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --sequence ${VERSION} --output json --init-required
-    echo "===================== checking commit readyness from org 1 ===================== "
+    echo "===================== checking commit readyness from org 4 ===================== "
 }
 
 # checkCommitReadyness
@@ -72,14 +72,14 @@ approveForMyOrg5() {
         --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
-    echo "===================== chaincode approved from org 2 ===================== "
+    echo "===================== chaincode approved from org 5 ===================== "
 }
 
 # approveForMyOrg5
 
 checkCommitReadyness() {
 
-    setGlobalsForPeer0Org4
+    setGlobalsForPeer0Org1
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --sequence ${VERSION} --output json --init-required
@@ -121,12 +121,14 @@ chaincodeInvokeInit() {
     setGlobalsForPeer0Org4
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
+        --peerAddresses localhost:7051  \
         --peerAddresses localhost:14051  \
         --peerAddresses localhost:15051 \
         --isInit -c '{"Args":[]}'
 }
 
 # chaincodeInvokeInit
+
 #2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
 VcmsVotingToken() {
     setGlobalsForPeer0Org4
@@ -134,6 +136,7 @@ VcmsVotingToken() {
     #Input VCMS Data
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
+        --peerAddresses localhost:7051 \
         --peerAddresses localhost:14051 \
         --peerAddresses localhost:15051 \
         -c '{"function": "VcmsVotingToken","Args":[ "14051","digitalsignature"]}'
@@ -149,8 +152,6 @@ GetVotingTokenRecord(){
     #Input VCMS Data
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051  \
         -c '{"function": "GetVotingTokenRecord","Args":["14051"]}'
     set +x
 }
@@ -169,7 +170,7 @@ approveForMyOrg5
 checkCommitReadyness
 commitChaincodeDefination
 queryCommitted
-chaincodeInvokeInit
+# chaincodeInvokeInit
 sleep 5
 VcmsVotingToken
 sleep 3

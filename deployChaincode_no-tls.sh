@@ -14,6 +14,8 @@ CC_NAME="voting8"
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
     setGlobalsForPeer0Org1
+    export GOFLAGS="-buildvcs=false"
+
     peer lifecycle chaincode package ${CC_NAME}.tar.gz \
         --path ${CC_SRC_PATH} --lang ${CC_RUNTIME_LANGUAGE} \
         --label ${CC_NAME}_${VERSION}

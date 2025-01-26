@@ -11,42 +11,21 @@ VERSION="1"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot8"
 CC_NAME="voting8"
 
-packageChaincode() {
-    rm -rf ${CC_NAME}.tar.gz
-    setGlobalsForPeer0Org1
-    peer lifecycle chaincode package ${CC_NAME}.tar.gz \
-        --path ${CC_SRC_PATH} --lang ${CC_RUNTIME_LANGUAGE} \
-        --label ${CC_NAME}_${VERSION}
-    echo "===================== Chaincode is packaged on peer0.org1 ===================== "
-}
-# packageChaincode
-
 installChaincode() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    echo "===================== Chaincode is installed on peer0.org1 ===================== "
+    echo "===================== Chaincode is installed on peer0.org4 ===================== "
 
-    # setGlobalsForPeer1Org1
-    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    # echo "===================== Chaincode is installed on peer1.org1 ===================== "
-
-    setGlobalsForPeer0Org2
+    setGlobalsForPeer0Org5
     peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    echo "===================== Chaincode is installed on peer0.org2 ===================== "
+    echo "===================== Chaincode is installed on peer0.org5 ===================== "
 
-    # setGlobalsForPeer1Org2
-    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    # echo "===================== Chaincode is installed on peer1.org2 ===================== "
-
-    setGlobalsForPeer0Org3
-    peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    echo "===================== Chaincode is installed on peer0.org3 ===================== "
 }
 
 # installChaincode
 
 queryInstalled() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer lifecycle chaincode queryinstalled >&log.txt
     cat log.txt
     PACKAGE_ID=$(sed -n "/${CC_NAME}_${VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" log.txt)
@@ -56,8 +35,8 @@ queryInstalled() {
 
 # queryInstalled
 
-approveForMyOrg1() {
-    setGlobalsForPeer0Org1
+approveForMyOrg4() {
+    setGlobalsForPeer0Org4
     # set -x
     peer lifecycle chaincode approveformyorg -o localhost:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
@@ -65,73 +44,57 @@ approveForMyOrg1() {
         --sequence ${VERSION}
     # set +x
 
-    echo "===================== chaincode approved from org 1 ===================== "
+    echo "===================== chaincode approved from org 4 ===================== "
 
 }
 
-# approveForMyOrg1
+# approveForMyOrg4
 
 getBlock() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer channel getinfo  -c ${CHANNEL_NAME} -o localhost:7050 
 }
 
 # getBlock
 
 checkCommitReadyness() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --sequence ${VERSION} --output json --init-required
-    echo "===================== checking commit readyness from org 1 ===================== "
+    echo "===================== checking commit readyness from org 4 ===================== "
 }
 
 # checkCommitReadyness
-approveForMyOrg2() {
-    setGlobalsForPeer0Org2
+approveForMyOrg5() {
+    setGlobalsForPeer0Org5
     peer lifecycle chaincode approveformyorg -o localhost:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
 
-    echo "===================== chaincode approved from org 2 ===================== "
+    echo "===================== chaincode approved from org 5 ===================== "
 }
 
-# approveForMyOrg2
+# approveForMyOrg5
 
 checkCommitReadyness() {
 
-    setGlobalsForPeer0Org2
+    setGlobalsForPeer0Org4
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --sequence ${VERSION} --output json --init-required
-    echo "===================== checking commit readyness from org 1 ===================== "
+    echo "===================== checking commit readyness from org 4 ===================== "
 }
-
-# checkCommitReadyness
-
-approveForMyOrg3() {
-    setGlobalsForPeer0Org3
-
-    peer lifecycle chaincode approveformyorg -o localhost:7050 \
-        --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
-        --sequence ${VERSION}
-
-    echo "===================== chaincode approved from org 3 ===================== "
-}
-
-# approveForMyOrg3
 
 # checkCommitReadyness
 
 commitChaincodeDefination() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer lifecycle chaincode commit -o localhost:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
+        --peerAddresses localhost:14051 \
+        --peerAddresses localhost:15051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required
 }
@@ -148,7 +111,7 @@ commitChaincodeDefination() {
 #     [--tls --cafile <ORDERER_CA_FILE>]
 
 queryCommitted() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME}
 
 }
@@ -156,62 +119,60 @@ queryCommitted() {
 # queryCommitted
 
 chaincodeInvokeInit() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses localhost:7051  \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
+        --peerAddresses localhost:14051  \
+        --peerAddresses localhost:15051 \
         --isInit -c '{"Args":[]}'
 }
 
 # chaincodeInvokeInit
 
 CastVote() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     set -x
     #Input VCMS Data
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
-        -c '{"function": "CastVote","Args":["cCiOJjRLGza2+8s26T7ybA==", "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
+        --peerAddresses localhost:14051 \
+        --peerAddresses localhost:15051 \
+        -c '{"function": "CastVote","Args":["cCiOJjRLGza2+8s26T7ybA==", "14051"]}'
     set +x
 
 }
 
-CastVote
+# CastVote
 
 getvotingtoken(){
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     set -x
     #Input VCMS Data
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
+        --peerAddresses localhost:14051 \
+        --peerAddresses localhost:15051 \
         -c '{"function": "GetBallot","Args":["01306b"]}'
     set +x
 }
 
 Postvotingtoken (){
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org4
     set -x
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
-        -c '{"function": "PostVoting","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9", "0123456789ABCDEF"]}'
+        --peerAddresses localhost:14051 \
+        --peerAddresses localhost:15051 \
+        -c '{"function": "PostVoting","Args":["14051", "0123456789ABCDEF"]}'
     set +x
 }
 
 # submitvotingtoken
 
 chaincodeQuery() {
-    setGlobalsForPeer0Org2
+    setGlobalsForPeer0Org4
 
     # Query voter by Id
     peer chaincode query -C $CHANNEL_NAME -n ${CC_NAME} -c '{"function": "GetBallot","Args":["10cb9"]}'
@@ -225,14 +186,12 @@ chaincodeQuery() {
 # Run this function if you add any new dependency in chaincode
 # presetup
 
-packageChaincode
+
 installChaincode
 queryInstalled
-approveForMyOrg1
+approveForMyOrg4
 checkCommitReadyness
-approveForMyOrg2
-checkCommitReadyness
-approveForMyOrg3
+approveForMyOrg5
 checkCommitReadyness
 commitChaincodeDefination
 queryCommitted
