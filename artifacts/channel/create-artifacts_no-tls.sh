@@ -57,4 +57,4 @@ configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org4
 echo "#######    Generating anchor peer update for Org5MSP  ##########"
 configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org5MSPanchors1.tx -channelID $CHANNEL_NAME -asOrg Org5MSP
 
-echo "artifacts created successfully"
+# echo "artifacts created successfully"

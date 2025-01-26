@@ -1,44 +1,4 @@
-export CORE_PEER_TLS_ENABLED=false
-export FABRIC_CFG_PATH=${PWD}/artifacts/channel/config/
-setGlobalsForOrderer() {
-    export CORE_PEER_LOCALMSPID="OrdererMSP"
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp
-
-}
-
-setGlobalsForPeer0Org1() {
-    export CORE_PEER_LOCALMSPID="Org1MSP"
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:7051
-}
-
-setGlobalsForPeer1Org1() {
-    export CORE_PEER_LOCALMSPID="Org1MSP"
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:8051
-
-}
-
-setGlobalsForPeer0Org2() {
-    export CORE_PEER_LOCALMSPID="Org2MSP"
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:9051
-
-}
-
-setGlobalsForPeer1Org2() {
-    export CORE_PEER_LOCALMSPID="Org2MSP"
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:10051
-
-}
-
-setGlobalsForPeer0Org3(){
-    export CORE_PEER_LOCALMSPID="Org3MSP"
-    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp
-    export CORE_PEER_ADDRESS=localhost:11051
-    
-}
+#!/bin/bash
 
 source ./env_variables.sh
 presetup() {
@@ -212,7 +172,7 @@ chaincodeInvokeInit() {
 }
 
 # chaincodeInvokeInit
-
+#2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
 VcmsVotingToken() {
     setGlobalsForPeer0Org1
     set -x
@@ -220,7 +180,7 @@ VcmsVotingToken() {
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
+        --peerAddresses localhost:9051   \
         --peerAddresses localhost:11051 \
         -c '{"function": "VcmsVotingToken","Args":[ "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9","digitalsignature"]}'
     set +x
@@ -236,8 +196,6 @@ VoteCheck(){
     peer chaincode invoke -o localhost:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051   \
-        --peerAddresses localhost:11051 \
         -c '{"function": "VoteCheck","Args":["hash002"]}'
     # set +x
 }
@@ -289,7 +247,7 @@ sleep 5
 VcmsVotingToken
 sleep 3
 GetVotingTokenRecord
-# sleep 3
+sleep 3
 # VoteCheck
 # sleep 3
 # chaincodeQuery

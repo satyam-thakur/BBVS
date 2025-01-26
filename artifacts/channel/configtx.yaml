@@ -205,7 +205,7 @@ Organizations:
             # encoded in the genesis block in the Application section context
             - Host: peer0.org5.example.com
               Port: 15051
-
+    
 ################################################################################
 #
 #   SECTION: Capabilities

@@ -90,4 +90,4 @@ setGlobalsForPeer0Org9(){
     export CORE_PEER_ADDRESS=localhost:19051
 }
 
-set -x
+# set -x

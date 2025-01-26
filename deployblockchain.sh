@@ -20,20 +20,20 @@ sleep 5
 # Run createChannel1.sh
 echo "Running createChannel_no-tls.sh"
 ./createChannel_no-tls.sh
-# if [ $? -ne 0 ]; then
-#     echo "Error running createChannel_no-tls.sh"
-#     exit 1
-# fi
+if [ $? -ne 0 ]; then
+    echo "Error running createChannel_no-tls.sh"
+    exit 1
+fi
 
 sleep 5
 
 # Run createChannel1.sh
 echo "Running createChannel_no-tls1.sh"
 ./createChannel_no-tls1.sh
-# if [ $? -ne 0 ]; then
-#     echo "Error running createChannel_no-tls1.sh"
-#     exit 1
-# fi
+if [ $? -ne 0 ]; then
+    echo "Error running createChannel_no-tls1.sh"
+    exit 1
+fi
 
 sleep 5
 
@@ -48,7 +48,7 @@ sleep 5
 
 # Run deployChaincode1.sh
 echo "Running deployChaincode_no-tls1.sh"
-./deployChaincode_no-tls-1.sh
+./deployChaincode_no-tls1.sh
 if [ $? -ne 0 ]; then
     echo "Error running deployChaincode_no-tls1.sh"
     exit 1
