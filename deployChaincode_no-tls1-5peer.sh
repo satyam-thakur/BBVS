@@ -6,6 +6,7 @@ export CHANNEL_NAME="mychannel1"
 CHANNEL_NAME="mychannel1"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
+SEQ_VERSION="2"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot6"
 CC_NAME="voting6"
 
@@ -55,16 +56,6 @@ getBlock() {
 }
 
 # getBlock
-
-checkCommitReadyness() {
-    setGlobalsForPeer0Org4
-    peer lifecycle chaincode checkcommitreadiness \
-        --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
-        --sequence ${VERSION} --output json --init-required
-    echo "===================== checking commit readyness from org 4 ===================== "
-}
-
-# checkCommitReadyness
 approveForMyOrg5() {
     setGlobalsForPeer0Org5
     peer lifecycle chaincode approveformyorg -o localhost:7050 \
@@ -79,11 +70,11 @@ approveForMyOrg5() {
 
 checkCommitReadyness() {
 
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org5
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
-        --sequence ${VERSION} --output json --init-required
-    echo "===================== checking commit readyness from org 1 ===================== "
+        --sequence ${SEQ_VERSION} --output json --init-required
+    echo "===================== checking commit readyness from org 5 ===================== "
 }
 
 # checkCommitReadyness
@@ -94,7 +85,7 @@ commitChaincodeDefination() {
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses localhost:14051 \
         --peerAddresses localhost:15051 \
-        --version ${VERSION} --sequence ${VERSION} \
+        --version ${VERSION} --sequence ${SEQ_VERSION} \
         --init-required
 }
 
@@ -165,13 +156,13 @@ GetVotingTokenRecord(){
 installChaincode
 queryInstalled
 approveForMyOrg4
-checkCommitReadyness
+# checkCommitReadyness
 approveForMyOrg5
-checkCommitReadyness
-commitChaincodeDefination
+# checkCommitReadyness
+# commitChaincodeDefination
 queryCommitted
 # chaincodeInvokeInit
-sleep 5
+# sleep 5
 VcmsVotingToken
 sleep 3
 GetVotingTokenRecord

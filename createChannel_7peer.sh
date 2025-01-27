@@ -2,6 +2,8 @@
 
 source ./env_variables.sh
 
+set -x
+
 export CHANNEL_NAME=mychannel
 echo $CHANNEL_NAME
 
@@ -25,7 +27,7 @@ updateAnchorPeers(){
 
 # Execute the functions
 joinChannel
-updateAnchorPeers
+# updateAnchorPeers
 
 #######################################################################
 
@@ -51,5 +53,5 @@ updateAnchorPeers1(){
 }
 
 # Execute the functions
-joinChannel1
-updateAnchorPeers1
+# joinChannel1
+# updateAnchorPeers1

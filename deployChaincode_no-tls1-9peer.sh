@@ -92,7 +92,6 @@ commitChaincodeDefination() {
     setGlobalsForPeer0Org8
     peer lifecycle chaincode commit -o localhost:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses localhost:7051 \
         --peerAddresses localhost:14051 \
         --peerAddresses localhost:15051 \
         --version ${VERSION} --sequence ${VERSION} \
