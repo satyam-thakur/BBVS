@@ -53,7 +53,7 @@ services:
     depends_on:
       - couchdb08
     ports:
-      - 18051:7051
+      - 18051:18051
     volumes:
       - ./channel/crypto-config/peerOrganizations/org8.example.com/peers/peer0.org8.example.com/msp:/etc/hyperledger/crypto/peer/msp
       - /var/run/:/host/var/run/
@@ -88,7 +88,7 @@ services:
     depends_on:
       - couchdb09
     ports:
-      - 19051:9051
+      - 19051:19051
     volumes:
       - ./channel/crypto-config/peerOrganizations/org9.example.com/peers/peer0.org9.example.com/msp:/etc/hyperledger/crypto/peer/msp
       - /var/run/:/host/var/run/

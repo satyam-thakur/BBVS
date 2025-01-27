@@ -190,17 +190,13 @@ chaincodeQuery() {
 installChaincode
 queryInstalled
 approveForMyOrg8
-checkCommitReadyness
+# checkCommitReadyness
 approveForMyOrg9
-checkCommitReadyness
-commitChaincodeDefination
+# checkCommitReadyness
+# commitChaincodeDefination
 queryCommitted
-chaincodeInvokeInit
+# chaincodeInvokeInit
 sleep 5
 CastVote
 sleep 3
 Postvotingtoken
-# sleep 3
-# getvotingtoken
-# sleep 3
-# chaincodeQuery

@@ -10,8 +10,8 @@ echo $CHANNEL_NAME
 
 # Create the channel
 createChannel(){
-    # rm -rf ./channel-artifacts/${CHANNEL_NAME}.block
-    # sleep 2
+    rm -rf ./channel-artifacts/${CHANNEL_NAME}.block
+    sleep 2
     setGlobalsForPeer0Org1
     peer channel create -o localhost:7050 -c $CHANNEL_NAME \
     -f ./artifacts/channel/${CHANNEL_NAME}.tx --outputBlock ./channel-artifacts/${CHANNEL_NAME}.block
@@ -61,8 +61,8 @@ echo $CHANNEL_NAME1
 
 # Create the channel
 createChannel1(){
-    # rm -rf ./channel-artifacts/${CHANNEL_NAME1}.block
-    # sleep 2
+    rm -rf ./channel-artifacts/${CHANNEL_NAME1}.block
+    sleep 2
 
     setGlobalsForPeer0Org1
 

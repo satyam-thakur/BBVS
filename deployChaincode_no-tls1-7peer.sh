@@ -166,10 +166,10 @@ GetVotingTokenRecord(){
 installChaincode
 queryInstalled
 approveForMyOrg6
-checkCommitReadyness
+# checkCommitReadyness
 approveForMyOrg7
-checkCommitReadyness
-commitChaincodeDefination
+# checkCommitReadyness
+# commitChaincodeDefination
 queryCommitted
 # chaincodeInvokeInit
 sleep 5
