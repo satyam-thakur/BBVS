@@ -2,12 +2,12 @@
 
 # chmod -R 0755 ./crypto-config
 # Delete existing artifacts
-# rm -rf ./crypto-config
-# rm genesis.block mychannel.tx
-# rm -rf ../../channel-artifacts/*
+rm -rf ./crypto-config
+rm genesis.block mychannel.tx mychannel1.tx *.tx
+rm -rf ../../channel-artifacts/*
 
-# #Generate Crypto artifactes for organizations
-# cryptogen generate --config=./crypto-config.yaml --output=./crypto-config/
+#Generate Crypto artifactes for organizations
+cryptogen generate --config=./crypto-config.yaml --output=./crypto-config/
 
 # System channel
 SYS_CHANNEL="sys-channel"
@@ -48,6 +48,9 @@ configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org8
 echo "#######    Generating anchor peer update for Org9MSP  ##########"
 configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org9MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org9MSP
 
+echo "#######    Generating anchor peer update for Org10MSP  ##########"
+configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org10MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org10MSP
+
 export CHANNEL_NAME="mychannel1"
 echo $CHANNEL_NAME
 
@@ -80,5 +83,8 @@ configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org8
 
 echo "#######    Generating anchor peer update for Org9MSP  ##########"
 configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org9MSPanchors1.tx -channelID $CHANNEL_NAME -asOrg Org9MSP
+
+echo "#######    Generating anchor peer update for Org10MSP  ##########"
+configtxgen -profile BasicChannel -configPath ./ -outputAnchorPeersUpdate ./Org10MSPanchors1.tx -channelID $CHANNEL_NAME -asOrg Org10MSP
 
 echo "artifacts created successfully"

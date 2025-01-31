@@ -29,6 +29,7 @@ VcmsVotingToken() {
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
         --peerAddresses localhost:9051 \
+        --peerAddresses localhost:11051 \
         -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' \
         >/dev/null  
         #2>&1

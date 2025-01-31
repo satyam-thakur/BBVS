@@ -26,6 +26,17 @@ services:
     networks:
       - test
 
+  # couchdb10:
+  #   container_name: couchdb10
+  #   image: hyperledger/fabric-couchdb
+  #   environment:
+  #     - COUCHDB_USER=
+  #     - COUCHDB_PASSWORD=
+  #   ports:
+  #     - 20984:5984
+  #   networks:
+  #     - test
+
   peer0.org8.example.com:
     container_name: peer0.org8.example.com
     extends:
@@ -69,15 +80,15 @@ services:
     environment:
       - FABRIC_LOGGING_SPEC=info
       - ORDERER_GENERAL_LOGLEVEL=info
-      - CORE_PEER_LOCALMSPID=org9MSP
+      - CORE_PEER_LOCALMSPID=Org9MSP
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
       - CORE_PEER_ID=peer0.org9.example.com
       - CORE_PEER_ADDRESS=peer0.org9.example.com:19051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:19051
       - CORE_PEER_CHAINCODEADDRESS=peer0.org9.example.com:19052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:19052
-      # - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org2.example.com:9051
-      # - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org2.example.com:10051
+      # - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.example.com:8051
+      # - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb09:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -95,3 +106,5 @@ services:
       - ./channel/:/etc/hyperledger/channel/
     networks:
       - test
+    
+  

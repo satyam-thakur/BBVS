@@ -1,0 +1,15 @@
+tx_num, duration
+1,203
+2,134
+3,148
+4,149
+5,174
+6,139
+7,160
+8,166
+9,153
+10,168
+11,317
+Total number of transactions = 10
+average latency = 191 ms
+Total latency = 1911 ms

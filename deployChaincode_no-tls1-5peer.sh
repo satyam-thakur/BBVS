@@ -153,17 +153,17 @@ GetVotingTokenRecord(){
 
 # Run this function if you add any new dependency in chaincode
 
-# installChaincode
-# queryInstalled
-# approveForMyOrg4
-# # checkCommitReadyness
-# approveForMyOrg5
-# # checkCommitReadyness
-# # commitChaincodeDefination
+installChaincode
+queryInstalled
+approveForMyOrg4
+# checkCommitReadyness
+approveForMyOrg5
+# checkCommitReadyness
+# commitChaincodeDefination
 queryCommitted
-# # chaincodeInvokeInit
-# # sleep 5
-# VcmsVotingToken
-# sleep 3
-# GetVotingTokenRecord
-# sleep 3
+# chaincodeInvokeInit
+# sleep 5
+VcmsVotingToken
+sleep 3
+GetVotingTokenRecord
+sleep 3

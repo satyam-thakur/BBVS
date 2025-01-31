@@ -14,6 +14,7 @@ setGlobalsForPeer0Org1() {
     export CORE_PEER_MSPCONFIGPATH=${PWD}/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
     export CORE_PEER_ADDRESS=localhost:7051
 }
+
 setGlobalsForPeer0Org1
 
 VcmsVotingToken() {
@@ -25,6 +26,8 @@ VcmsVotingToken() {
         --peerAddresses localhost:7051 \
         --peerAddresses localhost:9051 \
         --peerAddresses localhost:11051 \
+        --peerAddresses localhost:18051 \
+        --peerAddresses localhost:19051 \
         -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' 
         
         # >/dev/null
@@ -37,11 +40,11 @@ VcmsVotingToken() {
     >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-pre-voting-invoke.csv"
+OUTPUT_FILE="Pre-voting-latency-9Validators.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
 start_tx=1
-Num_of_tx=1
+Num_of_tx=10
 
 # set +x
 

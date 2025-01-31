@@ -37,8 +37,8 @@ OUTPUT_FILE="voting_Phase_throughput_and_usage.csv"
 echo "time,transactions,cpu_usage,memory_usage" >> $OUTPUT_FILE
 
 start_tx=0
-Num_of_tx=25  # Total number of transactions
-batch_size=1000  # Transactions per second
+Num_of_tx=5  # Total number of transactions
+batch_size=10  # Transactions per second
 
 start_time=$(date +%s)
 start_usage=$(get_cpu_memory_usage)

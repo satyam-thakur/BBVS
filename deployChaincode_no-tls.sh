@@ -183,7 +183,7 @@ CastVote() {
 
 }
 
-CastVote
+# CastVote
 
 getvotingtoken(){
     setGlobalsForPeer0Org1

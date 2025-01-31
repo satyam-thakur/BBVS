@@ -91,5 +91,11 @@ setGlobalsForPeer0Org9(){
     export CORE_PEER_ADDRESS=localhost:19051
 }
 
+# Set global environment variables for peer0 in org10
+setGlobalsForPeer0Org10(){
+    export CORE_PEER_LOCALMSPID="Org10MSP"
+    export CORE_PEER_MSPCONFIGPATH=${PWD}/artifacts/channel/crypto-config/peerOrganizations/org10.example.com/users/Admin@org10.example.com/msp
+    export CORE_PEER_ADDRESS=localhost:20051
+}
 
 set +x

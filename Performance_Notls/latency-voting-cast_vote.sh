@@ -24,6 +24,11 @@ CastVote() {
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses localhost:7051 \
         --peerAddresses localhost:9051 \
+        --peerAddresses localhost:11051 \
+        --peerAddresses localhost:14051 \
+        --peerAddresses localhost:15051   \
+        --peerAddresses localhost:16051   \
+        --peerAddresses localhost:17051 \
         -c '{"function": "CastVote","Args":["Trump","'$tx_num'"]}' 
         
         # >/dev/null
@@ -36,11 +41,11 @@ CastVote() {
     >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="voting_Phase-total_latency.xlsx"
+OUTPUT_FILE="voting-latency-7Validators.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=0
-Num_of_tx=50
+start_tx=1002
+Num_of_tx=1000
 
 # set +x
 

@@ -41,11 +41,11 @@ VcmsVotingToken() {
     >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="pre-voting_Phase-latency&usage.xlsx"
+OUTPUT_FILE="pre-voting_Phase-latency&usage.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
 start_tx=1
-Num_of_tx=50
+Num_of_tx=5
 
 start_usage=($(get_cpu_memory_usage))
 echo "start_usage CPU= ${start_usage[0]}% Memory= ${start_usage[1]}MB"

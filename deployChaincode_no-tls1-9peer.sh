@@ -19,6 +19,10 @@ installChaincode() {
     peer lifecycle chaincode install ${CC_NAME}.tar.gz
     echo "===================== Chaincode is installed on peer0.Org9 ===================== "
 
+    # setGlobalsForPeer0Org10
+    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
+    # echo "===================== Chaincode is installed on peer0.Org10 ===================== "
+
 }
 
 # installChaincode
@@ -76,6 +80,16 @@ approveForMyOrg9() {
 }
 
 # approveForMyOrg9
+
+approveForMyOrg10() {
+    setGlobalsForPeer0Org10
+    peer lifecycle chaincode approveformyorg -o localhost:7050 \
+        --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
+        --init-required --package-id ${PACKAGE_ID} \
+        --sequence ${VERSION}
+
+    echo "===================== chaincode approved from Org10 ===================== "
+}
 
 checkCommitReadyness() {
 
@@ -168,6 +182,7 @@ queryInstalled
 approveForMyOrg8
 # checkCommitReadyness
 approveForMyOrg9
+# approveForMyOrg10
 # checkCommitReadyness
 # commitChaincodeDefination
 queryCommitted

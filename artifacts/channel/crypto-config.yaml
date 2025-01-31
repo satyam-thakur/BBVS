@@ -44,8 +44,6 @@ PeerOrgs:
 
     Template:
       Count: 2
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -58,8 +56,6 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -72,8 +68,6 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -86,8 +80,6 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -100,8 +92,6 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -114,8 +104,6 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -128,8 +116,6 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
@@ -142,10 +128,22 @@ PeerOrgs:
 
     Template:
       Count: 1
-      # Start: 5
-      # Hostname: {{.Prefix}}{{.Index}} # default
       SANS:
         - "localhost"
 
     Users:
       Count: 1
+
+  - Name: Org10
+    Domain: org10.example.com
+    EnableNodeOUs: true
+
+    Template:
+      Count: 1
+      SANS:
+        - "localhost"
+
+    Users:
+      Count: 1
+
+  

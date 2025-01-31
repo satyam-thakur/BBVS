@@ -340,7 +340,41 @@ Organizations:
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
             - Host: peer0.org9.example.com
-              Port: 19051  
+              Port: 19051
+
+    - &Org10
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org10MSP
+
+        # ID to load the MSP definition as
+        ID: Org10MSP
+
+        MSPDir: crypto-config/peerOrganizations/org10.example.com/msp
+
+        # Policies defines the set of policies at this level of the config tree
+        # For organization policies, their canonical path is usually
+        #   /Channel/<Application|Orderer>/<OrgName>/<PolicyName>
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Org10MSP.admin', 'Org10MSP.peer', 'Org10MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Org10MSP.admin', 'Org10MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Org10MSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Org10MSP.peer')"
+
+        AnchorPeers:
+            # AnchorPeers defines the location of peers which can be used
+            # for cross org gossip communication.  Note, this value is only
+            # encoded in the genesis block in the Application section context
+            - Host: peer0.org10.example.com
+              Port: 20051
 
 ################################################################################
 #
@@ -428,13 +462,13 @@ Application: &ApplicationDefaults
         LifecycleEndorsement:
             Type: Signature
             Rule: "OutOf(3, 'Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member', 'Org4MSP.member', \
-            'Org5MSP.member', 'Org6MSP.member', 'Org7MSP.member', 'Org8MSP.member', 'Org9MSP.member')"
+            'Org5MSP.member', 'Org6MSP.member', 'Org7MSP.member', 'Org8MSP.member', 'Org9MSP.member', 'Org10MSP.member')"
             # Type: ImplicitMeta
             # Rule: "MAJORITY Endorsement"
         Endorsement:
             Type: Signature
             Rule: "OutOf(3, 'Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member', 'Org4MSP.member', \
-            'Org5MSP.member', 'Org6MSP.member', 'Org7MSP.member', 'Org8MSP.member', 'Org9MSP.member')"
+            'Org5MSP.member', 'Org6MSP.member', 'Org7MSP.member', 'Org8MSP.member', 'Org9MSP.member', 'Org10MSP.member')"
             # Type: ImplicitMeta
             # Rule: "MAJORITY Endorsement"
 
@@ -563,6 +597,7 @@ Profiles:
                 - *Org7
                 - *Org8
                 - *Org9
+                - *Org10
             Capabilities:
                 <<: *ApplicationCapabilities
 
@@ -599,3 +634,7 @@ Profiles:
                 - *Org7
                 - *Org8
                 - *Org9
+                - *Org10
+                
+ 
+                
