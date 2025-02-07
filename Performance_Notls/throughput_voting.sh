@@ -19,8 +19,8 @@ CastVote() {
         >/dev/null &
 }
 
-OUTPUT_FILE="throughput-Voting-results.csv"
-start_tx=1000003000
+OUTPUT_FILE="throughput-Voting.csv"
+start_tx=1200
 Num_of_tx=50
 
 # Capture initial resource usage
@@ -30,7 +30,7 @@ start_usage=($(get_cpu_memory_usage))
 start_time=$(date +%s%N)
 
 # Start all transactions in the background
-for i in $(seq $start_tx $((start_tx+Num_of_tx))); do
+for i in $(seq $start_tx $((start_tx+Num_of_tx-1))); do
     CastVote $i
 done
 

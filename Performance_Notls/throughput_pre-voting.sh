@@ -20,8 +20,8 @@ VcmsVotingToken() {
 }
 
 OUTPUT_FILE="throughput-prevoting.csv"
-start_tx=701
-Num_of_tx=100
+start_tx=1200
+Num_of_tx=50
 
 # Capture initial resource usage
 start_usage=($(get_cpu_memory_usage))
