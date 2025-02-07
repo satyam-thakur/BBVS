@@ -1,0 +1,18 @@
+Metric,Value
+Number of Transactions,50
+Total Duration (s),4.52
+Throughput (TPS),11.06
+CPU Usage Increase (%),64.1
+Memory Usage Increase (MB),-8
+Metric,Value
+Number of Transactions,100
+Total Duration (s),8.43
+Throughput (TPS),11.86
+CPU Usage Increase (%),47.6
+Memory Usage Increase (MB),12
+Metric,Value
+Number of Transactions,100
+Total Duration (s),7.30
+Throughput (TPS),13.69
+CPU Usage Increase (%),-16.0
+Memory Usage Increase (MB),-7
