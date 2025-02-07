@@ -29,6 +29,8 @@ CastVote() {
         --peerAddresses localhost:15051 \
         --peerAddresses localhost:16051 \
         --peerAddresses localhost:17051 \
+        --peerAddresses localhost:18051 \
+        --peerAddresses localhost:19051 \
         -c '{"function": "PostVoting","Args":["'$tx_num'","voting_token"]}' #2>&1
         
         # >/dev/null
@@ -41,10 +43,10 @@ CastVote() {
     >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="Post-voting_latency-7Validators.csv"
+OUTPUT_FILE="Post-voting_latency-9Validators.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1002
+start_tx=10000
 Num_of_tx=1000
 
 # set +x

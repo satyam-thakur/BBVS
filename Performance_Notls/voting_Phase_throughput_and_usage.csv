@@ -1,7 +1,0 @@
-time,transactions,cpu_usage,memory_usage
-1,10,36.4,2879
-Total transactions: 5
-Total duration: 1 seconds
-Average throughput: 5.00 TPS
-CPU usage difference: 18.7%
-Memory usage difference: 13 MB

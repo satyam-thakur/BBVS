@@ -1,0 +1,5 @@
+1. 1000 transaction 
+2. .csv file 
+3. 3, 5, 7, 9 Validators
+4. Latency, Throughput, Resource utilization (CPU, memory) (batch) for each batch of validators case
+5. Block size
