@@ -22,3 +22,33 @@ Total Duration (s),11.25
 Throughput (TPS),8.88
 CPU Usage Increase (%),49.6
 Memory Usage Increase (MB),-95
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.15
+Throughput (TPS),6.66
+CPU Usage Increase (%),4.7
+Memory Usage Increase (MB),-12
+Metric,Value
+Number of Transactions,2
+Total Duration (s),.18
+Throughput (TPS),11.11
+CPU Usage Increase (%),-6.9
+Memory Usage Increase (MB),-7
+Metric,Value
+Number of Transactions,3
+Total Duration (s),.25
+Throughput (TPS),12.00
+CPU Usage Increase (%),4.0
+Memory Usage Increase (MB),9
+Metric,Value
+Number of Transactions,5
+Total Duration (s),.57
+Throughput (TPS),8.77
+CPU Usage Increase (%),-4.0
+Memory Usage Increase (MB),-2
+Metric,Value
+Number of Transactions,6
+Total Duration (s),.68
+Throughput (TPS),8.82
+CPU Usage Increase (%),10.4
+Memory Usage Increase (MB),-2

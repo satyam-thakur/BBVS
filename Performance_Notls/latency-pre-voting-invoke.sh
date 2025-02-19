@@ -33,8 +33,8 @@ sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
 # echo "Tx Block Size" >> tx_response.txt
 
-start_tx=50
-Num_of_tx=100
+start_tx=100700
+Num_of_tx=50
 
 start_usage=($(get_cpu_memory_usage))
 echo "start_usage CPU= ${start_usage[0]}% Memory= ${start_usage[1]}MB"

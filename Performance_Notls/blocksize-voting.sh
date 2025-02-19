@@ -2,8 +2,8 @@
 
 source ./env_variables1.sh
 
-CHANNEL_NAME="mychannel1"
-BLOCK_FILE="blockfile.block"
+CHANNEL_NAME="mychannel"
+BLOCK_FILE="blockfile-voting.block"
 PREVIOUS_SIZE=0
 
 setGlobalsForPeer0Org1

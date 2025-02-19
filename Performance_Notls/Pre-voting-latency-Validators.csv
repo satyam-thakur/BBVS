@@ -3755,3 +3755,646 @@ Memory Usage for 100 transactions = -1 MB
 Total number of transactions = 100
 average latency = 130 ms
 Total latency = 13052 ms
+tx_num, duration
+1,127
+Batch Tx. Duration: 136 ms
+CPU Usage for 1 transactions = -4.1%
+Memory Usage for 1 transactions = -1 MB
+Total number of transactions = 1
+average latency = 127 ms
+Total latency = 127 ms
+tx_num, duration
+2,153
+3,122
+4,138
+5,119
+6,170
+Batch Tx. Duration: 734 ms
+CPU Usage for 5 transactions = 15.0%
+Memory Usage for 5 transactions = 23 MB
+Total number of transactions = 5
+average latency = 140 ms
+Total latency = 702 ms
+tx_num, duration
+2,120
+3,132
+4,121
+5,116
+6,128
+Batch Tx. Duration: 640 ms
+CPU Usage for 5 transactions = -12.3%
+Memory Usage for 5 transactions = 7 MB
+Total number of transactions = 5
+average latency = 123 ms
+Total latency = 617 ms
+tx_num, duration
+5,145
+6,108
+7,118
+8,123
+9,114
+10,116
+11,130
+12,117
+13,113
+14,129
+Batch Tx. Duration: 1253 ms
+CPU Usage for 10 transactions = -6.9%
+Memory Usage for 10 transactions = 1 MB
+Total number of transactions = 10
+average latency = 121 ms
+Total latency = 1213 ms
+tx_num, duration
+11,116
+Batch Tx. Duration: 123 ms
+CPU Usage for 1 transactions = -7.1%
+Memory Usage for 1 transactions = 2 MB
+Total number of transactions = 1
+average latency = 116 ms
+Total latency = 116 ms
+tx_num, duration
+12,108
+Batch Tx. Duration: 116 ms
+CPU Usage for 1 transactions = -10.4%
+Memory Usage for 1 transactions = -1 MB
+Total number of transactions = 1
+average latency = 108 ms
+Total latency = 108 ms
+tx_num, duration
+13,121
+Batch Tx. Duration: 126 ms
+CPU Usage for 1 transactions = -5.0%
+Memory Usage for 1 transactions = -15 MB
+Total number of transactions = 1
+average latency = 121 ms
+Total latency = 121 ms
+tx_num, duration
+100,130
+Batch Tx. Duration: 135 ms
+CPU Usage for 1 transactions = 1.1%
+Memory Usage for 1 transactions = -2 MB
+Total number of transactions = 1
+average latency = 130 ms
+Total latency = 130 ms
+tx_num, duration
+101,115
+Batch Tx. Duration: 121 ms
+CPU Usage for 1 transactions = -11.3%
+Memory Usage for 1 transactions = -3 MB
+Total number of transactions = 1
+average latency = 115 ms
+Total latency = 115 ms
+tx_num, duration
+102,133
+Batch Tx. Duration: 138 ms
+CPU Usage for 1 transactions = -.2%
+Memory Usage for 1 transactions = 1 MB
+Total number of transactions = 1
+average latency = 133 ms
+Total latency = 133 ms
+tx_num, duration
+103,126
+104,135
+Batch Tx. Duration: 278 ms
+CPU Usage for 2 transactions = -4.8%
+Memory Usage for 2 transactions = -6 MB
+Total number of transactions = 2
+average latency = 130 ms
+Total latency = 261 ms
+tx_num, duration
+1001,116
+Batch Tx. Duration: 122 ms
+CPU Usage for 1 transactions = -6.5%
+Memory Usage for 1 transactions = -4 MB
+Total number of transactions = 1
+average latency = 116 ms
+Total latency = 116 ms
+tx_num, duration
+1002,128
+1003,116
+Batch Tx. Duration: 253 ms
+CPU Usage for 2 transactions = .6%
+Memory Usage for 2 transactions = 4 MB
+Total number of transactions = 2
+average latency = 122 ms
+Total latency = 244 ms
+tx_num, duration
+1010,140
+Batch Tx. Duration: 145 ms
+CPU Usage for 1 transactions = 2.0%
+Memory Usage for 1 transactions = -1 MB
+Total number of transactions = 1
+average latency = 140 ms
+Total latency = 140 ms
+tx_num, duration
+1011,122
+Batch Tx. Duration: 132 ms
+CPU Usage for 1 transactions = 46.6%
+Memory Usage for 1 transactions = -13 MB
+Total number of transactions = 1
+average latency = 122 ms
+Total latency = 122 ms
+tx_num, duration
+1011,152
+Batch Tx. Duration: 162 ms
+CPU Usage for 1 transactions = 10.5%
+Memory Usage for 1 transactions = -6 MB
+Total number of transactions = 1
+average latency = 152 ms
+Total latency = 152 ms
+tx_num, duration
+1012,123
+1013,133
+Batch Tx. Duration: 264 ms
+CPU Usage for 2 transactions = -5.3%
+Memory Usage for 2 transactions = -3 MB
+Total number of transactions = 2
+average latency = 128 ms
+Total latency = 256 ms
+tx_num, duration
+1014,123
+1015,117
+1016,126
+Batch Tx. Duration: 377 ms
+CPU Usage for 3 transactions = 26.8%
+Memory Usage for 3 transactions = -2 MB
+Total number of transactions = 3
+average latency = 122 ms
+Total latency = 366 ms
+tx_num, duration
+1017,118
+1018,113
+1019,115
+1020,116
+Batch Tx. Duration: 481 ms
+CPU Usage for 4 transactions = 1.2%
+Memory Usage for 4 transactions = -2 MB
+Total number of transactions = 4
+average latency = 115 ms
+Total latency = 462 ms
+tx_num, duration
+1020,122
+1021,118
+1022,128
+1023,111
+1024,128
+Batch Tx. Duration: 625 ms
+CPU Usage for 5 transactions = -7.3%
+Memory Usage for 5 transactions = 12 MB
+Total number of transactions = 5
+average latency = 121 ms
+Total latency = 607 ms
+tx_num, duration
+1000001,120
+1000002,117
+1000003,108
+1000004,144
+1000005,110
+Batch Tx. Duration: 625 ms
+CPU Usage for 5 transactions = 12.8%
+Memory Usage for 5 transactions = 12 MB
+Total number of transactions = 5
+average latency = 119 ms
+Total latency = 599 ms
+tx_num, duration
+1000010,116
+1000011,122
+1000012,113
+1000013,121
+1000014,116
+1000015,111
+Batch Tx. Duration: 718 ms
+CPU Usage for 6 transactions = -17.8%
+Memory Usage for 6 transactions = 7 MB
+Total number of transactions = 6
+average latency = 116 ms
+Total latency = 699 ms
+tx_num, duration
+100020,126
+100021,128
+100022,124
+100023,115
+100024,114
+100025,117
+100026,115
+Batch Tx. Duration: 861 ms
+CPU Usage for 7 transactions = -6.2%
+Memory Usage for 7 transactions = -5 MB
+Total number of transactions = 7
+average latency = 119 ms
+Total latency = 839 ms
+tx_num, duration
+100030,122
+100031,122
+100032,127
+100033,133
+100034,122
+100035,131
+100036,113
+Batch Tx. Duration: 892 ms
+CPU Usage for 7 transactions = -15.7%
+Memory Usage for 7 transactions = 3 MB
+Total number of transactions = 7
+average latency = 124 ms
+Total latency = 870 ms
+tx_num, duration
+100040,121
+100041,118
+100042,113
+100043,120
+100044,133
+100045,116
+100046,128
+100047,117
+Batch Tx. Duration: 999 ms
+CPU Usage for 8 transactions = 1.4%
+Memory Usage for 8 transactions = 4 MB
+Total number of transactions = 8
+average latency = 120 ms
+Total latency = 966 ms
+tx_num, duration
+100050,151
+100051,167
+100052,142
+100053,141
+100054,144
+100055,117
+100056,117
+100057,114
+100058,128
+Batch Tx. Duration: 1247 ms
+CPU Usage for 9 transactions = -14.6%
+Memory Usage for 9 transactions = 2 MB
+Total number of transactions = 9
+average latency = 135 ms
+Total latency = 1221 ms
+tx_num, duration
+100060,122
+100061,125
+100062,121
+100063,122
+100064,124
+100065,119
+100066,117
+100067,142
+100068,169
+100069,150
+Batch Tx. Duration: 1358 ms
+CPU Usage for 10 transactions = 38.9%
+Memory Usage for 10 transactions = -10 MB
+Total number of transactions = 10
+average latency = 131 ms
+Total latency = 1311 ms
+tx_num, duration
+100070,117
+100071,118
+100072,130
+100073,125
+100074,136
+100075,135
+100076,123
+100077,120
+100078,114
+100079,116
+100080,151
+100081,127
+100082,130
+100083,121
+100084,128
+100085,145
+100086,132
+100087,130
+100088,129
+100089,117
+Batch Tx. Duration: 2637 ms
+CPU Usage for 20 transactions = -19.9%
+Memory Usage for 20 transactions = -9 MB
+Total number of transactions = 20
+average latency = 127 ms
+Total latency = 2544 ms
+tx_num, duration
+100100,116
+100101,140
+100102,112
+100103,118
+100104,116
+100105,114
+100106,115
+100107,125
+100108,118
+100109,162
+Batch Tx. Duration: 1275 ms
+CPU Usage for 10 transactions = 14.6%
+Memory Usage for 10 transactions = 7 MB
+Total number of transactions = 10
+average latency = 123 ms
+Total latency = 1236 ms
+tx_num, duration
+100200,131
+100201,122
+100202,117
+100203,180
+100204,116
+Batch Tx. Duration: 698 ms
+CPU Usage for 5 transactions = -6.9%
+Memory Usage for 5 transactions = -2 MB
+Total number of transactions = 5
+average latency = 133 ms
+Total latency = 666 ms
+tx_num, duration
+100300,128
+100301,125
+100302,120
+100303,121
+100304,148
+100305,129
+100306,115
+100307,112
+100308,130
+100309,114
+Batch Tx. Duration: 1305 ms
+CPU Usage for 10 transactions = -19.3%
+Memory Usage for 10 transactions = 0 MB
+Total number of transactions = 10
+average latency = 124 ms
+Total latency = 1242 ms
+tx_num, duration
+100400,133
+100401,123
+100402,107
+100403,113
+100404,156
+100405,142
+100406,148
+100407,117
+100408,119
+100409,116
+100410,175
+100411,131
+100412,116
+100413,116
+100414,123
+100415,132
+100416,124
+100417,121
+100418,118
+100419,121
+Batch Tx. Duration: 2628 ms
+CPU Usage for 20 transactions = 23.0%
+Memory Usage for 20 transactions = -9 MB
+Total number of transactions = 20
+average latency = 127 ms
+Total latency = 2551 ms
+tx_num, duration
+100500,126
+100501,144
+100502,123
+100503,115
+100504,117
+100505,114
+100506,124
+100507,131
+100508,117
+100509,123
+100510,143
+100511,108
+100512,130
+100513,133
+100514,119
+100515,118
+100516,125
+100517,112
+100518,121
+100519,167
+100520,159
+100521,108
+100522,117
+100523,119
+100524,113
+100525,116
+100526,122
+100527,122
+100528,115
+100529,116
+Batch Tx. Duration: 3830 ms
+CPU Usage for 30 transactions = 25.8%
+Memory Usage for 30 transactions = -10 MB
+Total number of transactions = 30
+average latency = 123 ms
+Total latency = 3717 ms
+tx_num, duration
+100500,120
+100501,131
+100502,125
+100503,121
+100504,129
+100505,116
+100506,123
+100507,117
+100508,135
+100509,127
+100510,132
+100511,144
+100512,123
+100513,143
+100514,178
+100515,119
+100516,132
+100517,120
+100518,183
+100519,109
+100520,107
+100521,155
+100522,108
+100523,117
+100524,114
+100525,113
+100526,115
+100527,134
+100528,114
+100529,114
+Batch Tx. Duration: 3922 ms
+CPU Usage for 30 transactions = -1.5%
+Memory Usage for 30 transactions = 58 MB
+Total number of transactions = 30
+average latency = 127 ms
+Total latency = 3818 ms
+tx_num, duration
+100600,146
+Batch Tx. Duration: 150 ms
+CPU Usage for 1 transactions = 1.7%
+Memory Usage for 1 transactions = 2 MB
+Total number of transactions = 1
+average latency = 146 ms
+Total latency = 146 ms
+tx_num, duration
+100700,128
+100701,119
+100702,147
+100703,119
+100704,188
+100705,123
+100706,129
+100707,117
+100708,107
+100709,115
+100710,173
+100711,118
+100712,127
+100713,148
+100714,130
+100715,124
+100716,132
+100717,152
+100718,141
+100719,138
+100720,210
+100721,144
+100722,128
+100723,127
+100724,133
+100725,128
+100726,129
+100727,117
+100728,136
+100729,112
+100730,215
+100731,125
+100732,112
+100733,125
+100734,117
+100735,122
+100736,126
+100737,118
+100738,117
+100739,127
+100740,174
+100741,115
+100742,122
+100743,116
+100744,116
+100745,109
+100746,133
+100747,124
+100748,127
+100749,114
+Batch Tx. Duration: 6761 ms
+CPU Usage for 50 transactions = 26.6%
+Memory Usage for 50 transactions = 5 MB
+Total number of transactions = 50
+average latency = 131 ms
+Total latency = 6593 ms
+tx_num, duration
+100700,115
+100701,124
+100702,120
+100703,113
+100704,110
+100705,111
+100706,111
+100707,140
+100708,124
+100709,116
+100710,114
+100711,121
+100712,114
+100713,116
+100714,114
+100715,121
+100716,120
+100717,117
+100718,129
+100719,144
+100720,174
+100721,119
+100722,119
+100723,113
+100724,113
+100725,115
+100726,114
+100727,114
+100728,125
+100729,107
+100730,126
+100731,118
+100732,112
+100733,117
+100734,111
+100735,114
+100736,124
+100737,109
+100738,108
+100739,135
+100740,144
+100741,133
+100742,119
+100743,111
+100744,184
+100745,171
+100746,115
+100747,108
+100748,114
+100749,116
+Batch Tx. Duration: 6253 ms
+CPU Usage for 50 transactions = -14.9%
+Memory Usage for 50 transactions = 20 MB
+Total number of transactions = 50
+average latency = 121 ms
+Total latency = 6096 ms
+tx_num, duration
+100700,105
+100701,108
+100702,121
+100703,127
+100704,104
+100705,112
+100706,107
+100707,112
+100708,113
+100709,113
+100710,102
+100711,118
+100712,105
+100713,110
+100714,112
+100715,109
+100716,115
+100717,109
+100718,107
+100719,114
+100720,129
+100721,157
+100722,101
+100723,107
+100724,121
+100725,111
+100726,111
+100727,103
+100728,105
+100729,109
+100730,103
+100731,113
+100732,106
+100733,110
+100734,113
+100735,99
+100736,110
+100737,107
+100738,111
+100739,113
+100740,116
+100741,122
+100742,124
+100743,108
+100744,109
+100745,163
+100746,139
+100747,134
+100748,114
+100749,115
+Batch Tx. Duration: 5851 ms
+CPU Usage for 50 transactions = -5.1%
+Memory Usage for 50 transactions = 7 MB
+Total number of transactions = 50
+average latency = 114 ms
+Total latency = 5706 ms

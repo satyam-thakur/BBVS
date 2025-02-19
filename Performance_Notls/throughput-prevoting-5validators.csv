@@ -10,3 +10,123 @@ Total Duration (s),7.96
 Throughput (TPS),12.56
 CPU Usage Increase (%),44.8
 Memory Usage Increase (MB),-1
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.15
+Throughput (TPS),6.66
+CPU Usage Increase (%),-2.2
+Memory Usage Increase (MB),-11
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.14
+Throughput (TPS),7.14
+CPU Usage Increase (%),-8.7
+Memory Usage Increase (MB),7
+Metric,Value
+Number of Transactions,2
+Total Duration (s),.15
+Throughput (TPS),13.33
+CPU Usage Increase (%),5.9
+Memory Usage Increase (MB),5
+Metric,Value
+Number of Transactions,2
+Total Duration (s),.24
+Throughput (TPS),8.33
+CPU Usage Increase (%),-7.1
+Memory Usage Increase (MB),-1
+Metric,Value
+Number of Transactions,3
+Total Duration (s),.31
+Throughput (TPS),9.67
+CPU Usage Increase (%),-1.2
+Memory Usage Increase (MB),6
+Metric,Value
+Number of Transactions,2
+Total Duration (s),.17
+Throughput (TPS),11.76
+CPU Usage Increase (%),-21.3
+Memory Usage Increase (MB),10
+Metric,Value
+Number of Transactions,2
+Total Duration (s),.19
+Throughput (TPS),10.52
+CPU Usage Increase (%),-9.4
+Memory Usage Increase (MB),2
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.14
+Throughput (TPS),7.14
+CPU Usage Increase (%),-13.7
+Memory Usage Increase (MB),6
+Metric,Value
+Number of Transactions,3
+Total Duration (s),.21
+Throughput (TPS),14.28
+CPU Usage Increase (%),22.3
+Memory Usage Increase (MB),4
+Metric,Value
+Number of Transactions,4
+Total Duration (s),.35
+Throughput (TPS),11.42
+CPU Usage Increase (%),.1
+Memory Usage Increase (MB),11
+Metric,Value
+Number of Transactions,4
+Total Duration (s),.26
+Throughput (TPS),15.38
+CPU Usage Increase (%),9.1
+Memory Usage Increase (MB),4
+Metric,Value
+Number of Transactions,4
+Total Duration (s),.29
+Throughput (TPS),13.79
+CPU Usage Increase (%),10.6
+Memory Usage Increase (MB),-1
+Metric,Value
+Number of Transactions,5
+Total Duration (s),.34
+Throughput (TPS),14.70
+CPU Usage Increase (%),18.8
+Memory Usage Increase (MB),14
+Metric,Value
+Number of Transactions,6
+Total Duration (s),.43
+Throughput (TPS),13.95
+CPU Usage Increase (%),-4.2
+Memory Usage Increase (MB),18
+Metric,Value
+Number of Transactions,7
+Total Duration (s),.49
+Throughput (TPS),14.28
+CPU Usage Increase (%),13.6
+Memory Usage Increase (MB),2
+Metric,Value
+Number of Transactions,8
+Total Duration (s),.53
+Throughput (TPS),15.09
+CPU Usage Increase (%),19.4
+Memory Usage Increase (MB),3
+Metric,Value
+Number of Transactions,9
+Total Duration (s),.59
+Throughput (TPS),15.25
+CPU Usage Increase (%),17.3
+Memory Usage Increase (MB),8
+Metric,Value
+Number of Transactions,10
+Total Duration (s),.69
+Throughput (TPS),14.49
+CPU Usage Increase (%),46.5
+Memory Usage Increase (MB),-5
+Metric,Value
+Number of Transactions,20
+Total Duration (s),1.42
+Throughput (TPS),14.08
+CPU Usage Increase (%),48.2
+Memory Usage Increase (MB),37
+Metric,Value
+Number of Transactions,50
+Total Duration (s),3.38
+Throughput (TPS),14.79
+CPU Usage Increase (%),73.5
+Memory Usage Increase (MB),8

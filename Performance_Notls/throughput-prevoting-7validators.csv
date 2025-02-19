@@ -10,3 +10,81 @@ Total Duration (s),9.51
 Throughput (TPS),10.51
 CPU Usage Increase (%),51.1
 Memory Usage Increase (MB),-36
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.20
+Throughput (TPS),5.00
+CPU Usage Increase (%),15.4
+Memory Usage Increase (MB),-12
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.17
+Throughput (TPS),5.88
+CPU Usage Increase (%),-15.0
+Memory Usage Increase (MB),2
+Metric,Value
+Number of Transactions,1
+Total Duration (s),.23
+Throughput (TPS),4.34
+CPU Usage Increase (%),-12.2
+Memory Usage Increase (MB),-4
+Metric,Value
+Number of Transactions,2
+Total Duration (s),.21
+Throughput (TPS),9.52
+CPU Usage Increase (%),-11.7
+Memory Usage Increase (MB),-7
+Metric,Value
+Number of Transactions,3
+Total Duration (s),.39
+Throughput (TPS),7.69
+CPU Usage Increase (%),-4.0
+Memory Usage Increase (MB),-2
+Metric,Value
+Number of Transactions,4
+Total Duration (s),.46
+Throughput (TPS),8.69
+CPU Usage Increase (%),-28.9
+Memory Usage Increase (MB),4
+Metric,Value
+Number of Transactions,5
+Total Duration (s),.50
+Throughput (TPS),10.00
+CPU Usage Increase (%),-.7
+Memory Usage Increase (MB),12
+Metric,Value
+Number of Transactions,6
+Total Duration (s),.65
+Throughput (TPS),9.23
+CPU Usage Increase (%),-27.3
+Memory Usage Increase (MB),-3
+Metric,Value
+Number of Transactions,7
+Total Duration (s),.65
+Throughput (TPS),10.76
+CPU Usage Increase (%),-6.8
+Memory Usage Increase (MB),11
+Metric,Value
+Number of Transactions,8
+Total Duration (s),.81
+Throughput (TPS),9.87
+CPU Usage Increase (%),-19.7
+Memory Usage Increase (MB),-4
+Metric,Value
+Number of Transactions,9
+Total Duration (s),.89
+Throughput (TPS),10.11
+CPU Usage Increase (%),-8.1
+Memory Usage Increase (MB),8
+Metric,Value
+Number of Transactions,10
+Total Duration (s),.93
+Throughput (TPS),10.75
+CPU Usage Increase (%),36
+Memory Usage Increase (MB),16
+Metric,Value
+Number of Transactions,20
+Total Duration (s),1.85
+Throughput (TPS),10.81
+CPU Usage Increase (%),42.7
+Memory Usage Increase (MB),-37

@@ -22,8 +22,8 @@ CastVote() {
 }
 
 OUTPUT_FILE="throughput-Voting-5validators.csv"
-start_tx=2100
-Num_of_tx=100
+start_tx=103
+Num_of_tx=3
 
 # Capture initial resource usage
 start_usage=($(get_cpu_memory_usage))

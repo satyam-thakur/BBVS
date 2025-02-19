@@ -1,6 +1,6 @@
 Metric,Value
-Number of Transactions,50
-Total Duration (s),6.52
+Number of Transactions,1000
+Total Duration (s),65.2
 Throughput (TPS),7.66
 CPU Usage Increase (%),60.3
 Memory Usage Increase (MB),40
