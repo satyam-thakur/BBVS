@@ -22,14 +22,14 @@ joinChannel(){
     setGlobalsForPeer0Org1
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
-    setGlobalsForPeer1Org1
-    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+    # setGlobalsForPeer1Org1
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
     setGlobalsForPeer0Org2
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
-    setGlobalsForPeer1Org2
-    peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
+    # setGlobalsForPeer1Org2
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
 
     setGlobalsForPeer0Org3
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME.block
@@ -75,14 +75,14 @@ joinChannel1(){
     setGlobalsForPeer0Org1
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block
 
-    setGlobalsForPeer1Org1
-    peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block
+    # setGlobalsForPeer1Org1
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block
 
     setGlobalsForPeer0Org2
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block
 
-    setGlobalsForPeer1Org2
-    peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block
+    # setGlobalsForPeer1Org2
+    # peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block
 
     setGlobalsForPeer0Org3
     peer channel join -b ./channel-artifacts/$CHANNEL_NAME1.block

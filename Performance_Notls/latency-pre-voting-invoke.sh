@@ -18,8 +18,8 @@ VcmsVotingToken() {
         --peerAddresses localhost:7051 \
         --peerAddresses localhost:9051 \
         --peerAddresses localhost:11051 \
-        -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}'    
-        # >/dev/null
+        -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}'   \ 
+        >/dev/null &
 
     local end_time=$(date +%s%N)
     local duration=$(( (end_time - start_time) / 1000000 ))
@@ -33,8 +33,8 @@ sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
 # echo "Tx Block Size" >> tx_response.txt
 
-start_tx=100700
-Num_of_tx=50
+start_tx=0
+Num_of_tx=1000
 
 start_usage=($(get_cpu_memory_usage))
 echo "start_usage CPU= ${start_usage[0]}% Memory= ${start_usage[1]}MB"
