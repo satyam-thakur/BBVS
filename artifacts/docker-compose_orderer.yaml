@@ -7,7 +7,6 @@ networks:
 
 services:
   orderer.example.com:
-    container_name: orderer.example.com
     image: hyperledger/fabric-orderer:2.1
     environment:
       - ORDERER_GENERAL_LOGLEVEL=info
@@ -32,6 +31,17 @@ services:
       - 8443:8443
     networks:
       - test
+    deploy:
+      mode: replicated
+      replicas: 1  # Change if you want multiple orderers
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager  # Ensure orderer runs on a manager node
     volumes:
-      - ./channel/genesis.block:/var/hyperledger/orderer/genesis.block
-      - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
+      - "${PWD}/channel/genesis.block:/var/hyperledger/orderer/genesis.block"
+      - "${PWD}/channel/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp"
+
+      # export PWD=$(pwd)  # Ensure PWD is set
+      # docker stack deploy -c <(envsubst < docker-compose_orderer.yml) orderer
