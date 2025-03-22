@@ -32,9 +32,9 @@ updateAnchorPeers(){
 }
 
 # Execute the functions
-# createChannel
-# joinChannel
-# updateAnchorPeers
+createChannel
+joinChannel
+updateAnchorPeers
 
 ####################################################################
 
@@ -68,9 +68,9 @@ updateAnchorPeers1(){
 }
 
 # Execute the functions
-# createChannel1
-# joinChannel1
-# updateAnchorPeers1
+createChannel1
+joinChannel1
+updateAnchorPeers1
 
 
 

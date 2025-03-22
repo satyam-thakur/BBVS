@@ -69,8 +69,8 @@ updateAnchorPeers1(){
 
 # Execute the functions
 # createChannel1
-# joinChannel1
-# updateAnchorPeers1
+joinChannel1
+updateAnchorPeers1
 
 
 

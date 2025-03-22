@@ -122,9 +122,9 @@ commitChaincodeDefination() {
     setGlobalsForPeer0Org1
     peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required 
         # --signature-policy "OutOf(2, 'Org1MSP.peer', 'Org2MSP.peer', 'Org3MSP.peer')"
@@ -153,9 +153,9 @@ chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses orderer:7051  \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051  \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         --isInit -c '{"Args":[]}'
 }
 
@@ -167,9 +167,9 @@ VcmsVotingToken() {
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051   \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051   \
+        --peerAddresses fabric_orderer:11051 \
         -c '{"function": "VcmsVotingToken","Args":[ "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9","digitalsignature"]}'
     set +x
 
@@ -183,7 +183,7 @@ VoteCheck(){
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer:7051 \
+        --peerAddresses fabric_orderer:7051 \
         -c '{"function": "VoteCheck","Args":["hash002"]}'
     # set +x
 }
@@ -196,9 +196,9 @@ GetVotingTokenRecord(){
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051  \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051  \
+        --peerAddresses fabric_orderer:11051 \
         -c '{"function": "GetVotingTokenRecord","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 }

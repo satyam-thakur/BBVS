@@ -72,9 +72,9 @@ commitChaincodeDefination() {
     setGlobalsForPeer0Org1
     peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required
 }

@@ -131,9 +131,9 @@ commitChaincodeDefination() {
     setGlobalsForPeer0Org1
     peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required
 }
@@ -161,9 +161,9 @@ chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses orderer:7051  \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051  \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         --isInit -c '{"Args":[]}'
 }
 
@@ -175,9 +175,9 @@ CastVote() {
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         -c '{"function": "CastVote","Args":["cCiOJjRLGza2+8s26T7ybA==", "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 
@@ -191,9 +191,9 @@ getvotingtoken(){
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         -c '{"function": "GetBallot","Args":["01306b"]}'
     set +x
 }
@@ -203,9 +203,9 @@ Postvotingtoken (){
     set -x
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer:7051 \
-        --peerAddresses orderer:9051 \
-        --peerAddresses orderer:11051 \
+        --peerAddresses fabric_orderer:7051 \
+        --peerAddresses fabric_orderer:9051 \
+        --peerAddresses fabric_orderer:11051 \
         -c '{"function": "PostVoting","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9", "0123456789ABCDEF"]}'
     set +x
 }
