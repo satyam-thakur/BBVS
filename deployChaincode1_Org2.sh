@@ -21,7 +21,7 @@ packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
     export GOFLAGS="-buildvcs=false"
 
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer lifecycle chaincode package ${CC_NAME}.tar.gz \
         --path ${CC_SRC_PATH} --lang ${CC_RUNTIME_LANGUAGE} \
         --label ${CC_NAME}_${VERSION} 
@@ -30,7 +30,7 @@ packageChaincode() {
 # packageChaincode
 
 installChaincode() {
-    # setGlobalsForPeer0Org1
+    # setGlobalsForPeer0Org2
     # peer lifecycle chaincode install ${CC_NAME}.tar.gz
     # echo "===================== Chaincode is installed on peer0.org1 ===================== "
 
@@ -54,7 +54,7 @@ installChaincode() {
 # installChaincode
 
 queryInstalled() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer lifecycle chaincode queryinstalled >&log.txt
     cat log.txt
     PACKAGE_ID=$(sed -n "/${CC_NAME}_${VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" log.txt)
@@ -65,7 +65,7 @@ queryInstalled() {
 # queryInstalled
 
 approveForMyOrg1() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     # set -x
     peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
@@ -80,14 +80,14 @@ approveForMyOrg1() {
 # approveForMyOrg1
 
 getBlock() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer channel getinfo  -c ${CHANNEL_NAME} -o fabric_orderer:7050 
 }
 
 # getBlock
 
 checkCommitReadyness() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --sequence ${VERSION} --output json --init-required
@@ -134,7 +134,7 @@ approveForMyOrg3() {
 # checkCommitReadyness
 
 commitChaincodeDefination() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses fabric_orderer:7051 \
@@ -157,7 +157,7 @@ commitChaincodeDefination() {
 #     [--tls --cafile <ORDERER_CA_FILE>]
 
 queryCommitted() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME}
 
 }
@@ -165,7 +165,7 @@ queryCommitted() {
 # queryCommitted
 
 chaincodeInvokeInit() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses fabric_orderer:7051  \
@@ -177,7 +177,7 @@ chaincodeInvokeInit() {
 # chaincodeInvokeInit
 #2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
 VcmsVotingToken() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     set -x
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
@@ -193,7 +193,7 @@ VcmsVotingToken() {
 # VcmsVotingToken
 
 VoteCheck(){
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     # set -x
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
@@ -206,7 +206,7 @@ VoteCheck(){
 # VoteCheck
 
 GetVotingTokenRecord(){
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org2
     set -x
     #Input VCMS Data
     peer chaincode invoke -o fabric_orderer:7050 \
