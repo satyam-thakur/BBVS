@@ -2,8 +2,8 @@ version: "2"
 
 networks:
   test:
-    external:
-      name: first-network
+    # external:
+    #   name: first-network
 services:
   orderer.example.com:
     container_name: orderer.example.com
