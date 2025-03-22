@@ -2,7 +2,8 @@ version: "2"
 
 networks:
   test:
-
+    extenal:
+      name: first-network
 services:
   orderer.example.com:
     container_name: orderer.example.com
