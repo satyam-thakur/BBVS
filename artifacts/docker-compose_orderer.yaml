@@ -6,7 +6,7 @@ networks:
       name: first-network
 
 services:
-  orderer-example-com:
+  orderer:
     image: hyperledger/fabric-orderer:2.1
     environment:
       - ORDERER_GENERAL_LOGLEVEL=info
