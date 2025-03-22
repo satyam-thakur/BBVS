@@ -1,4 +1,4 @@
-version: "latest"
+version: "3.7"
 
 networks:
   test:
@@ -6,7 +6,7 @@ networks:
       name: first-network
 
 services:
-  orderer.example.com:
+  orderer-example-com:
     image: hyperledger/fabric-orderer:2.1
     environment:
       - ORDERER_GENERAL_LOGLEVEL=info
