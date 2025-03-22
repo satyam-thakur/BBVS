@@ -61,7 +61,7 @@ queryInstalled() {
 approveForMyOrg1() {
     setGlobalsForPeer0Org1
     # set -x
-    peer lifecycle chaincode approveformyorg -o orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -75,7 +75,7 @@ approveForMyOrg1() {
 
 getBlock() {
     setGlobalsForPeer0Org1
-    peer channel getinfo  -c ${CHANNEL_NAME} -o orderer:7050 
+    peer channel getinfo  -c ${CHANNEL_NAME} -o fabric_orderer:7050 
 }
 
 # getBlock
@@ -91,7 +91,7 @@ checkCommitReadyness() {
 # checkCommitReadyness
 approveForMyOrg2() {
     setGlobalsForPeer0Org2
-    peer lifecycle chaincode approveformyorg -o orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -115,7 +115,7 @@ checkCommitReadyness() {
 approveForMyOrg3() {
     setGlobalsForPeer0Org3
 
-    peer lifecycle chaincode approveformyorg -o orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -129,7 +129,7 @@ approveForMyOrg3() {
 
 commitChaincodeDefination() {
     setGlobalsForPeer0Org1
-    peer lifecycle chaincode commit -o orderer:7050  \
+    peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses orderer:7051 \
         --peerAddresses orderer:9051 \
@@ -159,7 +159,7 @@ queryCommitted() {
 
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
-    peer chaincode invoke -o orderer:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses orderer:7051  \
         --peerAddresses orderer:9051 \
@@ -173,7 +173,7 @@ CastVote() {
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o orderer:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses orderer:7051 \
         --peerAddresses orderer:9051 \
@@ -189,7 +189,7 @@ getvotingtoken(){
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o orderer:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses orderer:7051 \
         --peerAddresses orderer:9051 \
@@ -201,7 +201,7 @@ getvotingtoken(){
 Postvotingtoken (){
     setGlobalsForPeer0Org1
     set -x
-    peer chaincode invoke -o orderer:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses orderer:7051 \
         --peerAddresses orderer:9051 \

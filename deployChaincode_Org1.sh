@@ -42,7 +42,7 @@ queryInstalled() {
 approveForMyOrg1() {
     setGlobalsForPeer0Org1
     # set -x
-    peer lifecycle chaincode approveformyorg -o localhost:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -56,7 +56,7 @@ approveForMyOrg1() {
 
 getBlock() {
     setGlobalsForPeer0Org1
-    peer channel getinfo  -c ${CHANNEL_NAME} -o localhost:7050 
+    peer channel getinfo  -c ${CHANNEL_NAME} -o fabric_orderer:7050 
 }
 
 # getBlock
@@ -70,11 +70,11 @@ checkCommitReadyness() {
 }
 commitChaincodeDefination() {
     setGlobalsForPeer0Org1
-    peer lifecycle chaincode commit -o localhost:7050  \
+    peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
+        --peerAddresses orderer:7051 \
+        --peerAddresses orderer:9051 \
+        --peerAddresses orderer:11051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required
 }

@@ -52,7 +52,7 @@ queryInstalled() {
 approveForMyOrg1() {
     setGlobalsForPeer0Org1
     # set -x
-    peer lifecycle chaincode approveformyorg -o localhost:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -66,7 +66,7 @@ approveForMyOrg1() {
 
 getBlock() {
     setGlobalsForPeer0Org1
-    peer channel getinfo  -c ${CHANNEL_NAME} -o localhost:7050 
+    peer channel getinfo  -c ${CHANNEL_NAME} -o fabric_orderer:7050 
 }
 
 # getBlock
@@ -82,7 +82,7 @@ checkCommitReadyness() {
 # checkCommitReadyness
 approveForMyOrg2() {
     setGlobalsForPeer0Org2
-    peer lifecycle chaincode approveformyorg -o localhost:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -106,7 +106,7 @@ checkCommitReadyness() {
 approveForMyOrg3() {
     setGlobalsForPeer0Org3
 
-    peer lifecycle chaincode approveformyorg -o localhost:7050 \
+    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -120,11 +120,11 @@ approveForMyOrg3() {
 
 commitChaincodeDefination() {
     setGlobalsForPeer0Org1
-    peer lifecycle chaincode commit -o localhost:7050  \
+    peer lifecycle chaincode commit -o fabric_orderer:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
+        --peerAddresses orderer:7051 \
+        --peerAddresses orderer:9051 \
+        --peerAddresses orderer:11051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required 
         # --signature-policy "OutOf(2, 'Org1MSP.peer', 'Org2MSP.peer', 'Org3MSP.peer')"
@@ -151,11 +151,11 @@ queryCommitted() {
 
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
-    peer chaincode invoke -o localhost:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses localhost:7051  \
-        --peerAddresses localhost:9051 \
-        --peerAddresses localhost:11051 \
+        --peerAddresses orderer:7051  \
+        --peerAddresses orderer:9051 \
+        --peerAddresses orderer:11051 \
         --isInit -c '{"Args":[]}'
 }
 
@@ -165,11 +165,11 @@ VcmsVotingToken() {
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o localhost:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051   \
-        --peerAddresses localhost:11051 \
+        --peerAddresses orderer:7051 \
+        --peerAddresses orderer:9051   \
+        --peerAddresses orderer:11051 \
         -c '{"function": "VcmsVotingToken","Args":[ "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9","digitalsignature"]}'
     set +x
 
@@ -181,9 +181,9 @@ VoteCheck(){
     setGlobalsForPeer0Org1
     # set -x
     #Input VCMS Data
-    peer chaincode invoke -o localhost:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses localhost:7051 \
+        --peerAddresses orderer:7051 \
         -c '{"function": "VoteCheck","Args":["hash002"]}'
     # set +x
 }
@@ -194,11 +194,11 @@ GetVotingTokenRecord(){
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o localhost:7050 \
+    peer chaincode invoke -o fabric_orderer:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses localhost:7051 \
-        --peerAddresses localhost:9051  \
-        --peerAddresses localhost:11051 \
+        --peerAddresses orderer:7051 \
+        --peerAddresses orderer:9051  \
+        --peerAddresses orderer:11051 \
         -c '{"function": "GetVotingTokenRecord","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 }

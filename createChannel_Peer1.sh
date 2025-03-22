@@ -13,7 +13,7 @@ createChannel(){
     rm -rf ./channel-artifacts/${CHANNEL_NAME}.block
     sleep 2
     setGlobalsForPeer0Org1
-    peer channel create -o orderer:7050 -c $CHANNEL_NAME \
+    peer channel create -o fabric_orderer:7050 -c $CHANNEL_NAME \
     -f ./artifacts/channel/${CHANNEL_NAME}.tx --outputBlock ./channel-artifacts/${CHANNEL_NAME}.block
 }
 
@@ -27,7 +27,7 @@ joinChannel(){
 # Update anchor peers for each organization
 updateAnchorPeers(){
     setGlobalsForPeer0Org1
-    peer channel update -o orderer:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
+    peer channel update -o fabric_orderer:7050 -c $CHANNEL_NAME -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx
 
 }
 
@@ -48,7 +48,7 @@ createChannel1(){
 
     setGlobalsForPeer0Org1
 
-    peer channel create -o orderer:7050 -c $CHANNEL_NAME1 \
+    peer channel create -o fabric_orderer:7050 -c $CHANNEL_NAME1 \
     -f ./artifacts/channel/${CHANNEL_NAME1}.tx --outputBlock ./channel-artifacts/${CHANNEL_NAME1}.block
 }
 
@@ -63,7 +63,7 @@ joinChannel1(){
 # Update anchor peers for each organization
 updateAnchorPeers1(){
     setGlobalsForPeer0Org1
-    peer channel update -o orderer:7050 -c $CHANNEL_NAME1 -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors1.tx
+    peer channel update -o fabric_orderer:7050 -c $CHANNEL_NAME1 -f ./artifacts/channel/${CORE_PEER_LOCALMSPID}anchors1.tx
 
 }
 
