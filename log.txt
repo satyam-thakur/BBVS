@@ -1,3 +1,2 @@
 Installed chaincodes on peer:
-Package ID: voting6_1:1e2dfa0daceb26a7366c93d6b48cae1fca85d5fced870dc3386eb895fad027b1, Label: voting6_1
 Package ID: voting8_1:a47f0ca86eb92475158d9552d94baa677975d73d90f5152d973f652a44efacbb, Label: voting8_1
