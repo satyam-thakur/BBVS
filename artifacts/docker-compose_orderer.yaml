@@ -1,4 +1,4 @@
-version: "2"
+version: "latest"
 
 networks:
   test:
@@ -16,10 +16,7 @@ services:
       - ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/genesis.block
       - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
       - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
-      - ORDERER_GENERAL_TLS_ENABLED=false  # Disable TLS
-      # - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
-      # - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
-      # - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+      - ORDERER_GENERAL_TLS_ENABLED=false
       - ORDERER_KAFKA_VERBOSE=true
       - ORDERER_METRICS_PROVIDER=prometheus
       - ORDERER_OPERATIONS_LISTENADDRESS=0.0.0.0:8443
@@ -33,12 +30,12 @@ services:
       - test
     deploy:
       mode: replicated
-      replicas: 1  # Change if you want multiple orderers
+      replicas: 1
       restart_policy:
         condition: on-failure
       placement:
         constraints:
-          - node.role == manager  # Ensure orderer runs on a manager node
+          - node.role == manager
     volumes:
       - "${PWD}/channel/genesis.block:/var/hyperledger/orderer/genesis.block"
       - "${PWD}/channel/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp"
