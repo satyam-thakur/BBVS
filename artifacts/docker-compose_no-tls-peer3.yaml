@@ -1,7 +1,7 @@
 version: "2"
 
 networks:
-  test:
+  first-network:
     external:
       name: first-network
 services:
@@ -14,7 +14,7 @@ services:
     ports:
       - 9984:5984
     networks:
-      - test
+      - first-network
 
   peer0.org3.example.com:
     container_name: peer0.org3.example.com
@@ -25,7 +25,7 @@ services:
       - FABRIC_LOGGING_SPEC=info
       - ORDERER_GENERAL_LOGLEVEL=info
       - CORE_PEER_LOCALMSPID=Org3MSP
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=artifacts_test
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=first-network
       - CORE_PEER_ID=peer0.org3.example.com
       - CORE_PEER_ADDRESS=peer0.org3.example.com:11051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
@@ -49,6 +49,6 @@ services:
       - /var/run/:/host/var/run/
       - ./channel/:/etc/hyperledger/channel/
     networks:
-      - test
+      - first-network
 
   

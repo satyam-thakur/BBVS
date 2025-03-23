@@ -67,7 +67,7 @@ queryInstalled() {
 approveForMyOrg1() {
     setGlobalsForPeer0Org2
     # set -x
-    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -81,7 +81,7 @@ approveForMyOrg1() {
 
 getBlock() {
     setGlobalsForPeer0Org2
-    peer channel getinfo  -c ${CHANNEL_NAME} -o fabric_orderer:7050 
+    peer channel getinfo  -c ${CHANNEL_NAME} -o orderer.example.com:7050 
 }
 
 # getBlock
@@ -97,7 +97,7 @@ checkCommitReadyness() {
 # checkCommitReadyness
 approveForMyOrg2() {
     setGlobalsForPeer0Org2
-    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -121,7 +121,7 @@ checkCommitReadyness() {
 approveForMyOrg3() {
     setGlobalsForPeer0Org3
 
-    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -133,19 +133,6 @@ approveForMyOrg3() {
 
 # checkCommitReadyness
 
-commitChaincodeDefination() {
-    setGlobalsForPeer0Org2
-    peer lifecycle chaincode commit -o fabric_orderer:7050  \
-        --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
-        --version ${VERSION} --sequence ${VERSION} \
-        --init-required 
-        # --signature-policy "OutOf(2, 'Org1MSP.peer', 'Org2MSP.peer', 'Org3MSP.peer')"
-}
-
-# commitChaincodeDefination
 
 # peer lifecycle chaincode commit -o <ORDERER_ADDRESS> \
 #     --channelID <CHANNEL_NAME> --name <CHAINCODE_NAME> \
@@ -164,61 +151,8 @@ queryCommitted() {
 
 # queryCommitted
 
-chaincodeInvokeInit() {
-    setGlobalsForPeer0Org2
-    peer chaincode invoke -o fabric_orderer:7050 \
-        -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses fabric_orderer:7051  \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
-        --isInit -c '{"Args":[]}'
-}
 
-# chaincodeInvokeInit
-#2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
-VcmsVotingToken() {
-    setGlobalsForPeer0Org2
-    set -x
-    #Input VCMS Data
-    peer chaincode invoke -o fabric_orderer:7050 \
-        -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051   \
-        --peerAddresses fabric_orderer:11051 \
-        -c '{"function": "VcmsVotingToken","Args":[ "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9","digitalsignature"]}'
-    set +x
 
-}
-
-# VcmsVotingToken
-
-VoteCheck(){
-    setGlobalsForPeer0Org2
-    # set -x
-    #Input VCMS Data
-    peer chaincode invoke -o fabric_orderer:7050 \
-        -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses fabric_orderer:7051 \
-        -c '{"function": "VoteCheck","Args":["hash002"]}'
-    # set +x
-}
-
-# VoteCheck
-
-GetVotingTokenRecord(){
-    setGlobalsForPeer0Org2
-    set -x
-    #Input VCMS Data
-    peer chaincode invoke -o fabric_orderer:7050 \
-        -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051  \
-        --peerAddresses fabric_orderer:11051 \
-        -c '{"function": "GetVotingTokenRecord","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
-    set +x
-}
-
-# GetVotingTokenRecord
 
 # Ballot_key = 1092c
 chaincodeQuery() {
