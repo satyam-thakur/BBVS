@@ -2,8 +2,8 @@ version: "2"
 
 networks:
   first-network:
-    external:
-      name: first-network
+    external: true
+      # name: first-network
 services:
   couchdb4:
     container_name: couchdb4

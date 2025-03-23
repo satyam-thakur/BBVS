@@ -1,9 +1,9 @@
 version: "2"
 
 networks:
-  test:
-    external:
-      name: first-network
+  first-network:
+    external: true
+      # name: first-network
 services:
   orderer.example.com:
     container_name: orderer.example.com
@@ -30,7 +30,7 @@ services:
       - 7050:7050
       - 8443:8443
     networks:
-      - test
+      - first-network
     volumes:
       - ./channel/genesis.block:/var/hyperledger/orderer/genesis.block
       - ./channel/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp

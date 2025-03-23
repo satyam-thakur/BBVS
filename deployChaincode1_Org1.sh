@@ -95,12 +95,13 @@ queryCommitted() {
 # presetup
 
 # packageChaincode
-installChaincode
-sleep 1
-queryInstalled
-sleep 3
-approveForMyOrg1
-sleep 1
+# installChaincode
+# sleep 1
+# queryInstalled
+# sleep 3
+# approveForMyOrg1
+# sleep 1
+getBlock
 checkCommitReadyness
 # queryCommitted
 
