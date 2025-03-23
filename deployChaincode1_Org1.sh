@@ -221,6 +221,7 @@ chaincodeQuery() {
 packageChaincode
 installChaincode
 queryInstalled
+sleep 3
 approveForMyOrg1
 checkCommitReadyness
 # approveForMyOrg2
