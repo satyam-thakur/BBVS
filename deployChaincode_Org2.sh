@@ -61,7 +61,7 @@ queryInstalled() {
 approveForMyOrg1() {
     setGlobalsForPeer0Org2
     # set -x
-    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -75,7 +75,7 @@ approveForMyOrg1() {
 
 getBlock() {
     setGlobalsForPeer0Org2
-    peer channel getinfo  -c ${CHANNEL_NAME} -o fabric_orderer:7050 
+    peer channel getinfo  -c ${CHANNEL_NAME} -o orderer.example.com:7050 
 }
 
 # getBlock
@@ -91,7 +91,7 @@ checkCommitReadyness() {
 # checkCommitReadyness
 approveForMyOrg2() {
     setGlobalsForPeer0Org2
-    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -115,7 +115,7 @@ checkCommitReadyness() {
 approveForMyOrg3() {
     setGlobalsForPeer0Org3
 
-    peer lifecycle chaincode approveformyorg -o fabric_orderer:7050 \
+    peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
@@ -129,11 +129,11 @@ approveForMyOrg3() {
 
 commitChaincodeDefination() {
     setGlobalsForPeer0Org2
-    peer lifecycle chaincode commit -o fabric_orderer:7050  \
+    peer lifecycle chaincode commit -o orderer.example.com:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
+        --peerAddresses orderer.example.com:7051 \
+        --peerAddresses orderer.example.com:9051 \
+        --peerAddresses orderer.example.com:11051 \
         --version ${VERSION} --sequence ${VERSION} \
         --init-required
 }
@@ -159,11 +159,11 @@ queryCommitted() {
 
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org2
-    peer chaincode invoke -o fabric_orderer:7050 \
+    peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses fabric_orderer:7051  \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
+        --peerAddresses orderer.example.com:7051  \
+        --peerAddresses orderer.example.com:9051 \
+        --peerAddresses orderer.example.com:11051 \
         --isInit -c '{"Args":[]}'
 }
 
@@ -173,11 +173,11 @@ CastVote() {
     setGlobalsForPeer0Org2
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o fabric_orderer:7050 \
+    peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
+        --peerAddresses orderer.example.com:7051 \
+        --peerAddresses orderer.example.com:9051 \
+        --peerAddresses orderer.example.com:11051 \
         -c '{"function": "CastVote","Args":["cCiOJjRLGza2+8s26T7ybA==", "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 
@@ -189,11 +189,11 @@ getvotingtoken(){
     setGlobalsForPeer0Org2
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o fabric_orderer:7050 \
+    peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
+        --peerAddresses orderer.example.com:7051 \
+        --peerAddresses orderer.example.com:9051 \
+        --peerAddresses orderer.example.com:11051 \
         -c '{"function": "GetBallot","Args":["01306b"]}'
     set +x
 }
@@ -201,11 +201,11 @@ getvotingtoken(){
 Postvotingtoken (){
     setGlobalsForPeer0Org2
     set -x
-    peer chaincode invoke -o fabric_orderer:7050 \
+    peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses fabric_orderer:7051 \
-        --peerAddresses fabric_orderer:9051 \
-        --peerAddresses fabric_orderer:11051 \
+        --peerAddresses orderer.example.com:7051 \
+        --peerAddresses orderer.example.com:9051 \
+        --peerAddresses orderer.example.com:11051 \
         -c '{"function": "PostVoting","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9", "0123456789ABCDEF"]}'
     set +x
 }
