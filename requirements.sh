@@ -10,7 +10,14 @@ sudo apt-get install -y curl wget git software-properties-common apt-transport-h
 wget https://go.dev/dl/go1.23.1.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf go1.23.1.linux-amd64.tar.gz
-rm go1.23.1.linux-amd64.tar.gz
+# rm go1.23.1.linux-amd64.tar.gz
+wait
+# sleep 0.5
+
+if [ $? -ne 0 ]; then
+    echo "Error Go installing"
+    exit 1
+fi
 
 # Set Go environment variables
 echo '# Go environment variables' >> ~/.bashrc
@@ -22,34 +29,46 @@ echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 # Remove any existing Docker installations
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
-# Add Docker's official GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# Add Docker's official script
+curl -fsSL https://get.docker.com -o get-docker.sh
 
-# Set up the stable repository
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo sh get-docker.sh
 
-# Install Docker Engine (version 18.06.3-ce)
-sudo apt-get update
-sudo apt-get install -y docker-ce=18.06.3~ce~3-0~ubuntu docker-ce-cli=18.06.3~ce~3-0~ubuntu containerd.io
-sudo apt-get install docker.io
+wait
+
+if [ $? -ne 0 ]; then
+    echo "Error Docker installing"
+    exit 1
+fi
 
 # Install Docker Compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+wait
+
+if [ $? -ne 0 ]; then
+    echo "Error docker-compose installing"
+    exit 1
+fi
 
 # Add user to docker group
 sudo usermod -aG docker $USER
 newgrp docker
 sudo systemctl restart docker.services
+wait
 
 # Install Hyperledger Fabric binaries (v2.5.9)
 mkdir -p ~/fabric
 cd ~/fabric
 wget https://github.com/hyperledger/fabric/releases/download/v2.5.9/hyperledger-fabric-linux-amd64-2.5.9.tar.gz
 tar -xzf hyperledger-fabric-linux-amd64-2.5.9.tar.gz
-rm hyperledger-fabric-linux-amd64-2.5.9.tar.gz
+# rm hyperledger-fabric-linux-amd64-2.5.9.tar.gz
+wait
+
+if [ $? -ne 0 ]; then
+    echo "Error Installing fabric binaries"
+    exit 1
+fi
 
 # Set Fabric binaries path
 echo '# Hyperledger Fabric binaries' >> ~/.bashrc
@@ -57,10 +76,7 @@ echo 'export PATH=$PATH:~/fabric/bin' >> ~/.bashrc
 
 # Reload bashrc
 source ~/.bashrc
-
-wait 1
-
-source ~/.bashrc
+wait
 
 # Verify installations
 echo "Go version:"
@@ -76,4 +92,3 @@ echo "Peer version:"
 peer version
 
 echo "Installation complete! Please log out and log back in or run 'source ~/.bashrc' to apply path changes."
-
