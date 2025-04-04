@@ -112,7 +112,7 @@ chaincodeInvokeInit() {
         --isInit -c '{"Args":[]}'
 }
 
-chaincodeInvokeInit
+# chaincodeInvokeInit
 #2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
 VcmsVotingToken() {
     setGlobalsForPeer0Org1
@@ -174,11 +174,11 @@ chaincodeQuery() {
 # presetup
 
 # packageChaincode
-# installChaincode
-# queryInstalled
-# approveForMyorg3
-# sleep 1
-# checkCommitReadyness
+installChaincode
+queryInstalled
+approveForMyorg3
+sleep 1
+checkCommitReadyness
 # commitChaincodeDefination
 # queryCommitted
 # chaincodeInvokeInit
