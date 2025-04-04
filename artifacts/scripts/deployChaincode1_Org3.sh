@@ -106,13 +106,13 @@ chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
     peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
-        --peerAddresses peer0.org1.example.com:7051 \
-        --peerAddresses peer0.org2.example.com:9051 \
-        --peerAddresses peer0.org3.example.com:11051 \
+        --peerAddresses orderer.example.com:7051  \
+        --peerAddresses orderer.example.com:9051 \
+        --peerAddresses orderer.example.com:11051 \
         --isInit -c '{"Args":[]}'
 }
 
-chaincodeInvokeInit
+# chaincodeInvokeInit
 #2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
 VcmsVotingToken() {
     setGlobalsForPeer0Org1
@@ -180,10 +180,10 @@ chaincodeQuery() {
 # sleep 1
 # checkCommitReadyness
 # commitChaincodeDefination
-# queryCommitted
-# chaincodeInvokeInit
-# sleep 5
-# VcmsVotingToken
-# sleep 3
-# GetVotingTokenRecord
-# sleep 3
+queryCommitted
+chaincodeInvokeInit
+sleep 5
+VcmsVotingToken
+sleep 3
+GetVotingTokenRecord
+sleep 3
