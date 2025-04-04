@@ -174,16 +174,16 @@ chaincodeQuery() {
 # presetup
 
 # packageChaincode
-installChaincode
+# installChaincode
 queryInstalled
-approveForMyOrg3
+approveForMyorg3
 sleep 1
 checkCommitReadyness
-commitChaincodeDefination
-queryCommitted
-chaincodeInvokeInit
-sleep 5
-VcmsVotingToken
-sleep 3
-GetVotingTokenRecord
-sleep 3
+# commitChaincodeDefination
+# queryCommitted
+# chaincodeInvokeInit
+# sleep 5
+# VcmsVotingToken
+# sleep 3
+# GetVotingTokenRecord
+# sleep 3
