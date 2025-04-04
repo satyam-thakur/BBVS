@@ -5,7 +5,7 @@ source ./env_variables.sh
 # presetup
 
 CHANNEL_NAME="mychannel"
-export CHANNEL_NAME=mychannel
+export CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot8"
@@ -41,12 +41,12 @@ queryInstalled() {
 
 approveForMyOrg1() {
     setGlobalsForPeer0Org1
-    # set -x
+    set -x
     peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
-    # set +x
+    set +x
 
     echo "===================== chaincode approved from org 1 ===================== "
 
@@ -87,8 +87,8 @@ queryCommitted() {
 
 
 # packageChaincode
-installChaincode
+# installChaincode
 queryInstalled
 approveForMyOrg1
 checkCommitReadyness
-queryCommitted
+# queryCommitted

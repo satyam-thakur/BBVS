@@ -71,11 +71,11 @@ VcmsVotingToken() {
     echo "$tx_num,$duration" >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-pre-voting.xlsx"
+OUTPUT_FILE="latency-pre-voting.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=3
-Num_of_tx=100
+start_tx=101
+Num_of_tx=20
 
 # set +x
 
