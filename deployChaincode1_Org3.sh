@@ -175,9 +175,9 @@ chaincodeQuery() {
 
 # packageChaincode
 # installChaincode
-queryInstalled
-approveForMyorg3
-sleep 1
+# queryInstalled
+# approveForMyorg3
+# sleep 1
 checkCommitReadyness
 # commitChaincodeDefination
 # queryCommitted
