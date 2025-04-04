@@ -23,3 +23,13 @@ tx_num, duration
 Total number of transactions = 20
 average latency = 2665 ms
 Total latency = 53313 ms
+tx_num, duration
+1,2561
+2,2541
+3,2521
+4,2528
+5,2539
+6,2524
+Total number of transactions = 5
+average latency = 3042 ms
+Total latency = 15214 ms
