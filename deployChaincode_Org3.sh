@@ -236,11 +236,11 @@ queryInstalled
 # checkCommitReadyness
 approveForMyOrg3
 checkCommitReadyness
-commitChaincodeDefination
-queryCommitted
-chaincodeInvokeInit
-sleep 5
-CastVote
-sleep 3
-Postvotingtoken
-sleep 3
+# commitChaincodeDefination
+# queryCommitted
+# chaincodeInvokeInit
+# sleep 5
+# CastVote
+# sleep 3
+# Postvotingtoken
+# sleep 3
