@@ -179,7 +179,7 @@ chaincodeQuery() {
 # approveForMyorg3
 # sleep 1
 checkCommitReadyness
-# commitChaincodeDefination
+commitChaincodeDefination
 # queryCommitted
 # chaincodeInvokeInit
 # sleep 5
