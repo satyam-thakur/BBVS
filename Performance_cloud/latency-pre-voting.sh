@@ -1,17 +1,13 @@
 #!/bin/bash
 
-# pushd ../
 export CORE_PEER_TLS_ENABLED=false
 export FABRIC_CFG_PATH=${PWD}/config/
-
-# export PRIVATE_DATA_CONFIG=${PWD}/artifacts/private-data/collections_config.json
 
 export CHANNEL_NAME=mychannel1
 
 CHANNEL_NAME="mychannel1"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
-# CC_SRC_PATH="./artifacts/src/github.com/Ballot6"
 CC_NAME="voting6"
 setGlobalsForPeer0Org1() {
     export CORE_PEER_LOCALMSPID="Org1MSP"
