@@ -228,18 +228,18 @@ chaincodeQuery() {
 # presetup
 
 # packageChaincode
-# installChaincode
-# queryInstalled
-# # approveForMyOrg1
-# # checkCommitReadyness
-# # approveForMyOrg2
-# # checkCommitReadyness
-# approveForMyOrg3
+installChaincode
+queryInstalled
+# approveForMyOrg1
 # checkCommitReadyness
-commitChaincodeDefination
-sleep 2
-# queryCommitted
-chaincodeInvokeInit
+# approveForMyOrg2
+# checkCommitReadyness
+approveForMyOrg3
+checkCommitReadyness
+# commitChaincodeDefination
+# sleep 2
+# # queryCommitted
+# chaincodeInvokeInit
 # sleep 5
 # CastVote
 # sleep 3

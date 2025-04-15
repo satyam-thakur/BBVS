@@ -118,7 +118,7 @@ VcmsVotingToken() {
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o orderer.example.com:7050 \
+     docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -147,11 +147,11 @@ GetVotingTokenRecord(){
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses orderer.example.com:7051 \
-        --peerAddresses orderer.example.com:9051  \
-        --peerAddresses orderer.example.com:11051 \
+        --peerAddresses peer0.org1.example.com:7051 \
+        --peerAddresses peer0.org2.example.com:9051 \
+        --peerAddresses peer0.org3.example.com:11051 \
         -c '{"function": "GetVotingTokenRecord","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
     set +x
 }
@@ -179,9 +179,10 @@ queryInstalled
 approveForMyorg3
 sleep 1
 checkCommitReadyness
-# commitChaincodeDefination
+commitChaincodeDefination
+chaincodeInvokeInit
+# sleep 3
 # queryCommitted
-# chaincodeInvokeInit
 # sleep 5
 # VcmsVotingToken
 # sleep 3
