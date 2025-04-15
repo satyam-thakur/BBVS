@@ -3,12 +3,12 @@
 export CORE_PEER_TLS_ENABLED=false
 export FABRIC_CFG_PATH=${PWD}/config/
 
-export CHANNEL_NAME=mychannel1
+export CHANNEL_NAME=mychannel
 
-CHANNEL_NAME="mychannel1"
+CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
-CC_NAME="voting6"
+CC_NAME="voting8"
 
 setGlobalsForPeer0Org1() {
     export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -18,7 +18,7 @@ setGlobalsForPeer0Org1() {
 setGlobalsForPeer0Org1
 
 # popd
-VcmsVotingToken() {
+CastVote() {
     local tx_num=$1
     local start_time=$(date +%s%N)
 
@@ -27,7 +27,7 @@ VcmsVotingToken() {
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' \
+        -c '{"function": "CastVote","Args":["Trump","'$tx_num'"]}' \
         >/dev/null  
         #2>&1
 
@@ -68,17 +68,17 @@ VcmsVotingToken() {
     echo "$tx_num,$duration" >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-pre-voting.csv"
+OUTPUT_FILE="latency-voting.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1000
-Num_of_tx=1000
+start_tx=1
+Num_of_tx=5
 
 # set +x
 
 for i in $(seq $start_tx $((Num_of_tx+start_tx)));
 do
-    VcmsVotingToken $i
+    CastVote $i
 done
 
 echo "Total number of transactions = $Num_of_tx" >> $OUTPUT_FILE

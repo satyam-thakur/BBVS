@@ -71,8 +71,8 @@ VcmsVotingToken() {
 OUTPUT_FILE="latency-pre-voting.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1000
-Num_of_tx=1000
+start_tx=6
+Num_of_tx=5
 
 # set +x
 
