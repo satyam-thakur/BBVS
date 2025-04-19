@@ -170,10 +170,10 @@ chaincodeInvokeInit() {
 # chaincodeInvokeInit
 
 CastVote() {
-    setGlobalsForPeer0Org3
+    setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -199,9 +199,9 @@ getvotingtoken(){
 }
 
 Postvotingtoken (){
-    setGlobalsForPeer0Org3
+    setGlobalsForPeer0Org1
     set -x
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -228,20 +228,20 @@ chaincodeQuery() {
 # presetup
 
 # packageChaincode
-installChaincode
-queryInstalled
-# approveForMyOrg1
+# installChaincode
+# queryInstalled
+# # approveForMyOrg1
+# # checkCommitReadyness
+# # approveForMyOrg2
+# # checkCommitReadyness
+# approveForMyOrg3
 # checkCommitReadyness
-# approveForMyOrg2
-# checkCommitReadyness
-approveForMyOrg3
-checkCommitReadyness
 # commitChaincodeDefination
 # sleep 2
 # # queryCommitted
 # chaincodeInvokeInit
 # sleep 5
-# CastVote
-# sleep 3
-# Postvotingtoken
-# sleep 3
+CastVote
+sleep 3
+Postvotingtoken
+sleep 3

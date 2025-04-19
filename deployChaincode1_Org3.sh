@@ -179,8 +179,8 @@ queryInstalled
 approveForMyorg3
 sleep 1
 checkCommitReadyness
-commitChaincodeDefination
-chaincodeInvokeInit
+# commitChaincodeDefination
+# chaincodeInvokeInit
 # sleep 3
 # queryCommitted
 # sleep 5
