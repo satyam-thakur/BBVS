@@ -1003,3 +1003,45 @@ tx_num, duration
 Total number of transactions = 1000
 average latency = 2541 ms
 Total latency = 2541371 ms
+tx_num, duration
+100001,2884
+100002,2388
+100003,2376
+100004,2389
+100005,2375
+100006,2387
+Total number of transactions = 5
+average latency = 2959 ms
+Total latency = 14799 ms
+tx_num, duration
+100001,245
+100002,238
+100003,248
+100004,247
+100005,246
+100006,253
+Total number of transactions = 5
+average latency = 295 ms
+Total latency = 1477 ms
+tx_num, duration
+100001,245
+100002,261
+100003,254
+100004,251
+100005,245
+100006,243
+tx_num, duration
+100001,187
+100002,183
+100003,176
+100004,182
+100005,180
+100006,195
+tx_num, duration
+100001,195
+100002,201
+100003,196
+100004,189
+100005,193
+100006,194
+100007,2387

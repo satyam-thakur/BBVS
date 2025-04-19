@@ -27,6 +27,7 @@ VcmsVotingToken() {
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
+        --peerAddresses peer0.org4.example.com:14051 \
         -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' \
         >/dev/null  
         #2>&1
@@ -71,8 +72,8 @@ VcmsVotingToken() {
 OUTPUT_FILE="latency-pre-voting.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1000
-Num_of_tx=1000
+start_tx=100001
+Num_of_tx=10
 
 # set +x
 
