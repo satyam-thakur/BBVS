@@ -22,7 +22,7 @@ packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
     export GOFLAGS="-buildvcs=false"
 
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     peer lifecycle chaincode package ${CC_NAME}.tar.gz \
         --path ${CC_SRC_PATH} --lang ${CC_RUNTIME_LANGUAGE} \
         --label ${CC_NAME}_${VERSION} 
@@ -31,7 +31,7 @@ packageChaincode() {
 # packageChaincode
 
 installChaincode() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     peer lifecycle chaincode install ${CC_NAME}.tar.gz
     echo "===================== Chaincode is installed on peer0.org2 ===================== "
 
@@ -40,7 +40,7 @@ installChaincode() {
 # installChaincode
 
 queryInstalled() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     peer lifecycle chaincode queryinstalled >&log.txt
     cat log.txt
     PACKAGE_ID=$(sed -n "/${CC_NAME}_${VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" log.txt)
@@ -51,7 +51,7 @@ queryInstalled() {
 # queryInstalled
 
 approveForMyorg2() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     # set -x
     peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
@@ -66,14 +66,14 @@ approveForMyorg2() {
 # approveForMyorg2
 
 getBlock() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     peer channel getinfo  -c ${CHANNEL_NAME} -o orderer.example.com:7050 
 }
 
 # getBlock
 
 checkCommitReadyness() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
         --sequence ${VERSION} --output json --init-required
@@ -83,23 +83,25 @@ checkCommitReadyness() {
 # checkCommitReadyness
 
 CastVote() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     set -x
     #Input VCMS Data
-    docker exec peer0.org5.example.com peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec peer0.org7.example.com peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
         --peerAddresses peer0.org4.example.com:14051 \
         --peerAddresses peer0.org5.example.com:15051 \
-        -c '{"function": "CastVote","Args":["15051", "President_XYZ"]}'
+        --peerAddresses peer0.org6.example.com:16051 \
+        --peerAddresses peer0.org7.example.com:17051 \
+        -c '{"function": "CastVote","Args":["17051", "President_XYZ"]}'
     set +x
 
 }
 
 queryCommitted() {
-    setGlobalsForPeer0Org5
+    setGlobalsForPeer0Org7
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME} 
 
 }

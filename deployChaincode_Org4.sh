@@ -82,6 +82,23 @@ checkCommitReadyness() {
 
 # checkCommitReadyness
 
+CastVote() {
+    setGlobalsForPeer0Org4
+    set -x
+    #Input VCMS Data
+    docker exec peer0.org4.example.com peer chaincode invoke -o orderer.example.com:7050 \
+        -C $CHANNEL_NAME -n ${CC_NAME}  \
+        --peerAddresses peer0.org1.example.com:7051 \
+        --peerAddresses peer0.org2.example.com:9051 \
+        --peerAddresses peer0.org3.example.com:11051 \
+        --peerAddresses peer0.org4.example.com:14051 \
+        -c '{"function": "CastVote","Args":["14051", "President_XYZ"]}'
+    set +x
+
+}
+
+# CastVote
+
 queryCommitted() {
     setGlobalsForPeer0Org4
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME} 
@@ -102,6 +119,7 @@ queryInstalled
 sleep 3
 approveForMyorg2
 sleep 1
-checkCommitReadyness
+CastVote
+# checkCommitReadyness
 # queryCommitted
 
