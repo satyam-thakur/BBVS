@@ -23,8 +23,8 @@ PostVoting() {
 OUTPUT_FILE="Post-Voting_batch_throughput-3val.csv"
 echo "time,transactions,batch_throughput_TPS,avg_tx_duration_ms" >> $OUTPUT_FILE
 
-start_tx=300000
-Num_of_tx=10000 # Total number of transactions
+start_tx=100000
+Num_of_tx=100000 # Total number of transactions
 batch_size=100  # Transactions per second
 
 start_time=$(date +%s)

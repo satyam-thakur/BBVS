@@ -29,8 +29,8 @@ VcmsVotingToken() {
 OUTPUT_FILE="Pre-Voting_batch_throughput-9val.csv"
 echo "time,transactions,batch_throughput_TPS,avg_tx_duration_ms" >> $OUTPUT_FILE
 
-start_tx=900000
-Num_of_tx=10000 # Total number of transactions
+start_tx=400000
+Num_of_tx=100000 # Total number of transactions
 batch_size=100  # Transactions per second
 
 start_time=$(date +%s)

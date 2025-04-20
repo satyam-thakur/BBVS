@@ -75,8 +75,8 @@ PostVoting() {
 OUTPUT_FILE="latency-post-voting-7val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1
-Num_of_tx=10
+start_tx=2001
+Num_of_tx=1000
 
 # set +x
 
