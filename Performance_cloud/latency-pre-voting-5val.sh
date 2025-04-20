@@ -3,12 +3,12 @@
 export CORE_PEER_TLS_ENABLED=false
 export FABRIC_CFG_PATH=${PWD}/config/
 
-export CHANNEL_NAME=mychannel
+export CHANNEL_NAME=mychannel1
 
-CHANNEL_NAME="mychannel"
+CHANNEL_NAME="mychannel1"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
-CC_NAME="voting8"
+CC_NAME="voting6"
 
 setGlobalsForPeer0Org1() {
     export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -18,7 +18,7 @@ setGlobalsForPeer0Org1() {
 setGlobalsForPeer0Org1
 
 # popd
-CastVote() {
+VcmsVotingToken() {
     local tx_num=$1
     local start_time=$(date +%s%N)
 
@@ -27,15 +27,21 @@ CastVote() {
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "CastVote","Args":["Trump","'$tx_num'"]}' \
-        >/dev/null  
-        #2>&1
+        --peerAddresses peer0.org4.example.com:14051 \
+        --peerAddresses peer0.org5.example.com:15051 \
+        -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' \
+        >/dev/null  #2>&1
 
-    # local query_result="Error"
-    # while [[ $query_result == *"Error"* ]]; do
+    # local query_result=""
+    # while true; do
     #     query_result=$(peer chaincode query -C $CHANNEL_NAME -n ${CC_NAME} \
-    #         -c '{"function": "GetVotingTokenRecord","Args":["'$tx_num'"]}' )
-    #         #2>&1)
+    #         -c '{"function": "GetVotingTokenRecord","Args":["'$tx_num'"]}' 2>&1)
+        
+    #     echo "$query_result"
+        
+    #     if [[ $query_result != *"Error"* ]] && [[ $query_result != "" ]]; then
+    #         break
+    #     fi
     # done
     
     local query_result=""
@@ -58,7 +64,7 @@ CastVote() {
             return 1
         fi
         
-        sleep 0.5  # Wait for 0.5 seconds before next query
+        sleep 0.02  # Wait for 0.5 seconds before next query
     done
 
     local end_time=$(date +%s%N)
@@ -68,17 +74,17 @@ CastVote() {
     echo "$tx_num,$duration" >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-voting.csv"
+OUTPUT_FILE="latency-pre-voting-5val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1
-Num_of_tx=5
+start_tx=100007322001
+Num_of_tx=10
 
 # set +x
 
 for i in $(seq $start_tx $((Num_of_tx+start_tx)));
 do
-    CastVote $i
+    VcmsVotingToken $i
 done
 
 echo "Total number of transactions = $Num_of_tx" >> $OUTPUT_FILE

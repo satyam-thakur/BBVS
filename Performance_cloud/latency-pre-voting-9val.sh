@@ -28,15 +28,24 @@ VcmsVotingToken() {
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
         --peerAddresses peer0.org4.example.com:14051 \
+        --peerAddresses peer0.org5.example.com:15051 \
+        --peerAddresses peer0.org6.example.com:16051 \
+        --peerAddresses peer0.org7.example.com:17051 \
+        --peerAddresses peer0.org8.example.com:18051 \
+        --peerAddresses peer0.org9.example.com:19051 \
         -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' \
-        >/dev/null  
-        #2>&1
+        >/dev/null  #2>&1
 
-    # local query_result="Error"
-    # while [[ $query_result == *"Error"* ]]; do
+    # local query_result=""
+    # while true; do
     #     query_result=$(peer chaincode query -C $CHANNEL_NAME -n ${CC_NAME} \
-    #         -c '{"function": "GetVotingTokenRecord","Args":["'$tx_num'"]}' )
-    #         #2>&1)
+    #         -c '{"function": "GetVotingTokenRecord","Args":["'$tx_num'"]}' 2>&1)
+        
+    #     echo "$query_result"
+        
+    #     if [[ $query_result != *"Error"* ]] && [[ $query_result != "" ]]; then
+    #         break
+    #     fi
     # done
     
     local query_result=""
@@ -59,7 +68,7 @@ VcmsVotingToken() {
             return 1
         fi
         
-        sleep 0.5  # Wait for 0.5 seconds before next query
+        sleep 0.02  # Wait for 0.5 seconds before next query
     done
 
     local end_time=$(date +%s%N)
@@ -69,10 +78,10 @@ VcmsVotingToken() {
     echo "$tx_num,$duration" >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-pre-voting.csv"
+OUTPUT_FILE="latency-pre-voting-9val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=100001
+start_tx=100007322001
 Num_of_tx=10
 
 # set +x
