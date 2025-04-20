@@ -82,7 +82,7 @@ checkCommitReadyness() {
 
 commitChaincodeDefination() {
     setGlobalsForPeer0Org1
-    peer lifecycle chaincode commit -o orderer.example.com:7050  \
+    docker exec peer0.org3.example.com peer lifecycle chaincode commit -o orderer.example.com:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -149,11 +149,11 @@ GetVotingTokenRecord(){
 # presetup
 
 # packageChaincode
-installChaincode
-queryInstalled
-approveForMyorg3
-sleep 1
-checkCommitReadyness
+# installChaincode
+# queryInstalled
+# approveForMyorg3
+# sleep 1
+# checkCommitReadyness
 commitChaincodeDefination
 chaincodeInvokeInit
 sleep 3
