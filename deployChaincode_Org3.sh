@@ -162,7 +162,7 @@ QueryPostVoting (){
 installChaincode
 queryInstalled
 approveForMyOrg3
-checkCommitReadyness
+checkCommitReadiness
 # commitChaincodeDefination
 # set +x
 # chaincodeInvokeInit
