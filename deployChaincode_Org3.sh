@@ -7,7 +7,7 @@ source ./env_variables.sh
 CHANNEL_NAME="mychannel"
 export CHANNEL_NAME=mychannel
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="2"
+VERSION="1"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot8"
 CC_NAME="voting8"
 
@@ -212,19 +212,19 @@ chaincodeQuery() {
 # presetup
 
 # packageChaincode
-# installChaincode
-# queryInstalled
-# # approveForMyOrg1
-# # checkCommitReadyness
-# # approveForMyOrg2
-# # checkCommitReadyness
-# approveForMyOrg3
+installChaincode
+queryInstalled
+# approveForMyOrg1
 # checkCommitReadyness
+# approveForMyOrg2
+# checkCommitReadyness
+approveForMyOrg3
+checkCommitReadyness
 # commitChaincodeDefination
 # sleep 2
 # queryCommitted
 # set +x
-chaincodeInvokeInit
+# chaincodeInvokeInit
 # set -x
 # sleep 5
 # CastVote

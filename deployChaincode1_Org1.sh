@@ -101,7 +101,7 @@ queryInstalled
 sleep 3
 approveForMyOrg1
 sleep 1
-getBlock
+# getBlock
 checkCommitReadyness
 # queryCommitted
 
