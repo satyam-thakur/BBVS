@@ -104,7 +104,7 @@ queryCommitted() {
 
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec peer0.org3.example.com peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -118,55 +118,30 @@ VcmsVotingToken() {
     setGlobalsForPeer0Org1
     set -x
     #Input VCMS Data
-     docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
+     docker exec peer0.org3.example.com peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "VcmsVotingToken","Args":[ "2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9","digitalsignature"]}'
+        -c '{"function": "VcmsVotingToken","Args":[ "3333","digitalsignature"]}'
     set +x
 
 }
 
 # VcmsVotingToken
 
-VoteCheck(){
+GetVotingTokenRecord(){
     setGlobalsForPeer0Org1
     # set -x
     #Input VCMS Data
     peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
-        -c '{"function": "VoteCheck","Args":["hash002"]}'
+        -c '{"function": "GetVotingTokenRecord","Args":["3333"]}'
     # set +x
 }
 
-# VoteCheck
-
-GetVotingTokenRecord(){
-    setGlobalsForPeer0Org1
-    set -x
-    #Input VCMS Data
-    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
-        -C $CHANNEL_NAME -n ${CC_NAME}  \
-        --peerAddresses peer0.org1.example.com:7051 \
-        --peerAddresses peer0.org2.example.com:9051 \
-        --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "GetVotingTokenRecord","Args":["2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9"]}'
-    set +x
-}
-
 # GetVotingTokenRecord
-
-# Ballot_key = 1092c
-chaincodeQuery() {
-    setGlobalsForPeer0Org1
-
-    # Query voter by Id
-    peer chaincode query -C $CHANNEL_NAME -n ${CC_NAME} -c '{"function": "GetBallot","Args":["10cb9"]}'
-}
-
-# chaincodeQuery
 
 ####=================================================================================####
 
@@ -174,17 +149,15 @@ chaincodeQuery() {
 # presetup
 
 # packageChaincode
-# installChaincode
-# queryInstalled
-# approveForMyorg3
-# sleep 1
-# checkCommitReadyness
+installChaincode
+queryInstalled
+approveForMyorg3
+sleep 1
+checkCommitReadyness
 commitChaincodeDefination
 chaincodeInvokeInit
 sleep 3
-queryCommitted
-sleep 5
 VcmsVotingToken
-# sleep 3
-# GetVotingTokenRecord
-# sleep 3
+sleep 3
+GetVotingTokenRecord
+sleep 3
