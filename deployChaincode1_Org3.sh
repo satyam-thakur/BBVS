@@ -81,7 +81,7 @@ checkCommitReadyness() {
 # checkCommitReadyness
 
 commitChaincodeDefination() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org3
     docker exec peer0.org3.example.com peer lifecycle chaincode commit -o orderer.example.com:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
@@ -95,7 +95,7 @@ commitChaincodeDefination() {
 # commitChaincodeDefination
 
 queryCommitted() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org3
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME}
 
 }
@@ -103,7 +103,7 @@ queryCommitted() {
 # queryCommitted
 
 chaincodeInvokeInit() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org3
     docker exec peer0.org3.example.com peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
@@ -115,7 +115,7 @@ chaincodeInvokeInit() {
 # chaincodeInvokeInit
 #2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
 VcmsVotingToken() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org3
     set -x
     #Input VCMS Data
      docker exec peer0.org3.example.com peer chaincode invoke -o orderer.example.com:7050 \
@@ -131,7 +131,7 @@ VcmsVotingToken() {
 # VcmsVotingToken
 
 GetVotingTokenRecord(){
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org3
     # set -x
     #Input VCMS Data
     peer chaincode invoke -o orderer.example.com:7050 \
