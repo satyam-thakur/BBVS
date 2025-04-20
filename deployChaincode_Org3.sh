@@ -55,6 +55,17 @@ approveForMyOrg3() {
 
 # approveForMyOrg3
 
+
+checkCommitReadiness() {
+    setGlobalsForPeer0Org3
+    peer lifecycle chaincode checkcommitreadiness \
+        --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
+        --init-required --sequence ${VERSION} --output json
+    echo "===================== checking commit readiness from org 3 ===================== "
+}
+
+# checkCommitReadiness
+
 commitChaincodeDefination() {
     setGlobalsForPeer0Org3
     docker exec cli peer lifecycle chaincode commit -o orderer.example.com:7050  \
