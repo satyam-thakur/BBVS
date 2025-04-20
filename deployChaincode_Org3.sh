@@ -7,7 +7,7 @@ source ./env_variables.sh
 CHANNEL_NAME="mychannel"
 export CHANNEL_NAME=mychannel
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="1"
+VERSION="2"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot8"
 CC_NAME="voting8"
 
@@ -24,22 +24,6 @@ packageChaincode() {
 # packageChaincode
 
 installChaincode() {
-    # setGlobalsForPeer0Org3
-    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    # echo "===================== Chaincode is installed on peer0.org1 ===================== "
-
-    # setGlobalsForPeer1Org1
-    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    # echo "===================== Chaincode is installed on peer1.org1 ===================== "
-
-    # setGlobalsForPeer0Org2
-    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    # echo "===================== Chaincode is installed on peer0.org2 ===================== "
-
-    # setGlobalsForPeer1Org2
-    # peer lifecycle chaincode install ${CC_NAME}.tar.gz
-    # echo "===================== Chaincode is installed on peer1.org2 ===================== "
-
     setGlobalsForPeer0Org3
     peer lifecycle chaincode install ${CC_NAME}.tar.gz
     echo "===================== Chaincode is installed on peer0.org3 ===================== "
@@ -129,7 +113,7 @@ approveForMyOrg3() {
 
 commitChaincodeDefination() {
     setGlobalsForPeer0Org3
-    peer lifecycle chaincode commit -o orderer.example.com:7050  \
+    docker exec cli peer lifecycle chaincode commit -o orderer.example.com:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -156,17 +140,17 @@ queryCommitted() {
 }
 
 # queryCommitted
-
+set -x
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org3
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
         --isInit -c '{"Args":[]}'
 }
-
+set +x
 # chaincodeInvokeInit
 
 CastVote() {
@@ -238,10 +222,12 @@ chaincodeQuery() {
 # checkCommitReadyness
 # commitChaincodeDefination
 # sleep 2
-# # queryCommitted
-# chaincodeInvokeInit
+# queryCommitted
+# set +x
+chaincodeInvokeInit
+# set -x
 # sleep 5
-CastVote
-sleep 3
-Postvotingtoken
-sleep 3
+# CastVote
+# sleep 3
+# Postvotingtoken
+# sleep 3

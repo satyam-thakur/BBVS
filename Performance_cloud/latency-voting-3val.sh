@@ -7,7 +7,7 @@ export CHANNEL_NAME=mychannel
 
 CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="1"
+VERSION="2"
 CC_NAME="voting8"
 
 setGlobalsForPeer0Org1() {
@@ -22,13 +22,13 @@ CastVote() {
     local tx_num=$1
     local start_time=$(date +%s%N)
 
-   docker exec -it cli  peer chaincode invoke -o orderer.example.com:7050 \
+   docker exec cli  peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "CastVote","Args":["Trump","'$tx_num'"]}' \
-        >/dev/null  
+        -c '{"function": "CastVote","Args":["Candidate_X","'$tx_num'"]}' \
+        >/dev/null 
         #2>&1
 
     # local query_result="Error"
@@ -44,7 +44,7 @@ CastVote() {
     
     while true; do
         query_result=$(peer chaincode query -C $CHANNEL_NAME -n ${CC_NAME} \
-            -c '{"function": "GetVotingTokenRecord","Args":["'$tx_num'"]}' 2>&1)
+            -c '{"function": "QueryCastVote","Args":["'$tx_num'"]}' 2>&1)
         
         echo "$query_result"
 
@@ -68,11 +68,11 @@ CastVote() {
     echo "$tx_num,$duration" >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-voting.csv"
+OUTPUT_FILE="latency-voting-3val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1
-Num_of_tx=5
+start_tx=10
+Num_of_tx=2
 
 # set +x
 

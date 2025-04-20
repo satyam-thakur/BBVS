@@ -3,12 +3,12 @@
 export CORE_PEER_TLS_ENABLED=false
 export FABRIC_CFG_PATH=${PWD}/config/
 
-export CHANNEL_NAME=mychannel1
+export CHANNEL_NAME=mychannel
 
-CHANNEL_NAME="mychannel1"
+CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="1"
-CC_NAME="voting6"
+VERSION="2"
+CC_NAME="voting8"
 
 setGlobalsForPeer0Org1() {
     export CORE_PEER_LOCALMSPID="Org1MSP"
@@ -18,16 +18,16 @@ setGlobalsForPeer0Org1() {
 setGlobalsForPeer0Org1
 
 # popd
-VcmsVotingToken() {
+PostVoting() {
     local tx_num=$1
     local start_time=$(date +%s%N)
 
-   docker exec -it cli  peer chaincode invoke -o orderer.example.com:7050 \
+   docker exec cli  peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "VcmsVotingToken","Args":["'$tx_num'","digitalsignature"]}' \
+        -c '{"function": "PostVoting","Args":["'$tx_num'","digitalsignature"]}' \
         >/dev/null  
         #2>&1
 
@@ -44,7 +44,7 @@ VcmsVotingToken() {
     
     while true; do
         query_result=$(peer chaincode query -C $CHANNEL_NAME -n ${CC_NAME} \
-            -c '{"function": "GetVotingTokenRecord","Args":["'$tx_num'"]}' 2>&1)
+            -c '{"function": "QueryPostVoting","Args":["'$tx_num'"]}' 2>&1)
         
         echo "$query_result"
 
@@ -58,7 +58,7 @@ VcmsVotingToken() {
             return 1
         fi
         
-        sleep 0.5  # Wait for 0.5 seconds before next query
+        sleep 0.02  # Wait for 0.5 seconds before next query
     done
 
     local end_time=$(date +%s%N)
@@ -68,17 +68,17 @@ VcmsVotingToken() {
     echo "$tx_num,$duration" >> $OUTPUT_FILE
 }
 
-OUTPUT_FILE="latency-pre-voting.csv"
+OUTPUT_FILE="latency-post-voting-3val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=6
-Num_of_tx=5
+start_tx=1
+Num_of_tx=10
 
 # set +x
 
 for i in $(seq $start_tx $((Num_of_tx+start_tx)));
 do
-    VcmsVotingToken $i
+    PostVoting $i
 done
 
 echo "Total number of transactions = $Num_of_tx" >> $OUTPUT_FILE
