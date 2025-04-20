@@ -86,7 +86,7 @@ queryCommitted() {
 
 
 
-# packageChaincode
+packageChaincode
 installChaincode
 queryInstalled
 approveForMyOrg1
