@@ -118,7 +118,7 @@ QueryCastVote(){
     setGlobalsForPeer0Org3
     set -x
     #Input VCMS Data
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -164,13 +164,13 @@ queryInstalled
 approveForMyOrg3
 checkCommitReadiness
 # commitChaincodeDefination
-# set +x
-# chaincodeInvokeInit
-# set -x
-# CastVote
 # sleep 3
+# chaincodeInvokeInit
+# sleep 3
+# CastVote
+# sleep 10
 # QueryCastVote
 # sleep 3
 # Postvotingtoken
-# sleep 3
+# sleep 10
 # QueryPostVoting

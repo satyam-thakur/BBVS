@@ -19,13 +19,13 @@ CC_NAME="voting6"
 
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
+    setGlobalsForPeer0Org3
     export GOFLAGS="-buildvcs=false"
 
-    setGlobalsForPeer0Org3
     peer lifecycle chaincode package ${CC_NAME}.tar.gz \
         --path ${CC_SRC_PATH} --lang ${CC_RUNTIME_LANGUAGE} \
-        --label ${CC_NAME}_${VERSION} 
-    echo "===================== Chaincode is packaged on peer0.org3 ===================== "
+        --label ${CC_NAME}_${VERSION}
+    echo "===================== Chaincode is packaged on peer0.org1 ===================== "
 }
 # packageChaincode
 
@@ -43,77 +43,67 @@ queryInstalled() {
     cat log.txt
     PACKAGE_ID=$(sed -n "/${CC_NAME}_${VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" log.txt)
     echo PackageID is ${PACKAGE_ID}
-    echo "===================== Query installed successful on peer0.org3 on channel ===================== "
+    echo "===================== Query installed successful on peer0.org1 on channel ===================== "
 }
 
 # queryInstalled
 
-approveForMyorg3() {
+approveForMyOrg3() {
     setGlobalsForPeer0Org3
-    # set -x
+
     peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
-    # set +x
 
     echo "===================== chaincode approved from org 3 ===================== "
-
 }
 
-# approveForMyorg3
+# approveForMyOrg3
 
-checkCommitReadyness() {
+
+checkCommitReadiness() {
     setGlobalsForPeer0Org3
     peer lifecycle chaincode checkcommitreadiness \
         --channelID $CHANNEL_NAME --name ${CC_NAME} --version ${VERSION} \
-        --sequence ${VERSION} --output json --init-required
-    echo "===================== checking commit readyness from org 3 ===================== "
+        --init-required --sequence ${VERSION} --output json
+    echo "===================== checking commit readiness from org 3 ===================== "
 }
 
-# checkCommitReadyness
-
-getBlock() {
-    setGlobalsForPeer0Org1
-    peer channel getinfo  -c ${CHANNEL_NAME} -o orderer.example.com:7050 
-}
-
-# getBlock
+# checkCommitReadiness
 
 commitChaincodeDefination() {
     setGlobalsForPeer0Org1
-    peer lifecycle chaincode commit -o orderer.example.com:7050  \
+    docker exec cli peer lifecycle chaincode commit -o orderer.example.com:7050  \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
         --version ${VERSION} --sequence ${VERSION} \
-        --init-required 
-        # --signature-policy "OutOf(2, 'Org1MSP.peer', 'Org2MSP.peer', 'Org3MSP.peer')"
+        --init-required
 }
 
-# commitChaincodeDefination
 
 queryCommitted() {
-    setGlobalsForPeer0Org1
+    setGlobalsForPeer0Org3
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME}
 
 }
 
 # queryCommitted
-
+set -x
 chaincodeInvokeInit() {
     setGlobalsForPeer0Org1
-    peer chaincode invoke -o orderer.example.com:7050 \
+    docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME} \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
         --isInit -c '{"Args":[]}'
 }
-
+set +x
 # chaincodeInvokeInit
-#2125b2c332b1113aae9bfc5e9f7e3b4c91d828cb942c2df1eeb02502eccae9e9
+
 VcmsVotingToken() {
     setGlobalsForPeer0Org1
     # set -x
@@ -153,10 +143,10 @@ GetVotingTokenRecord(){
 # packageChaincode
 installChaincode
 queryInstalled
-approveForMyorg3
-sleep 1
-checkCommitReadyness
+approveForMyOrg3
+checkCommitReadiness
 # commitChaincodeDefination
+# sleep 3
 # chaincodeInvokeInit
 # sleep 3
 # VcmsVotingToken
