@@ -13,7 +13,7 @@ presetup() {
 export CHANNEL_NAME="mychannel1"
 CHANNEL_NAME="mychannel1"
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="2"
+VERSION="1"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot6"
 CC_NAME="voting6"
 
