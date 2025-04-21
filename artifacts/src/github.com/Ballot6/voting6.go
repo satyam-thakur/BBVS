@@ -1,7 +1,7 @@
 package main
 
 import (
-    "crypto/sha256"
+    "crypto/sha1"
     "encoding/hex"
     "encoding/json"
     "fmt"
@@ -66,8 +66,8 @@ func (c *VotingContract) generateDeterministicKey(ctx contractapi.TransactionCon
     txID := ctx.GetStub().GetTxID()
     data := txID + vcmsToken
 
-    hash := sha256.Sum256([]byte(data))
-    deterministicKey := hex.EncodeToString(hash[:])[:4]
+    hash := sha1.Sum([]byte(data))
+    deterministicKey := hex.EncodeToString(hash[:])//[:4]
 
     return deterministicKey, nil
 }
@@ -75,8 +75,8 @@ func (c *VotingContract) generateDeterministicKey(ctx contractapi.TransactionCon
 // generateDeterministicSalt generates a deterministic salt based on vcmsToken and ID
 func (c *VotingContract) generateDeterministicSalt(vcmsToken string, id string) string {
     data := vcmsToken + id
-    hash := sha256.Sum256([]byte(data))
-    return hex.EncodeToString(hash[:])[:5]
+    hash := sha1.Sum([]byte(data))
+    return hex.EncodeToString(hash[:])//[:5]
 }
 
 // TokenExists checks if a token exists

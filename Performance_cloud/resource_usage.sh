@@ -16,7 +16,7 @@
 #===============================================================
 
 echo "Monitoring CPU and Memory Usage... (Press Ctrl+C to stop)"
-echo -e "Time\t\tCPU%\tMemory%\tAvailable MB\tAvg CPU%\tAvg Mem%"
+echo -e "Time\t\tCPU%\tMemory%\tAvail MB\tAvg CPU%\tAvg Mem%"
 
 cpu_total=0
 mem_total=0

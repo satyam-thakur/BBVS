@@ -75,7 +75,7 @@ CastVote() {
 OUTPUT_FILE="latency-voting-7val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=3001
+start_tx=2001
 Num_of_tx=1000
 
 # set +x
