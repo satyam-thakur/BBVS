@@ -1,7 +1,7 @@
 package main
 
 import (
-    "crypto/sha256"
+    "crypto/sha1"
     "encoding/json"
     "fmt"
 
@@ -22,7 +22,7 @@ type BallotRecord struct {
 
 // VotingTokenRecord represents the structure for storing voting token information on mychannel1
 type VotingTokenRecord struct {
-    VcmsTokenHash   string `json:"vcmsTokenhash"`
+    VcmsTokenHash   string `json:"vcmsTokenHash"`
     ID              string `json:"id"`
     Salt            string `json:"salt"`
     VCMSdSignature  string `json:"vcmsdSignature"`
@@ -241,7 +241,7 @@ func (c *VotingContract) QueryPostVoting(ctx contractapi.TransactionContextInter
 // hashWithSalt computes SHA-256 hash of a given input concatenated with salt
 func (c *VotingContract) hashWithSalt(input string, salt string) string {
     data := input + salt
-    hash := sha256.Sum256([]byte(data))
+    hash := sha1.Sum([]byte(data))
     return fmt.Sprintf("%x", hash[:])
 }
 

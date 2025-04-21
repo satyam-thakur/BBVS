@@ -16,7 +16,7 @@ type VotingContract struct {
 
 // VotingTokenRecord represents the structure for storing voting token information
 type VotingTokenRecord struct {
-    VcmsToken string `json:"vcmsTokenhash"`
+    VcmsToken string `json:"vcmsTokenHash"`
     ID        string `json:"id"`
     Salt      string `json:"salt"`
     VCMSdSignature  string `json:"vcmsdSignature"`

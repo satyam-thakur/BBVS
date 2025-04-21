@@ -22,7 +22,7 @@ VcmsVotingToken() {
     local tx_num=$1
     local start_time=$(date +%s%N)
 
-   docker exec -it cli  peer chaincode invoke -o orderer.example.com:7050 \
+   docker exec cli  peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
@@ -77,10 +77,10 @@ VcmsVotingToken() {
 OUTPUT_FILE="latency-pre-voting-5val.csv"
 sum_total_time=0
 echo "tx_num, duration" >> $OUTPUT_FILE
-start_tx=1001
+start_tx=1221
 Num_of_tx=1000
-# start_tx=1001000000
-# Num_of_tx=1
+# start_tx=1001000010
+# Num_of_tx=100
 # set +x
 
 for i in $(seq $start_tx $((Num_of_tx+start_tx)));
