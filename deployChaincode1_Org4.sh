@@ -117,7 +117,8 @@ queryInstalled
 sleep 3
 approveForMyorg2
 sleep 1
+checkCommitReadyness
+sleep 1
 VcmsVotingToken
-# checkCommitReadyness
 # queryCommitted
 
