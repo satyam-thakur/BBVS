@@ -163,14 +163,15 @@ installChaincode
 queryInstalled
 approveForMyOrg3
 checkCommitReadiness
+#######################################################################################
 # commitChaincodeDefination
 # sleep 3
 # chaincodeInvokeInit
 # sleep 3
 # CastVote
-# sleep 10
+# sleep 5
 # QueryCastVote
 # sleep 3
 # Postvotingtoken
-# sleep 10
+# sleep 4
 # QueryPostVoting
