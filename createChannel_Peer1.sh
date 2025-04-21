@@ -32,7 +32,7 @@ updateAnchorPeers(){
 }
 
 # Execute the functions
-createChannel
+# createChannel
 joinChannel
 updateAnchorPeers
 
@@ -68,7 +68,7 @@ updateAnchorPeers1(){
 }
 
 # Execute the functions
-createChannel1
+# createChannel1
 joinChannel1
 updateAnchorPeers1
 
