@@ -85,7 +85,7 @@ VcmsVotingToken() {
     setGlobalsForPeer0Org5
     set -x
     #Input VCMS Data
-     peer0.org5.example.com peer chaincode invoke -o orderer.example.com:7050 \
+    peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
