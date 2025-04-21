@@ -107,7 +107,7 @@ CastVote() {
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "CastVote","Args":["President_X", "3333"]}'
+        -c '{"function": "CastVote","Args":["President_X", "123123"]}'
     set +x
 
 }
@@ -123,7 +123,7 @@ QueryCastVote(){
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "QueryCastVote","Args":["3333"]}'
+        -c '{"function": "QueryCastVote","Args":["123123"]}'
     set +x
 }
 
@@ -135,7 +135,7 @@ Postvotingtoken (){
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "PostVoting","Args":["3333", "digitalsignature"]}'
+        -c '{"function": "PostVoting","Args":["123123", "digitalsignature"]}'
     set +x
 }
 
@@ -148,7 +148,7 @@ QueryPostVoting (){
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "QueryPostVoting","Args":["3333"]}'
+        -c '{"function": "QueryPostVoting","Args":["123123"]}'
 }
 
 # QueryPostVoting

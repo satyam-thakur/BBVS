@@ -112,7 +112,7 @@ VcmsVotingToken() {
         --peerAddresses peer0.org1.example.com:7051 \
         --peerAddresses peer0.org2.example.com:9051 \
         --peerAddresses peer0.org3.example.com:11051 \
-        -c '{"function": "VcmsVotingToken","Args":["3333","digitalsignature"]}' \
+        -c '{"function": "VcmsVotingToken","Args":["123123","digitalsignature"]}' \
         #>/dev/null 
     # set +x
 
@@ -127,7 +127,7 @@ GetVotingTokenRecord(){
     docker exec cli peer chaincode invoke -o orderer.example.com:7050 \
         -C $CHANNEL_NAME -n ${CC_NAME}  \
         --peerAddresses peer0.org1.example.com:7051 \
-        -c '{"function": "GetVotingTokenRecord","Args":["3333"]}'
+        -c '{"function": "GetVotingTokenRecord","Args":["123123"]}'
     # set +x
 }
 
