@@ -16,7 +16,6 @@ CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot6"
 CC_NAME="voting6"
-
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
     setGlobalsForPeer0Org3
