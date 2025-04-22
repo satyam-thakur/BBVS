@@ -51,12 +51,12 @@ queryInstalled() {
 
 approveForMyorg2() {
     setGlobalsForPeer0Org8
-    # set -x
+    set +x
     peer lifecycle chaincode approveformyorg -o orderer.example.com:7050 \
         --channelID $CHANNEL_NAME --name ${CC_NAME} \
         --version ${VERSION} --init-required --package-id ${PACKAGE_ID} \
         --sequence ${VERSION}
-    # set +x
+    set -x
 
     echo "===================== chaincode approved from org 1 ===================== "
 

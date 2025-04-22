@@ -136,79 +136,18 @@ set -x
 # fi
 # sleep 5
 # #================================================================
-echo "Running voting latency script for 7 validators"
-./latency-voting-7val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running voting latency script for 7 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-echo "Running post-voting latency script for 7 validators"
-./latency-post-voting-7val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running post-voting latency script for 7 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-
-#================================================================
-#Run throughput scripts
-echo "Running Batch throughput script for 7 validators for BBVS"
-echo "#=============================================================="
-#================================================================
-echo "Running Pre-voting Batch throughput script for 7 validators"
-./throughput_pre-voting-batch-7val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running pre-voting Batch throughput script for 7 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-echo "Running Voting Batch throughput script for 7 validators"
-./throughput_voting-batch-7val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running voting Batch throughput script for 7 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-echo "Running Post-voting Batch throughput script for 7 validators"
-./throughput_post-voting-batch-7val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running post-voting Batch throughput script for 7 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-# #********************************************************************************************************************************
-# #********************************************************************************************************************************
-# #================================================================
-# #Run latency scripts
-# echo "Running latency script for 9 validators for BBVS"
-# echo "#=============================================================="
-# #================================================================
-# echo "Running pre-voting latency script for 9 validators"
-# ./latency-pre-voting-9val.sh
+# echo "Running voting latency script for 7 validators"
+# ./latency-voting-7val.sh
 # if [ $? -ne 0 ]; then
-#     echo "Error running pre-voting latency script for 9 validators"
+#     echo "Error running voting latency script for 7 validators"
 #     exit 1
 # fi
 # sleep 5
 # #================================================================
-# echo "Running voting latency script for 9 validators"
-# ./latency-voting-9val.sh
+# echo "Running post-voting latency script for 7 validators"
+# ./latency-post-voting-7val.sh
 # if [ $? -ne 0 ]; then
-#     echo "Error running voting latency script for 9 validators"
-#     exit 1
-# fi
-# sleep 5
-# #================================================================
-# echo "Running post-voting latency script for 9 validators"
-# ./latency-post-voting-9val.sh
-# if [ $? -ne 0 ]; then
-#     echo "Error running post-voting latency script for 9 validators"
+#     echo "Error running post-voting latency script for 7 validators"
 #     exit 1
 # fi
 # sleep 5
@@ -216,33 +155,94 @@ sleep 5
 
 # #================================================================
 # #Run throughput scripts
-# echo "Running Batch throughput script for 9 validators for BBVS"
+# echo "Running Batch throughput script for 7 validators for BBVS"
 # echo "#=============================================================="
 # #================================================================
-# echo "Running Pre-voting Batch throughput script for 9 validators"
-# ./throughput_pre-voting-batch-9val.sh
+# echo "Running Pre-voting Batch throughput script for 7 validators"
+# ./throughput_pre-voting-batch-7val.sh
 # if [ $? -ne 0 ]; then
-#     echo "Error running pre-voting Batch throughput script for 9 validators"
+#     echo "Error running pre-voting Batch throughput script for 7 validators"
 #     exit 1
 # fi
 # sleep 5
 # #================================================================
-# echo "Running Voting Batch throughput script for 9 validators"
-# ./throughput_voting-batch-9val.sh
+# echo "Running Voting Batch throughput script for 7 validators"
+# ./throughput_voting-batch-7val.sh
 # if [ $? -ne 0 ]; then
-#     echo "Error running voting Batch throughput script for 9 validators"
+#     echo "Error running voting Batch throughput script for 7 validators"
 #     exit 1
 # fi
 # sleep 5
 # #================================================================
-# echo "Running Post-voting Batch throughput script for 9 validators"
-# ./throughput_post-voting-batch-9val.sh
+# echo "Running Post-voting Batch throughput script for 7 validators"
+# ./throughput_post-voting-batch-7val.sh
 # if [ $? -ne 0 ]; then
-#     echo "Error running post-voting Batch throughput script for 9 validators"
+#     echo "Error running post-voting Batch throughput script for 7 validators"
 #     exit 1
 # fi
 # sleep 5
-# #================================================================
+#================================================================
+# #********************************************************************************************************************************
+# #********************************************************************************************************************************
+#================================================================
+#Run latency scripts
+echo "Running latency script for 9 validators for BBVS"
+echo "#=============================================================="
+#================================================================
+echo "Running pre-voting latency script for 9 validators"
+./latency-pre-voting-9val.sh
+if [ $? -ne 0 ]; then
+    echo "Error running pre-voting latency script for 9 validators"
+    exit 1
+fi
+sleep 5
+#================================================================
+echo "Running voting latency script for 9 validators"
+./latency-voting-9val.sh
+if [ $? -ne 0 ]; then
+    echo "Error running voting latency script for 9 validators"
+    exit 1
+fi
+sleep 5
+#================================================================
+echo "Running post-voting latency script for 9 validators"
+./latency-post-voting-9val.sh
+if [ $? -ne 0 ]; then
+    echo "Error running post-voting latency script for 9 validators"
+    exit 1
+fi
+sleep 5
+#================================================================
+
+#================================================================
+#Run throughput scripts
+echo "Running Batch throughput script for 9 validators for BBVS"
+echo "#=============================================================="
+#================================================================
+echo "Running Pre-voting Batch throughput script for 9 validators"
+./throughput_pre-voting-batch-9val.sh
+if [ $? -ne 0 ]; then
+    echo "Error running pre-voting Batch throughput script for 9 validators"
+    exit 1
+fi
+sleep 5
+#================================================================
+echo "Running Voting Batch throughput script for 9 validators"
+./throughput_voting-batch-9val.sh
+if [ $? -ne 0 ]; then
+    echo "Error running voting Batch throughput script for 9 validators"
+    exit 1
+fi
+sleep 5
+#================================================================
+echo "Running Post-voting Batch throughput script for 9 validators"
+./throughput_post-voting-batch-9val.sh
+if [ $? -ne 0 ]; then
+    echo "Error running post-voting Batch throughput script for 9 validators"
+    exit 1
+fi
+sleep 5
+#================================================================
 
 echo "All scripts executed successfully"
 
