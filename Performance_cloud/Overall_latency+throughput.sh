@@ -214,35 +214,35 @@ fi
 sleep 5
 #================================================================
 
-#================================================================
-#Run throughput scripts
-echo "Running Batch throughput script for 9 validators for BBVS"
-echo "#=============================================================="
-#================================================================
-echo "Running Pre-voting Batch throughput script for 9 validators"
-./throughput_pre-voting-batch-9val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running pre-voting Batch throughput script for 9 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-echo "Running Voting Batch throughput script for 9 validators"
-./throughput_voting-batch-9val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running voting Batch throughput script for 9 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
-echo "Running Post-voting Batch throughput script for 9 validators"
-./throughput_post-voting-batch-9val.sh
-if [ $? -ne 0 ]; then
-    echo "Error running post-voting Batch throughput script for 9 validators"
-    exit 1
-fi
-sleep 5
-#================================================================
+# #================================================================
+# #Run throughput scripts
+# echo "Running Batch throughput script for 9 validators for BBVS"
+# echo "#=============================================================="
+# #================================================================
+# echo "Running Pre-voting Batch throughput script for 9 validators"
+# ./throughput_pre-voting-batch-9val.sh
+# if [ $? -ne 0 ]; then
+#     echo "Error running pre-voting Batch throughput script for 9 validators"
+#     exit 1
+# fi
+# sleep 5
+# #================================================================
+# echo "Running Voting Batch throughput script for 9 validators"
+# ./throughput_voting-batch-9val.sh
+# if [ $? -ne 0 ]; then
+#     echo "Error running voting Batch throughput script for 9 validators"
+#     exit 1
+# fi
+# sleep 5
+# #================================================================
+# echo "Running Post-voting Batch throughput script for 9 validators"
+# ./throughput_post-voting-batch-9val.sh
+# if [ $? -ne 0 ]; then
+#     echo "Error running post-voting Batch throughput script for 9 validators"
+#     exit 1
+# fi
+# sleep 5
+# #================================================================
 
 echo "All scripts executed successfully"
 
