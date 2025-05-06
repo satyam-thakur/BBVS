@@ -147,7 +147,7 @@ checkCommitReadiness
 # commitChaincodeDefination
 # sleep 3
 # chaincodeInvokeInit
-# sleep 3
+# # sleep 3
 # VcmsVotingToken
 # sleep 3
 # GetVotingTokenRecord

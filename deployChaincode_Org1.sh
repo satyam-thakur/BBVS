@@ -7,7 +7,7 @@ source ./env_variables.sh
 CHANNEL_NAME="mychannel"
 export CHANNEL_NAME="mychannel"
 CC_RUNTIME_LANGUAGE="golang"
-VERSION="2"
+VERSION="1"
 CC_SRC_PATH="./artifacts/src/github.com/Ballot8"
 CC_NAME="voting8"
 
@@ -86,7 +86,7 @@ queryCommitted() {
 
 
 
-packageChaincode
+# packageChaincode
 installChaincode
 queryInstalled
 approveForMyOrg1
