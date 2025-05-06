@@ -111,13 +111,13 @@ queryCommitted() {
 # presetup
 
 # packageChaincode
-# installChaincode
+installChaincode
+sleep 1
+queryInstalled
+sleep 3
+approveForMyorg2
 # sleep 1
-# queryInstalled
-# sleep 3
-# approveForMyorg2
-# sleep 1
-VcmsVotingToken
+# VcmsVotingToken
 # checkCommitReadyness
 # queryCommitted
 
