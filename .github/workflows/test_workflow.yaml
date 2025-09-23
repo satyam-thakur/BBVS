@@ -42,12 +42,12 @@ jobs:
       - name: Pull Docker Images from Compose File
         run: |
           docker-compose -f artifacts/docker-compose_notls-orderer.yaml pull
-          docker-compose -f artifacts/docker-compose_notls-peer1.yaml pull
+          docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml pull
 
       - name: Build Docker Compose Image
         run: |
           docker-compose -f artifacts/docker-compose_notls-orderer.yaml build
-          docker-compose -f artifacts/docker-compose_notls-peer1.yaml build
+          docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml build
 
       - name: List Docker Images
         run: docker images
