@@ -39,6 +39,10 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version
 
+      - name: Pull Docker Images from Compose File
+        run: |
+          docker-compose -f artifacts/docker-compose_notls-orderer.yaml pull
+
       - name: Build Docker Compose Image
         run: |
           docker-compose -f artifacts/docker-compose_notls-orderer.yaml build
@@ -46,11 +50,12 @@ jobs:
       - name: List Docker Images
         run: docker images
 
-      - name: Scan Docker Compose Image with Trivy
+      - name: Scan All Images from Compose File with Trivy
         run: |
-          OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$DATE.json"
-          mkdir -p "GithubActions/TrivyScan"
-          trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" orderer.example.com
+        for IMAGE in $(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}'); do
+          OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${{ env.DATE }}-$(echo $IMAGE | tr '/:' '_').json"
+          trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" "$IMAGE"
+        done
 
       - name: Verify Trivy Scan Report
         run: |
@@ -72,4 +77,3 @@ jobs:
           git add "GithubActions/TrivyScan/trivy-scan-report-$DATE.json"
           git commit -m "Add Trivy scan report for $DATE"
           git push origin main
-
