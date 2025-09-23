@@ -42,22 +42,24 @@ jobs:
       - name: Pull Docker Images from Compose File
         run: |
           docker-compose -f artifacts/docker-compose_notls-orderer.yaml pull
-          docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml pull
+          docker-compose -f artifacts/docker-compose_notls-peer1.yaml pull
 
       - name: Build Docker Compose Image
         run: |
           docker-compose -f artifacts/docker-compose_notls-orderer.yaml build
-          docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml build
+          docker-compose -f artifacts/docker-compose_notls-peer1.yaml build
 
       - name: List Docker Images
         run: docker images
 
       - name: Scan All Images from Compose File with Trivy
+        id: trivy-scan
         run: |
           IMAGES="$(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}')"
           for IMAGE in $IMAGES; do
-            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${{ env.DATE }}-$(echo $IMAGE | tr '/:' '_').json"
+            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
             trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" "$IMAGE"
+            git add "$OUTPUT_FILE"
           done
 
       - name: Verify Trivy Scan Report
@@ -71,7 +73,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           for IMAGE in $IMAGES; do
-            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${{ env.DATE }}-$(echo $IMAGE | tr '/:' '_').json"
+            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
             git add "$OUTPUT_FILE"
           done
           git commit -m "Add Trivy scan report for $DATE"
