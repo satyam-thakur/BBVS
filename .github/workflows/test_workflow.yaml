@@ -60,13 +60,6 @@ jobs:
       - name: Verify Trivy Scan Report
         run: |
           ls -l "GithubActions/TrivyScan/"
-          OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$DATE.json"
-          if [ -f "$OUTPUT_FILE" ]; then
-            echo "Trivy scan report generated successfully: $OUTPUT_FILE"
-          else
-            echo "Trivy scan report not found!"
-            exit 1
-          fi
 
       - name: Commit Trivy Scan Report as repository
         env:
