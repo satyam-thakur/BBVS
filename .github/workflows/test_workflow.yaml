@@ -1,0 +1,72 @@
+name: test_workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build container and Scan with Trivy
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create output directory
+        run: mkdir -p "GithubActions/TrivyScan"
+
+      - name: Set Date
+        id: set-date
+        run: echo "DATE=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
+      
+      - name: Install Trivy
+        run: |
+          sudo apt-get install -y wget apt-transport-https gnupg lsb-release
+          wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+          echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+          sudo apt-get update
+          sudo apt-get install -y trivy
+
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
+
+      - name: Build Docker Compose Image
+        run: |
+          docker-compose -f artifacts/docker-compose_notls-orderer.yaml build
+
+      - name: Scan Docker Compose Image with Trivy
+        run: |
+          OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$DATE.json"
+          mkdir -p "GithubActions/TrivyScan"
+          trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" orderer.example.com
+
+      - name: Verify Trivy Scan Report
+        run: |
+          ls -l "GithubActions/TrivyScan/"
+          OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$DATE.json"
+          if [ -f "$OUTPUT_FILE" ]; then
+            echo "Trivy scan report generated successfully: $OUTPUT_FILE"
+          else
+            echo "Trivy scan report not found!"
+            exit 1
+          fi
+
+      - name: Commit Trivy Scan Report as repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add "GithubActions/TrivyScan/trivy-scan-report-$DATE.json"
+          git commit -m "Add Trivy scan report for $DATE"
+          git push origin main
+
