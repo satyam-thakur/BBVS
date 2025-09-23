@@ -52,10 +52,10 @@ jobs:
 
       - name: Scan All Images from Compose File with Trivy
         run: |
-        for IMAGE in $(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}'); do
-          OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${{ env.DATE }}-$(echo $IMAGE | tr '/:' '_').json"
-          trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" "$IMAGE"
-        done
+          for IMAGE in $(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}'); do
+            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${{ env.DATE }}-$(echo $IMAGE | tr '/:' '_').json"
+            trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" "$IMAGE"
+          done
 
       - name: Verify Trivy Scan Report
         run: |
