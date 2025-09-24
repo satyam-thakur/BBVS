@@ -60,8 +60,15 @@ jobs:
         id: get-images
         run: |
           docker images
-          # Extract image names from docker-compose files after images are built
-          IMAGES="$(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}')"
+          # Get images and add :latest if no tag exists
+          IMAGES=""
+          for IMAGE in $(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}'); do
+            if [[ "$IMAGE" != *":"* ]]; then
+              IMAGE="${IMAGE}:latest"
+            fi
+            IMAGES="$IMAGES $IMAGE"
+          done
+          
           echo "IMAGES=$IMAGES" >> $GITHUB_ENV
           echo "Images to scan: $IMAGES"
 
