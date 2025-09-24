@@ -11,15 +11,17 @@ on:
 
 jobs:
   build:
-    name: Build container and Scan with Trivy
+    name: Build container and Scan with Trivy and Grype
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Create output directory
-        run: mkdir -p "GithubActions/TrivyScan"
+      - name: Create output directories
+        run: |
+          mkdir -p "GithubActions/TrivyScan"
+          mkdir -p "GithubActions/GrypeScan"
 
       - name: Set Date
         id: set-date
@@ -32,6 +34,11 @@ jobs:
           echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
           sudo apt-get update
           sudo apt-get install -y trivy
+
+      - name: Install Grype
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+          grype version
 
       - name: Install Docker Compose
         run: |
@@ -49,32 +56,65 @@ jobs:
           docker-compose -f artifacts/docker-compose_notls-orderer.yaml build
           docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml build
 
-      - name: List Docker Images
-        run: docker images
+      - name: List Docker Images and get Image Names
+        run: |
+          docker images
+          # Extract image names from docker-compose files after images are built
+          IMAGES="$(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}')"
+          echo "IMAGES=$IMAGES" >> $GITHUB_ENV
+          echo "Images to scan: $IMAGES"
 
       - name: Scan All Images from Compose File with Trivy
         id: trivy-scan
         run: |
-          IMAGES="$(docker-compose -f artifacts/docker-compose_notls-orderer.yaml config | grep 'image:' | awk '{print $2}') $(docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml config | grep 'image:' | awk '{print $2}')"
           for IMAGE in $IMAGES; do
-            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$OUTPUT_FILE" "$IMAGE"
-            git add "$OUTPUT_FILE"
+            # Generate JSON report
+            JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$JSON_OUTPUT_FILE" "$IMAGE"
+            
+            # Generate CSV report
+            CSV_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
+            trivy image --severity HIGH,CRITICAL --no-progress --format csv -o "$CSV_OUTPUT_FILE" "$IMAGE"
           done
 
-      - name: Verify Trivy Scan Report
+      - name: Scan All Images from Compose File with Grype
+        id: grype-scan
         run: |
-          ls -l "GithubActions/TrivyScan/"
+          for IMAGE in $IMAGES; do
+            # Generate JSON report
+            JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            grype --output json --file "$JSON_OUTPUT_FILE" "$IMAGE"
+            
+            # Generate CSV report
+            CSV_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
+            grype --output csv --file "$CSV_OUTPUT_FILE" "$IMAGE"
+          done
 
-      - name: Commit Trivy Scan Report as repository
+      - name: Verify Scan Reports
+        run: |
+          echo "Trivy Scan Reports:"
+          ls -l "GithubActions/TrivyScan/"
+          echo "Grype Scan Reports:"
+          ls -l "GithubActions/GrypeScan/"
+
+      - name: Commit Security Scan Reports
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
           for IMAGE in $IMAGES; do
-            OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            git add "$OUTPUT_FILE"
+            # Add Trivy reports
+            TRIVY_JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            TRIVY_CSV_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
+            git add "$TRIVY_JSON_OUTPUT_FILE"
+            git add "$TRIVY_CSV_OUTPUT_FILE"
+            
+            # Add Grype reports
+            GRYPE_JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            GRYPE_CSV_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
+            git add "$GRYPE_JSON_OUTPUT_FILE"
+            git add "$GRYPE_CSV_OUTPUT_FILE"
           done
-          git commit -m "Add Trivy scan report for $DATE"
+          git commit -m "Add security scan reports (Trivy and Grype) for $DATE"
           git push origin main
