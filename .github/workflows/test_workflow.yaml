@@ -57,10 +57,7 @@ jobs:
           docker-compose -f artifacts/docker-compose_no-tls-peer1.yaml build
 
       - name: List Docker Images and get Image Names
-<<<<<<< HEAD
         id: get-images
-=======
->>>>>>> 990724f51d3596c21092ac5a725797b2d512442e
         run: |
           docker images
           # Extract image names from docker-compose files after images are built
