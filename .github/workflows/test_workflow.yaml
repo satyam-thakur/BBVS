@@ -80,9 +80,9 @@ jobs:
             JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
             trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$JSON_OUTPUT_FILE" "$IMAGE"
             
-            # Generate CSV report
-            CSV_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
-            trivy image --severity HIGH,CRITICAL --no-progress --format csv -o "$CSV_OUTPUT_FILE" "$IMAGE"
+            # Generate table report
+            TABLE_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            trivy image --severity HIGH,CRITICAL --no-progress --format table -o "$TABLE_OUTPUT_FILE" "$IMAGE"
           done
 
       - name: Scan All Images from Compose File with Grype
@@ -93,9 +93,9 @@ jobs:
             JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
             grype --output json --file "$JSON_OUTPUT_FILE" "$IMAGE"
             
-            # Generate CSV report
-            CSV_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
-            grype --output csv --file "$CSV_OUTPUT_FILE" "$IMAGE"
+            # Generate table report
+            TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            grype --output table --file "$TABLE_OUTPUT_FILE" "$IMAGE"
           done
 
       - name: Verify Scan Reports
@@ -114,15 +114,15 @@ jobs:
           for IMAGE in $IMAGES; do
             # Add Trivy reports
             TRIVY_JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            TRIVY_CSV_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
+            TRIVY_TABLE_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
             git add "$TRIVY_JSON_OUTPUT_FILE"
-            git add "$TRIVY_CSV_OUTPUT_FILE"
+            git add "$TRIVY_TABLE_OUTPUT_FILE"
             
             # Add Grype reports
             GRYPE_JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            GRYPE_CSV_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').csv"
+            GRYPE_TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
             git add "$GRYPE_JSON_OUTPUT_FILE"
-            git add "$GRYPE_CSV_OUTPUT_FILE"
+            git add "$GRYPE_TABLE_OUTPUT_FILE"
           done
           git commit -m "Add security scan reports (Trivy and Grype) for $DATE"
           git push origin main
