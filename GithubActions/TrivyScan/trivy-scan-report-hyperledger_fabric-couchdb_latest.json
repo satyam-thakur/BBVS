@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-25T04:33:14.623324533Z",
+  "CreatedAt": "2025-09-25T04:37:06.100733682Z",
   "ArtifactName": "hyperledger/fabric-couchdb:latest",
   "ArtifactType": "container_image",
   "Metadata": {
