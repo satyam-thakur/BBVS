@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir -p "GithubActions/TrivyScan"
           mkdir -p "GithubActions/GrypeScan"
+          mkdir -p "GithubActions/Syft_sbom"
 
       - name: Set Date
         id: set-date
@@ -39,6 +40,11 @@ jobs:
         run: |
           curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
           grype version
+
+      - name: Install Syft
+        run: |
+          curl -sSfL https://get.anchore.io/syft | sudo sh -s -- -b /usr/local/bin
+          syft version
 
       - name: Install Docker Compose
         run: |
@@ -98,12 +104,27 @@ jobs:
             grype --output table --file "$TABLE_OUTPUT_FILE" "$IMAGE"
           done
 
+      - name: Scan All Images from Compose File with Syft
+        id: syft-scan
+        run: |
+          for IMAGE in $IMAGES; do
+            # Generate JSON SBOM report
+            JSON_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            syft "$IMAGE" -o syft-json > "$JSON_OUTPUT_FILE"
+            
+            # Generate text SBOM report
+            TEXT_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            syft "$IMAGE" -o syft-text > "$TEXT_OUTPUT_FILE"
+          done
+
       - name: Verify Scan Reports
         run: |
           echo "Trivy Scan Reports:"
           ls -l "GithubActions/TrivyScan/"
           echo "Grype Scan Reports:"
           ls -l "GithubActions/GrypeScan/"
+          echo "Syft SBOM Reports:"
+          ls -l "GithubActions/Syft_sbom/"
 
       - name: Commit Security Scan Reports
         env:
@@ -123,6 +144,12 @@ jobs:
             GRYPE_TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
             git add "$GRYPE_JSON_OUTPUT_FILE"
             git add "$GRYPE_TABLE_OUTPUT_FILE"
+            
+            # Add Syft SBOM reports
+            SYFT_JSON_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            SYFT_TEXT_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            git add "$SYFT_JSON_OUTPUT_FILE"
+            git add "$SYFT_TEXT_OUTPUT_FILE"
           done
-          git commit -m "Add security scan reports (Trivy and Grype) for $DATE"
+          git commit -m "Add security scan reports (Trivy, Grype, and Syft SBOM) for $DATE"
           git push origin main
