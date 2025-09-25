@@ -83,11 +83,11 @@ jobs:
         run: |
           for IMAGE in $IMAGES; do
             # Generate JSON report
-            JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$(echo $IMAGE | tr '/:' '_').json"
             trivy image --severity HIGH,CRITICAL --no-progress --format json -o "$JSON_OUTPUT_FILE" "$IMAGE"
             
             # Generate table report
-            TABLE_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            TABLE_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$(echo $IMAGE | tr '/:' '_').txt"
             trivy image --severity HIGH,CRITICAL --no-progress --format table -o "$TABLE_OUTPUT_FILE" "$IMAGE"
           done
 
@@ -96,11 +96,11 @@ jobs:
         run: |
           for IMAGE in $IMAGES; do
             # Generate JSON report
-            JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-$(echo $IMAGE | tr '/:' '_').json"
             grype --output json --file "$JSON_OUTPUT_FILE" "$IMAGE"
             
             # Generate table report
-            TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-$(echo $IMAGE | tr '/:' '_').txt"
             grype --output table --file "$TABLE_OUTPUT_FILE" "$IMAGE"
           done
 
@@ -109,11 +109,11 @@ jobs:
         run: |
           for IMAGE in $IMAGES; do
             # Generate JSON SBOM report
-            JSON_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
+            JSON_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-$(echo $IMAGE | tr '/:' '_').json"
             syft "$IMAGE" -o syft-json > "$JSON_OUTPUT_FILE"
             
             # Generate text SBOM report
-            TEXT_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            TEXT_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-$(echo $IMAGE | tr '/:' '_').txt"
             syft "$IMAGE" -o syft-text > "$TEXT_OUTPUT_FILE"
           done
 
@@ -134,20 +134,20 @@ jobs:
           git config --global user.email "actions@github.com"
           for IMAGE in $IMAGES; do
             # Add Trivy reports
-            TRIVY_JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            TRIVY_TABLE_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            TRIVY_JSON_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$(echo $IMAGE | tr '/:' '_').json"
+            TRIVY_TABLE_OUTPUT_FILE="GithubActions/TrivyScan/trivy-scan-report-$(echo $IMAGE | tr '/:' '_').txt"
             git add "$TRIVY_JSON_OUTPUT_FILE"
             git add "$TRIVY_TABLE_OUTPUT_FILE"
             
             # Add Grype reports
-            GRYPE_JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            GRYPE_TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            GRYPE_JSON_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-$(echo $IMAGE | tr '/:' '_').json"
+            GRYPE_TABLE_OUTPUT_FILE="GithubActions/GrypeScan/grype-scan-report-$(echo $IMAGE | tr '/:' '_').txt"
             git add "$GRYPE_JSON_OUTPUT_FILE"
             git add "$GRYPE_TABLE_OUTPUT_FILE"
             
             # Add Syft SBOM reports
-            SYFT_JSON_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').json"
-            SYFT_TEXT_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-${DATE}-$(echo $IMAGE | tr '/:' '_').txt"
+            SYFT_JSON_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-$(echo $IMAGE | tr '/:' '_').json"
+            SYFT_TEXT_OUTPUT_FILE="GithubActions/Syft_sbom/syft-sbom-report-$(echo $IMAGE | tr '/:' '_').txt"
             git add "$SYFT_JSON_OUTPUT_FILE"
             git add "$SYFT_TEXT_OUTPUT_FILE"
           done
