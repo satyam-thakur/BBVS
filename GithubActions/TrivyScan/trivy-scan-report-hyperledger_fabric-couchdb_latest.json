@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-09-25T04:37:06.100733682Z",
+  "CreatedAt": "2025-09-29T16:13:56.693456013Z",
   "ArtifactName": "hyperledger/fabric-couchdb:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -388,7 +388,7 @@
             "CWE-416"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 1,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -852,10 +852,9 @@
             "https://access.redhat.com/security/cve/CVE-2022-1304",
             "https://bugzilla.redhat.com/2069726",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2069726",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2083621",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1304",
             "https://errata.almalinux.org/9/ALSA-2022-8361.html",
-            "https://errata.rockylinux.org/RLSA-2022:7720",
+            "https://errata.rockylinux.org/RLSA-2022:8361",
             "https://linux.oracle.com/cve/CVE-2022-1304.html",
             "https://linux.oracle.com/errata/ELSA-2024-12731.html",
             "https://lists.debian.org/debian-lts-announce/2024/10/msg00001.html",
@@ -923,10 +922,9 @@
             "https://access.redhat.com/security/cve/CVE-2022-1304",
             "https://bugzilla.redhat.com/2069726",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2069726",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2083621",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1304",
             "https://errata.almalinux.org/9/ALSA-2022-8361.html",
-            "https://errata.rockylinux.org/RLSA-2022:7720",
+            "https://errata.rockylinux.org/RLSA-2022:8361",
             "https://linux.oracle.com/cve/CVE-2022-1304.html",
             "https://linux.oracle.com/errata/ELSA-2024-12731.html",
             "https://lists.debian.org/debian-lts-announce/2024/10/msg00001.html",
@@ -1232,7 +1230,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2073310",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271",
             "https://errata.almalinux.org/9/ALSA-2022-4940.html",
-            "https://errata.rockylinux.org/RLSA-2022:4991",
+            "https://errata.rockylinux.org/RLSA-2022:4940",
             "https://git.tukaani.org/?p=xz.git%3Ba=commit%3Bh=69d1b3fc29677af8ade8dc15dba83f0589cb63d6",
             "https://linux.oracle.com/cve/CVE-2022-1271.html",
             "https://linux.oracle.com/errata/ELSA-2022-5052.html",
@@ -1765,10 +1763,9 @@
             "https://access.redhat.com/security/cve/CVE-2022-1304",
             "https://bugzilla.redhat.com/2069726",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2069726",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2083621",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1304",
             "https://errata.almalinux.org/9/ALSA-2022-8361.html",
-            "https://errata.rockylinux.org/RLSA-2022:7720",
+            "https://errata.rockylinux.org/RLSA-2022:8361",
             "https://linux.oracle.com/cve/CVE-2022-1304.html",
             "https://linux.oracle.com/errata/ELSA-2024-12731.html",
             "https://lists.debian.org/debian-lts-announce/2024/10/msg00001.html",
@@ -1940,7 +1937,7 @@
             "CWE-416"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 1,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -2858,7 +2855,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 3,
+            "amazon": 4,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 3,
@@ -3725,7 +3722,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 2,
@@ -3759,7 +3756,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27405",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27406",
             "https://errata.almalinux.org/9/ALSA-2022-8340.html",
-            "https://errata.rockylinux.org/RLSA-2022:7745",
+            "https://errata.rockylinux.org/RLSA-2022:8340",
             "https://gitlab.freedesktop.org/freetype/freetype/-/issues/1138",
             "https://linux.oracle.com/cve/CVE-2022-27404.html",
             "https://linux.oracle.com/errata/ELSA-2022-8340.html",
@@ -3804,7 +3801,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -3839,7 +3836,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27405",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27406",
             "https://errata.almalinux.org/9/ALSA-2022-8340.html",
-            "https://errata.rockylinux.org/RLSA-2022:7745",
+            "https://errata.rockylinux.org/RLSA-2022:8340",
             "https://gitlab.freedesktop.org/freetype/freetype/-/issues/1139",
             "https://linux.oracle.com/cve/CVE-2022-27405.html",
             "https://linux.oracle.com/errata/ELSA-2022-8340.html",
@@ -3919,7 +3916,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27405",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27406",
             "https://errata.almalinux.org/9/ALSA-2022-8340.html",
-            "https://errata.rockylinux.org/RLSA-2022:7745",
+            "https://errata.rockylinux.org/RLSA-2022:8340",
             "https://gitlab.freedesktop.org/freetype/freetype/-/issues/1140",
             "https://linux.oracle.com/cve/CVE-2022-27406.html",
             "https://linux.oracle.com/errata/ELSA-2022-8340.html",
@@ -5715,7 +5712,7 @@
             "CWE-415"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "bitnami": 3,
             "cbl-mariner": 3,
             "nvd": 3,
@@ -6878,7 +6875,7 @@
             "CWE-415"
           ],
           "VendorSeverity": {
-            "amazon": 2,
+            "amazon": 3,
             "bitnami": 3,
             "cbl-mariner": 3,
             "nvd": 3,
@@ -7531,7 +7528,7 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2073310",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271",
             "https://errata.almalinux.org/9/ALSA-2022-4940.html",
-            "https://errata.rockylinux.org/RLSA-2022:4991",
+            "https://errata.rockylinux.org/RLSA-2022:4940",
             "https://git.tukaani.org/?p=xz.git%3Ba=commit%3Bh=69d1b3fc29677af8ade8dc15dba83f0589cb63d6",
             "https://linux.oracle.com/cve/CVE-2022-1271.html",
             "https://linux.oracle.com/errata/ELSA-2022-5052.html",
@@ -9489,10 +9486,9 @@
             "https://access.redhat.com/security/cve/CVE-2022-1304",
             "https://bugzilla.redhat.com/2069726",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2069726",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2083621",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1304",
             "https://errata.almalinux.org/9/ALSA-2022-8361.html",
-            "https://errata.rockylinux.org/RLSA-2022:7720",
+            "https://errata.rockylinux.org/RLSA-2022:8361",
             "https://linux.oracle.com/cve/CVE-2022-1304.html",
             "https://linux.oracle.com/errata/ELSA-2024-12731.html",
             "https://lists.debian.org/debian-lts-announce/2024/10/msg00001.html",
@@ -9685,7 +9681,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "ghsa": 3,
@@ -9786,7 +9782,7 @@
             "CWE-125"
           ],
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,
@@ -9898,7 +9894,7 @@
             "oracle-oval": 3,
             "photon": 3,
             "redhat": 3,
-            "rocky": 1,
+            "rocky": 3,
             "ubuntu": 3
           },
           "CVSS": {
@@ -9933,7 +9929,7 @@
             "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
             "https://errata.almalinux.org/8/ALSA-2022-5326.html",
-            "https://errata.rockylinux.org/RLSA-2022:5326",
+            "https://errata.rockylinux.org/RLSA-2022:4899",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=3118eb64934499d93db3230748a452351d1d9a65",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=380085481c64de749a6dd25cdf0bcf4360b30f83",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=a466912611aa6cbdf550cd10601390e587451246",
@@ -10014,7 +10010,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "ghsa": 3,
@@ -10115,7 +10111,7 @@
             "CWE-125"
           ],
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,
@@ -10227,7 +10223,7 @@
             "oracle-oval": 3,
             "photon": 3,
             "redhat": 3,
-            "rocky": 1,
+            "rocky": 3,
             "ubuntu": 3
           },
           "CVSS": {
@@ -10262,7 +10258,7 @@
             "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
             "https://errata.almalinux.org/8/ALSA-2022-5326.html",
-            "https://errata.rockylinux.org/RLSA-2022:5326",
+            "https://errata.rockylinux.org/RLSA-2022:4899",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=3118eb64934499d93db3230748a452351d1d9a65",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=380085481c64de749a6dd25cdf0bcf4360b30f83",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=a466912611aa6cbdf550cd10601390e587451246",
@@ -10343,7 +10339,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "nvd": 3,
@@ -12397,7 +12393,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "cbl-mariner": 3,
             "ghsa": 3,
             "nvd": 3,
@@ -12991,7 +12987,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "ghsa": 3,
@@ -13092,7 +13088,7 @@
             "CWE-125"
           ],
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "ghsa": 3,
@@ -13204,7 +13200,7 @@
             "oracle-oval": 3,
             "photon": 3,
             "redhat": 3,
-            "rocky": 1,
+            "rocky": 3,
             "ubuntu": 3
           },
           "CVSS": {
@@ -13239,7 +13235,7 @@
             "https://cert-portal.siemens.com/productcert/pdf/ssa-712929.pdf",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0778",
             "https://errata.almalinux.org/8/ALSA-2022-5326.html",
-            "https://errata.rockylinux.org/RLSA-2022:5326",
+            "https://errata.rockylinux.org/RLSA-2022:4899",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=3118eb64934499d93db3230748a452351d1d9a65",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=380085481c64de749a6dd25cdf0bcf4360b30f83",
             "https://git.openssl.org/gitweb/?p=openssl.git%3Ba=commitdiff%3Bh=a466912611aa6cbdf550cd10601390e587451246",
@@ -13320,7 +13316,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "cbl-mariner": 3,
             "nvd": 3,

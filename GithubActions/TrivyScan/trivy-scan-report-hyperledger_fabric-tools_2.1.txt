@@ -6,57 +6,57 @@ Report Summary
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
 │ hyperledger/fabric-tools:2.1 (alpine 3.11.5) │  alpine  │       43        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/bin/configtxgen                    │ gobinary │       51        │    -    │
+│ usr/local/bin/configtxgen                    │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/bin/configtxlator                  │ gobinary │       51        │    -    │
+│ usr/local/bin/configtxlator                  │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/bin/cryptogen                      │ gobinary │       51        │    -    │
+│ usr/local/bin/cryptogen                      │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/bin/discover                       │ gobinary │       51        │    -    │
+│ usr/local/bin/discover                       │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/bin/idemixgen                      │ gobinary │       51        │    -    │
+│ usr/local/bin/idemixgen                      │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/bin/peer                           │ gobinary │       51        │    -    │
+│ usr/local/bin/peer                           │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/bin/go                          │ gobinary │       51        │    -    │
+│ usr/local/go/bin/go                          │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/bin/gofmt                       │ gobinary │       51        │    -    │
+│ usr/local/go/bin/gofmt                       │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/addr2line  │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/addr2line  │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/api        │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/api        │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/asm        │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/asm        │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/buildid    │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/buildid    │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/cgo        │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/cgo        │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/compile    │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/compile    │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/cover      │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/cover      │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/dist       │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/dist       │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/doc        │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/doc        │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/fix        │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/fix        │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/link       │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/link       │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/nm         │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/nm         │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/objdump    │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/objdump    │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/pack       │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/pack       │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/pprof      │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/pprof      │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/test2json  │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/test2json  │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/trace      │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/trace      │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
-│ usr/local/go/pkg/tool/linux_amd64/vet        │ gobinary │       51        │    -    │
+│ usr/local/go/pkg/tool/linux_amd64/vet        │ gobinary │       50        │    -    │
 ├──────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
 │ /etc/hyperledger/fabric/msp/keystore/key.pem │   text   │        -        │    1    │
 └──────────────────────────────────────────────┴──────────┴─────────────────┴─────────┘
@@ -245,7 +245,7 @@ Total: 43 (HIGH: 38, CRITICAL: 5)
 
 usr/local/bin/configtxgen (gobinary)
 ====================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -428,17 +428,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/bin/configtxlator (gobinary)
 ======================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -621,17 +617,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/bin/cryptogen (gobinary)
 ==================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -814,17 +806,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/bin/discover (gobinary)
 =================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -1007,17 +995,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/bin/idemixgen (gobinary)
 ==================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -1200,17 +1184,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/bin/peer (gobinary)
 =============================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -1393,17 +1373,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/bin/go (gobinary)
 ==============================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -1586,17 +1562,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/bin/gofmt (gobinary)
 =================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -1779,17 +1751,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/addr2line (gobinary)
 ======================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -1972,17 +1940,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/api (gobinary)
 ================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -2165,17 +2129,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/asm (gobinary)
 ================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -2358,17 +2318,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/buildid (gobinary)
 ====================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -2551,17 +2507,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/cgo (gobinary)
 ================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -2744,17 +2696,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/compile (gobinary)
 ====================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -2937,17 +2885,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/cover (gobinary)
 ==================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -3130,17 +3074,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/dist (gobinary)
 =================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -3323,17 +3263,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/doc (gobinary)
 ================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -3516,17 +3452,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/fix (gobinary)
 ================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -3709,17 +3641,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/link (gobinary)
 =================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -3902,17 +3830,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/nm (gobinary)
 ===============================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -4095,17 +4019,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/objdump (gobinary)
 ====================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -4288,17 +4208,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/pack (gobinary)
 =================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -4481,17 +4397,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/pprof (gobinary)
 ==================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -4674,17 +4586,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/test2json (gobinary)
 ======================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -4867,17 +4775,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/trace (gobinary)
 ==================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -5060,17 +4964,13 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
 usr/local/go/pkg/tool/linux_amd64/vet (gobinary)
 ================================================
-Total: 51 (HIGH: 47, CRITICAL: 4)
+Total: 50 (HIGH: 46, CRITICAL: 4)
 
 ┌─────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │ Library │ Vulnerability  │ Severity │ Status │ Installed Version │          Fixed Version           │                            Title                             │
@@ -5253,11 +5153,7 @@ Total: 51 (HIGH: 47, CRITICAL: 4)
 │         │                │          │        │                   │                                  │ which contains deeply nested structures...                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2024-34156                   │
 │         ├────────────────┤          │        │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47906 │          │        │                   │ 1.23.12, 1.24.6                  │ If the PATH environment variable contains paths which are    │
-│         │                │          │        │                   │                                  │ executables ......                                           │
-│         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47906                   │
-│         ├────────────────┤          │        │                   │                                  ├──────────────────────────────────────────────────────────────┤
-│         │ CVE-2025-47907 │          │        │                   │                                  │ database/sql: Postgres Scan Race Condition                   │
+│         │ CVE-2025-47907 │          │        │                   │ 1.23.12, 1.24.6                  │ database/sql: Postgres Scan Race Condition                   │
 │         │                │          │        │                   │                                  │ https://avd.aquasec.com/nvd/cve-2025-47907                   │
 └─────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────┴──────────────────────────────────────────────────────────────┘
 
