@@ -1,4 +1,4 @@
-# Blockchain-Based Voting System (BBVS)
+# Blockchain-Based Commit Reveal Voting System (BBVS)
 
 This repository contains scripts and configurations for deploying a Hyperledger Fabric blockchain network for a voting system. The implementation supports a network with multiple organizations deployed on multi-region AWS Cloud, each with their own peers, and allows for dynamic network expansion. 
 More details for multi-region AWS Cloud network setup: [Medium Link](https://medium.com/@satyam.th3/aws-multi-az-multi-region-network-using-vpc-peering-a-3-region-9-node-ec2-deployment-guide-86dc4b801572)
