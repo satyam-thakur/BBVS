@@ -16,7 +16,7 @@ Before starting, ensure your system meets the following requirements:
 - Linux-based operating system (Ubuntu recommended)
 - Docker and Docker Compose
 - Go programming language
-- Hyperledger Fabric binaries
+- [Hyperledger Fabric binaries](https://hyperledger-fabric.readthedocs.io/en/latest/getting_started.html)
 
 ## Setup Instructions
 
@@ -54,7 +54,7 @@ By default, the network will have:
 - 3 organizations (Org1, Org2, Org3)
 - 1 peer per organization
 - CouchDB as the state database
-- TLS disabled for simplicity
+<!-- - TLS disabled for simplicity -->
 
 ### 3. Adding a New Organization (Org4)
 
@@ -130,6 +130,25 @@ If you encounter issues with the deployment:
    ./destroyblockchain.sh
    ./deployblockchain.sh
    ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch
+   ```bash
+   git checkout -b feature-branch-name
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4. Push to your fork
+   ```bash
+   git push origin feature-branch-name
+   ```
+5. Open a Pull Request
 
 ## License
 
