@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-10-05T04:57:10.418699419Z",
+  "CreatedAt": "2025-10-05T15:14:26.079791749Z",
   "ArtifactName": "hyperledger/fabric-orderer:2.1",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -3884,7 +3884,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 4,
             "cbl-mariner": 4,
             "nvd": 4,
@@ -4256,7 +4256,7 @@
           "Severity": "CRITICAL",
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "bitnami": 4,
             "cbl-mariner": 4,
             "nvd": 4,
@@ -4667,7 +4667,7 @@
             "CWE-20"
           ],
           "VendorSeverity": {
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "nvd": 3,
@@ -5349,7 +5349,7 @@
           "Severity": "HIGH",
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "cbl-mariner": 3,
@@ -7327,7 +7327,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "azure": 3,
             "bitnami": 3,
             "cbl-mariner": 3,

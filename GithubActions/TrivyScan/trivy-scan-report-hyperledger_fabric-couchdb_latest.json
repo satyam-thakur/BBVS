@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-10-05T04:57:19.623206089Z",
+  "CreatedAt": "2025-10-05T15:14:35.373678585Z",
   "ArtifactName": "hyperledger/fabric-couchdb:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -19146,7 +19146,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 2,
@@ -19242,7 +19242,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 2,
@@ -19338,7 +19338,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 2,
@@ -19435,7 +19435,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 3,
@@ -19605,7 +19605,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 4,
+            "amazon": 3,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 3,
@@ -19692,7 +19692,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 4,
+            "amazon": 3,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 3,
@@ -19774,7 +19774,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 3,
@@ -19861,7 +19861,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 3,
@@ -19959,7 +19959,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -20055,7 +20055,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -20151,7 +20151,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -20247,7 +20247,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 4,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 3,
@@ -20472,7 +20472,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 2,
@@ -20551,7 +20551,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -20631,7 +20631,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 3,
+            "amazon": 2,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
