@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-10-04T22:32:38.228780911Z",
+  "CreatedAt": "2025-10-05T03:20:42.880444802Z",
   "ArtifactName": "hyperledger/fabric-couchdb:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -20382,7 +20382,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
-            "amazon": 2,
+            "amazon": 3,
             "cbl-mariner": 4,
             "ghsa": 2,
             "nvd": 4,
@@ -20472,7 +20472,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "cbl-mariner": 4,
             "nvd": 4,
             "oracle-oval": 2,
@@ -20551,7 +20551,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -20631,7 +20631,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "cbl-mariner": 3,
             "nvd": 3,
             "oracle-oval": 2,
@@ -26635,7 +26635,7 @@
           ],
           "VendorSeverity": {
             "alma": 1,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "bitnami": 3,
             "cbl-mariner": 3,
@@ -26964,7 +26964,7 @@
           ],
           "VendorSeverity": {
             "alma": 1,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "bitnami": 3,
             "cbl-mariner": 3,
@@ -27089,7 +27089,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "cbl-mariner": 3,
             "nvd": 3,
@@ -29941,7 +29941,7 @@
           ],
           "VendorSeverity": {
             "alma": 1,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "bitnami": 3,
             "cbl-mariner": 3,
@@ -30066,7 +30066,7 @@
           ],
           "VendorSeverity": {
             "alma": 2,
-            "amazon": 2,
+            "amazon": 3,
             "azure": 3,
             "cbl-mariner": 3,
             "nvd": 3,
