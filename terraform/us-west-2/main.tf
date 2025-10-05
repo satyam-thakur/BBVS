@@ -86,7 +86,7 @@ resource "aws_vpc" "vpc_789" {
   cidr_block           = "10.0.3.0/24"
   enable_dns_hostnames = true
   enable_dns_support   = true
-  
+
   tags = {
     Name = "VPC789-subnet-public1-us-west-2a"
   }
@@ -94,15 +94,15 @@ resource "aws_vpc" "vpc_789" {
 
 # "igw-0e71b1b401a999474"
 resource "aws_internet_gateway" "igw" {
-  vpc_id = "vpc-0b3629292bff4ffc6"
+  vpc_id = aws_vpc.vpc_789.id
 }
 
 # "subnet-093dd43a877d2f5d1"
 resource "aws_subnet" "org7_subnet" {
   availability_zone = "us-west-2a"
   cidr_block        = "10.0.3.0/28"
-  vpc_id            = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id            = aws_vpc.vpc_789.id
+
   tags = {
     Name = "VPC123-VPC789"
   }
@@ -112,8 +112,8 @@ resource "aws_subnet" "org7_subnet" {
 resource "aws_subnet" "org8_subnet" {
   availability_zone = "us-west-2b"
   cidr_block        = "10.0.3.16/28"
-  vpc_id            = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id            = aws_vpc.vpc_789.id
+
   tags = {
     Name = "VPC789-subnet-public2-us-west-2b"
   }
@@ -123,8 +123,8 @@ resource "aws_subnet" "org8_subnet" {
 resource "aws_subnet" "org9_subnet" {
   availability_zone = "us-west-2c"
   cidr_block        = "10.0.3.32/28"
-  vpc_id            = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id            = aws_vpc.vpc_789.id
+
   tags = {
     Name = "VPC789-subnet-public3-us-west-2c"
   }
@@ -133,8 +133,8 @@ resource "aws_subnet" "org9_subnet" {
 # "sg-03afad46a6d5ffa62"
 resource "aws_security_group" "swarm_group" {
   description = "All traffic for test"
-  vpc_id      = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id      = aws_vpc.vpc_789.id
+
   ingress = [{
     cidr_blocks      = ["0.0.0.0/0"]
     description      = ""
@@ -146,7 +146,7 @@ resource "aws_security_group" "swarm_group" {
     self             = false
     to_port          = 0
   }]
-  
+
   egress = [{
     cidr_blocks      = ["0.0.0.0/0"]
     description      = ""
@@ -158,23 +158,23 @@ resource "aws_security_group" "swarm_group" {
     self             = false
     to_port          = 0
   }]
-  
+
   name = "BBVS_all"
-  
+
   tags = {}
 }
 
 # "rtb-099fcd3979e08303e"
 resource "aws_route_table" "VPC789-rt-VPC12_VPC456" {
-  vpc_id = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id = aws_vpc.vpc_789.id
+
   route = [{
     carrier_gateway_id         = null
     cidr_block                 = "0.0.0.0/0"
     core_network_arn           = null
     destination_prefix_list_id = null
     egress_only_gateway_id     = null
-    gateway_id                 = "igw-0e71b1b401a999474"
+    gateway_id                 = aws_internet_gateway.igw.id
     ipv6_cidr_block            = null
     local_gateway_id           = null
     nat_gateway_id             = null
@@ -195,7 +195,7 @@ resource "aws_route_table" "VPC789-rt-VPC12_VPC456" {
     network_interface_id       = null
     transit_gateway_id         = null
     vpc_endpoint_id            = null
-    vpc_peering_connection_id  = "pcx-04bb64cdbe9429a76"
+    vpc_peering_connection_id  = aws_vpc_peering_connection.peering_with_vpc123.id
     }, {
     carrier_gateway_id         = null
     cidr_block                 = "10.0.2.0/24"
@@ -209,9 +209,9 @@ resource "aws_route_table" "VPC789-rt-VPC12_VPC456" {
     network_interface_id       = null
     transit_gateway_id         = null
     vpc_endpoint_id            = null
-    vpc_peering_connection_id  = "pcx-0aafb24de9cc9b8eb"
+    vpc_peering_connection_id  = aws_vpc_peering_connection.peering_with_vpc456.id
   }]
-  
+
   tags = {
     Name = "VPC789-rt-VPC123&VPC456"
   }
@@ -222,16 +222,16 @@ resource "aws_vpc_peering_connection" "peering_with_vpc123" {
   peer_owner_id = "880110983955"
   peer_region   = "us-east-1"
   peer_vpc_id   = "vpc-0fc1f416a99367802"
-  vpc_id        = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id        = aws_vpc.vpc_789.id
+
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   requester {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   tags = {
     Name = "VPC123-VPC789"
   }
@@ -242,16 +242,16 @@ resource "aws_vpc_peering_connection" "peering_with_vpc456" {
   peer_owner_id = "880110983955"
   peer_region   = "us-east-2"
   peer_vpc_id   = "vpc-07b0b52d2ba27ab4f"
-  vpc_id        = "vpc-0b3629292bff4ffc6"
-  
+  vpc_id        = aws_vpc.vpc_789.id
+
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   requester {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   tags = {
     Name = "VPC456-VPC789"
   }
@@ -259,16 +259,16 @@ resource "aws_vpc_peering_connection" "peering_with_vpc456" {
 
 # "pcx-04bb64cdbe9429a76"
 resource "aws_vpc_peering_connection_accepter" "peering_vpc123" {
-  vpc_peering_connection_id = "pcx-04bb64cdbe9429a76"
-  
+  vpc_peering_connection_id = aws_vpc_peering_connection.peering_with_vpc123.id
+
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   requester {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   tags = {
     Name = "VPC123-VPC789"
   }
@@ -276,16 +276,16 @@ resource "aws_vpc_peering_connection_accepter" "peering_vpc123" {
 
 # "pcx-0aafb24de9cc9b8eb"
 resource "aws_vpc_peering_connection_accepter" "peering_vpc456" {
-  vpc_peering_connection_id = "pcx-0aafb24de9cc9b8eb"
-  
+  vpc_peering_connection_id = aws_vpc_peering_connection.peering_with_vpc456.id
+
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   requester {
     allow_remote_vpc_dns_resolution = false
   }
-  
+
   tags = {
     Name = "VPC456-VPC789"
   }
@@ -293,9 +293,9 @@ resource "aws_vpc_peering_connection_accepter" "peering_vpc456" {
 
 # "acl-0c39fc2876040ef03"
 resource "aws_default_network_acl" "default_nacl" {
-  default_network_acl_id = "acl-0c39fc2876040ef03"
-  subnet_ids             = ["subnet-00fecba6605905ce0", "subnet-093dd43a877d2f5d1", "subnet-09c3a22f442ab43e9"]
-  
+  default_network_acl_id = aws_vpc.vpc_789.default_network_acl_id
+  subnet_ids             = [aws_subnet.org9_subnet.id, aws_subnet.org7_subnet.id, aws_subnet.org8_subnet.id]
+
   egress {
     action     = "allow"
     cidr_block = "0.0.0.0/0"
@@ -306,7 +306,7 @@ resource "aws_default_network_acl" "default_nacl" {
     rule_no    = 100
     to_port    = 0
   }
-  
+
   ingress {
     action     = "allow"
     cidr_block = "0.0.0.0/0"
@@ -317,7 +317,7 @@ resource "aws_default_network_acl" "default_nacl" {
     rule_no    = 100
     to_port    = 0
   }
-  
+
   tags = {}
 }
 
@@ -327,14 +327,14 @@ resource "aws_instance" "org7" {
   instance_type          = "c7a.xlarge"
   key_name               = "BBVS_Oregon"
   private_ip             = "10.0.3.36"
-  subnet_id              = "subnet-00fecba6605905ce0"
-  vpc_security_group_ids = ["sg-03afad46a6d5ffa62"]
-  
+  subnet_id              = aws_subnet.org9_subnet.id
+  vpc_security_group_ids = [aws_security_group.swarm_group.id]
+
   cpu_options {
     core_count       = 4
     threads_per_core = 1
   }
-  
+
   root_block_device {
     delete_on_termination = true
     volume_size           = 40
@@ -342,9 +342,9 @@ resource "aws_instance" "org7" {
     iops                  = 3000
     throughput            = 125
   }
-  
+
   tags = {
-    Name = "Org9"
+    Name = "Org7"
   }
 }
 
@@ -354,14 +354,14 @@ resource "aws_instance" "org8" {
   instance_type          = "c7a.xlarge"
   key_name               = "BBVS_Oregon"
   private_ip             = "10.0.3.6"
-  subnet_id              = "subnet-093dd43a877d2f5d1"
-  vpc_security_group_ids = ["sg-03afad46a6d5ffa62"]
-  
+  subnet_id              = aws_subnet.org7_subnet.id
+  vpc_security_group_ids = [aws_security_group.swarm_group.id]
+
   cpu_options {
     core_count       = 4
     threads_per_core = 1
   }
-  
+
   root_block_device {
     delete_on_termination = true
     volume_size           = 40
@@ -369,9 +369,9 @@ resource "aws_instance" "org8" {
     iops                  = 3000
     throughput            = 125
   }
-  
+
   tags = {
-    Name = "Org7"
+    Name = "Org8"
   }
 }
 
@@ -381,14 +381,14 @@ resource "aws_instance" "org9" {
   instance_type          = "c7a.xlarge"
   key_name               = "BBVS_Oregon"
   private_ip             = "10.0.3.23"
-  subnet_id              = "subnet-09c3a22f442ab43e9"
-  vpc_security_group_ids = ["sg-03afad46a6d5ffa62"]
-  
+  subnet_id              = aws_subnet.org8_subnet.id
+  vpc_security_group_ids = [aws_security_group.swarm_group.id]
+
   cpu_options {
     core_count       = 4
     threads_per_core = 1
   }
-  
+
   root_block_device {
     delete_on_termination = true
     volume_size           = 40
@@ -396,8 +396,8 @@ resource "aws_instance" "org9" {
     iops                  = 3000
     throughput            = 125
   }
-  
+
   tags = {
-    Name = "Org8"
+    Name = "Org9"
   }
 }

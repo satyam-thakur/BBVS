@@ -87,7 +87,7 @@ resource "aws_internet_gateway" "peer123_igw" {
   tags_all = {
     Name = "Peer123-igw"
   }
-  vpc_id = "vpc-0fc1f416a99367802"
+  vpc_id = aws_vpc.peer123_vpc.id
 }
 
 # "pcx-068c3c652492096ac"
@@ -103,7 +103,7 @@ resource "aws_vpc_peering_connection" "vpc123_to_vpc456" {
   tags_all = {
     Name = "VPC123-VPC456"
   }
-  vpc_id = "vpc-0fc1f416a99367802"
+  vpc_id = aws_vpc.peer123_vpc.id
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
@@ -122,7 +122,7 @@ resource "aws_vpc_peering_connection_accepter" "VPC123-VPC456" {
   tags_all = {
     Name = "VPC123-VPC456"
   }
-  vpc_peering_connection_id = "pcx-068c3c652492096ac"
+  vpc_peering_connection_id = aws_vpc_peering_connection.vpc123_to_vpc456.id
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
@@ -141,7 +141,7 @@ resource "aws_route_table" "rt_vpc123_vpc456_vpc789" {
     core_network_arn           = null
     destination_prefix_list_id = null
     egress_only_gateway_id     = null
-    gateway_id                 = "igw-03eebd7425eb277e2"
+    gateway_id                 = aws_internet_gateway.peer123_igw.id
     ipv6_cidr_block            = null
     local_gateway_id           = null
     nat_gateway_id             = null
@@ -162,7 +162,7 @@ resource "aws_route_table" "rt_vpc123_vpc456_vpc789" {
     network_interface_id       = null
     transit_gateway_id         = null
     vpc_endpoint_id            = null
-    vpc_peering_connection_id  = "pcx-068c3c652492096ac"
+    vpc_peering_connection_id  = aws_vpc_peering_connection.vpc123_to_vpc456.id
     }, {
     carrier_gateway_id         = null
     cidr_block                 = "10.0.3.0/24"
@@ -176,7 +176,7 @@ resource "aws_route_table" "rt_vpc123_vpc456_vpc789" {
     network_interface_id       = null
     transit_gateway_id         = null
     vpc_endpoint_id            = null
-    vpc_peering_connection_id  = "pcx-04bb64cdbe9429a76"
+    vpc_peering_connection_id  = aws_vpc_peering_connection.vpc789_to_vpc123.id
   }]
   tags = {
     Name = "VPC123-rt-VPC456&VPC789"
@@ -184,7 +184,7 @@ resource "aws_route_table" "rt_vpc123_vpc456_vpc789" {
   tags_all = {
     Name = "VPC123-rt-VPC456&VPC789"
   }
-  vpc_id = "vpc-0fc1f416a99367802"
+  vpc_id = aws_vpc.peer123_vpc.id
 }
 
 # "pcx-04bb64cdbe9429a76"
@@ -192,7 +192,7 @@ resource "aws_vpc_peering_connection" "vpc789_to_vpc123" {
   auto_accept   = null
   peer_owner_id = "880110983955"
   peer_region   = "us-east-1"
-  peer_vpc_id   = "vpc-0fc1f416a99367802"
+  peer_vpc_id   = aws_vpc.peer123_vpc.id
   region        = "us-east-1"
   tags = {
     Name = "VPC123-VPC789"
@@ -200,7 +200,7 @@ resource "aws_vpc_peering_connection" "vpc789_to_vpc123" {
   tags_all = {
     Name = "VPC123-VPC789"
   }
-  vpc_id = "vpc-0b3629292bff4ffc6"
+  vpc_id = "vpc-0b3629292bff4ffc6"  # This is VPC789 in us-west-2 - cross-region reference
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
@@ -219,7 +219,7 @@ resource "aws_vpc_peering_connection_accepter" "VPC123-VPC789" {
   tags_all = {
     Name = "VPC123-VPC789"
   }
-  vpc_peering_connection_id = "pcx-04bb64cdbe9429a76"
+  vpc_peering_connection_id = aws_vpc_peering_connection.vpc789_to_vpc123.id
   accepter {
     allow_remote_vpc_dns_resolution = false
   }
@@ -230,9 +230,9 @@ resource "aws_vpc_peering_connection_accepter" "VPC123-VPC789" {
 
 # "acl-0081b3fe550e7b311"
 resource "aws_default_network_acl" "default_nacl" {
-  default_network_acl_id = "acl-0081b3fe550e7b311"
+  default_network_acl_id = aws_vpc.peer123_vpc.default_network_acl_id
   region                 = "us-east-1"
-  subnet_ids             = ["subnet-05f4a1227e3f212f8", "subnet-080f6702562499c23", "subnet-09c877aeb82eed5c0"]
+  subnet_ids             = [aws_subnet.public_1c.id, aws_subnet.public_1b.id, aws_subnet.public_1a.id]
   tags                   = {}
   tags_all               = {}
   egress {
@@ -360,14 +360,14 @@ resource "aws_security_group" "Swarm_Group" {
   revoke_rules_on_delete = null
   tags                   = {}
   tags_all               = {}
-  vpc_id                 = "vpc-0ecfccc63aeae1969"
+  vpc_id                 = aws_vpc.peer123_vpc.id
 }
 
 
 resource "aws_subnet" "public_1b" {
   availability_zone = "us-east-1b"
   cidr_block        = "10.0.1.16/28"
-  vpc_id            = "vpc-0fc1f416a99367802"
+  vpc_id            = aws_vpc.peer123_vpc.id
   
   tags = {
     Name = "Peer123-subnet-public2-us-east-1b"
@@ -378,7 +378,7 @@ resource "aws_subnet" "public_1b" {
 resource "aws_subnet" "public_1a" {
   availability_zone = "us-east-1a"
   cidr_block        = "10.0.1.0/28"
-  vpc_id            = "vpc-0fc1f416a99367802"
+  vpc_id            = aws_vpc.peer123_vpc.id
   
   tags = {
     Name = "Peer123-subnet-public1-us-east-1a"
@@ -389,7 +389,7 @@ resource "aws_subnet" "public_1a" {
 resource "aws_subnet" "public_1c" {
   availability_zone = "us-east-1c"
   cidr_block        = "10.0.1.32/28"
-  vpc_id            = "vpc-0fc1f416a99367802"
+  vpc_id            = aws_vpc.peer123_vpc.id
   
   tags = {
     Name = "Peer123-subnet-public3-us-east-1c"
@@ -398,15 +398,9 @@ resource "aws_subnet" "public_1c" {
 
 # "eipalloc-021c8ec29904b440a"
 resource "aws_eip" "org1_eip" {
-  address                   = null
-  associate_with_private_ip = null
-  customer_owned_ipv4_pool  = null
   domain                    = "vpc"
-  instance                  = "i-086fa90ecdb430d79"
-  ipam_pool_id              = null
+  instance                  = aws_instance.org1.id
   network_border_group      = "us-east-1"
-  network_interface         = "eni-08cf2068af3f44b02"
-  public_ipv4_pool          = "amazon"
   region                    = "us-east-1"
   tags = {
     Name = "BBVS_Peer123-eip-us-east-1a"
@@ -433,8 +427,8 @@ resource "aws_instance" "org1" {
   instance_type          = "c7a.xlarge"
   key_name               = "Swarm_key"
   private_ip             = "10.0.1.12"
-  subnet_id              = "subnet-09c877aeb82eed5c0"
-  vpc_security_group_ids = ["sg-0ec35adf53f858148"]
+  subnet_id              = aws_subnet.public_1a.id
+  vpc_security_group_ids = [aws_security_group.Swarm_Group.id]
   
   tags = {
     Name = "Org1"
@@ -460,8 +454,8 @@ resource "aws_instance" "org2" {
   instance_type          = "c7a.xlarge"
   key_name               = "Swarm_key"
   private_ip             = "10.0.1.28"
-  subnet_id              = "subnet-080f6702562499c23"
-  vpc_security_group_ids = ["sg-0ec35adf53f858148"]
+  subnet_id              = aws_subnet.public_1b.id
+  vpc_security_group_ids = [aws_security_group.Swarm_Group.id]
   
   tags = {
     Name = "Org2"
@@ -487,8 +481,8 @@ resource "aws_instance" "org3" {
   instance_type          = "c7a.xlarge"
   key_name               = "Swarm_key"
   private_ip             = "10.0.1.42"
-  subnet_id              = "subnet-05f4a1227e3f212f8"
-  vpc_security_group_ids = ["sg-0ec35adf53f858148"]
+  subnet_id              = aws_subnet.public_1c.id
+  vpc_security_group_ids = [aws_security_group.Swarm_Group.id]
   
   tags = {
     Name = "Org3"
